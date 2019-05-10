@@ -1,0 +1,10 @@
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.FrmQuanLyDanhMucPhong.resources
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
