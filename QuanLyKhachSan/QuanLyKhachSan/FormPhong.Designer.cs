@@ -56,8 +56,12 @@
             this.Edit_Button = new System.Windows.Forms.Button();
             this.Delete_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
+            this.Search_TextBox = new System.Windows.Forms.TextBox();
+            this.Search_ComboBox = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHONG)).BeginInit();
             this.panel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPHONG
@@ -74,7 +78,7 @@
             this.dgvPHONG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPHONG.Name = "dgvPHONG";
             this.dgvPHONG.RowTemplate.Height = 24;
-            this.dgvPHONG.Size = new System.Drawing.Size(668, 369);
+            this.dgvPHONG.Size = new System.Drawing.Size(668, 283);
             this.dgvPHONG.TabIndex = 0;
             this.dgvPHONG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPHONG_CellClick);
             // 
@@ -335,11 +339,46 @@
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
+            // Search_TextBox
+            // 
+            this.Search_TextBox.Location = new System.Drawing.Point(142, 24);
+            this.Search_TextBox.Name = "Search_TextBox";
+            this.Search_TextBox.Size = new System.Drawing.Size(179, 20);
+            this.Search_TextBox.TabIndex = 10;
+            this.Search_TextBox.TextChanged += new System.EventHandler(this.Search_TextBox_TextChanged);
+            // 
+            // Search_ComboBox
+            // 
+            this.Search_ComboBox.FormattingEnabled = true;
+            this.Search_ComboBox.Items.AddRange(new object[] {
+            "Mã Phòng",
+            "Loại Phòng",
+            "Tình Trạng",
+            "Giá Phòng",
+            "Mã Nhân Viên Phụ Trách",
+            "SĐT"});
+            this.Search_ComboBox.Location = new System.Drawing.Point(9, 23);
+            this.Search_ComboBox.Name = "Search_ComboBox";
+            this.Search_ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.Search_ComboBox.TabIndex = 12;
+            this.Search_ComboBox.Text = "Mã Phòng";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Search_ComboBox);
+            this.panel1.Controls.Add(this.Search_TextBox);
+            this.panel1.Location = new System.Drawing.Point(22, 407);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(334, 62);
+            this.panel1.TabIndex = 13;
+            this.panel1.Tag = "";
+            // 
             // QuanLyPhong_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 583);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Edit_Button);
@@ -356,6 +395,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHONG)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -390,6 +431,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.ComboBox LoaiPhong_ComboBox;
+        private System.Windows.Forms.TextBox Search_TextBox;
+        private System.Windows.Forms.ComboBox Search_ComboBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

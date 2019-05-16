@@ -65,5 +65,6 @@ namespace QuanLyKhachSan
             QuanLyPhong_Form Temp = new QuanLyPhong_Form();
             Temp.ShowDialog();
         }
+
     }
 }

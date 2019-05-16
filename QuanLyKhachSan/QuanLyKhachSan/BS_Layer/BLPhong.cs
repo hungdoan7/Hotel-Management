@@ -32,5 +32,10 @@ namespace QuanLyKhachSan.BS_layer
             string sqlString = "Insert into Phong values ('" + maphong + "',N'" + loaiphong + "','" + tinhtrang + "','" + giaphong + "','" + sdt + "',N'" + manhanvien + "')";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
         }
+        public DataSet TimKiem(string column,string keyword)
+        {
+            string sqlString = "select * from Phong where "+column+" like (N'"+keyword+"%')";
+            return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
+        }
     }
 }

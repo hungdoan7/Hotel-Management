@@ -214,5 +214,52 @@ namespace QuanLyKhachSan
         {
             this.Close();
         }
+
+        private void Search_TextBox_TextChanged(object sender, EventArgs e)
+        {
+            string column;
+            switch (Search_ComboBox.Text)
+            {
+                case "Mã Phòng":
+                {
+                        column = "MaPhong";
+                        break;
+                }
+                case "Loại Phòng":
+                    {
+                        column = "LoaiPhong";
+                        break;
+                    }
+                case "Tình Trạng":
+                    {
+                        column = "TinhTrang";
+                        break;
+                    }
+                case "Mã Nhân Viên Phụ Trách":
+                    {
+                        column = "MaNV";
+                        break;
+                    }
+                case "SĐT":
+                    {
+                        column = "SDT";
+                        break;
+                    }
+                case "Giá Phòng":
+                    {
+                        column = "GiaPhong";
+                        break;
+                    }
+                default:
+                    {
+                        return;
+                    }
+            }
+            blP = new BLPhong();
+            DataSet ds = blP.TimKiem(column, Search_TextBox.Text);
+            dtPhong = new DataTable();
+            dtPhong = ds.Tables[0];
+            dgvPHONG.DataSource = dtPhong;
+        }
     }
 }
