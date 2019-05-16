@@ -13,15 +13,15 @@ using QuanLyKhachSan.BS_layer;
 
 namespace QuanLyKhachSan
 {
-    public partial class FrmQuanLyDanhMucPhong : Form
+    public partial class QuanLyPhong_Form : Form
     {
         DataTable dtPhong = null;
         bool Them;
-        string err;
-        BLPhong dbPh = new BLPhong();
-        public FrmQuanLyDanhMucPhong()
+        BLPhong blP = new BLPhong();
+        public QuanLyPhong_Form()
         {
             InitializeComponent();
+            LoadData();
         }
         void LoadData()
         {
@@ -29,28 +29,28 @@ namespace QuanLyKhachSan
             {
                 dtPhong = new DataTable();
                 dtPhong.Clear();
-
-                DataSet ds = dbPh.LayPhong();
-                dtPhong = ds.Tables[0];
-
+                DataSet ds = blP.LayDSPhong();
+                dtPhong =ds.Tables[0];
                 dgvPHONG.DataSource = dtPhong;
-                dgvPHONG.AutoResizeColumns();
-                //this.txtMaPhong.ResetText();
-                //this.txtTenPhong.ResetText();
-                this.panel1.ResetText();
-                this.btn_Luu.Enabled = false;
-                this.btn_Huy.Enabled = false;
-                this.panel1.Enabled = false;
-                // Cho thao tác trên các nút Thêm / Sửa / Xóa /Thoát                  
-                this.btn_Them.Enabled = true;
-                this.btn_Sua.Enabled = true;
-                this.btn_Xoa.Enabled = true;
-                this.btn_Trove.Enabled = true;
-                dgvPHONG_CellClick(null, null);
+                this.MaNV_TextBox.ResetText();
+                this.MaPhong_Textbox.ResetText();
+                this.GiaPhong_TextBox.ResetText();
+                this.SDT_TextBox.ResetText();
+                this.LoaiPhong_ComboBox.ResetText();
+
+                this.Reload_Button.Enabled = true;
+                this.Edit_Button.Enabled = true;
+                this.Delete_Button.Enabled = true;
+                this.Back_Button.Enabled = true;
+                this.Add_Button.Enabled = true;
+
+                this.Cancel_Button.Enabled = false;
+                this.Save_Button.Enabled = false;
+                this.panel.Enabled = false;
             }
-            catch (SqlException)
+            catch(SqlException)
             {
-                MessageBox.Show("Không lấy được nội dung trong table");
+                MessageBox.Show("Không lấy được nội dung  trong table Phong !");
             }
         }
         private void FrmQuanLyDanhMucPhong_Load(object sender, EventArgs e)
@@ -61,14 +61,39 @@ namespace QuanLyKhachSan
         private void dgvPHONG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvPHONG.CurrentCell.RowIndex;
-            this.txtMaPhong.Text = dgvPHONG.Rows[r].Cells[0].Value.ToString();
-            this.txtTenPhong.Text = dgvPHONG.Rows[r].Cells[1].Value.ToString();
-            this.txtLoaiPhong.Text = dgvPHONG.Rows[r].Cells[2].Value.ToString();
-            this.txtGiaPhong.Text = dgvPHONG.Rows[r].Cells[3].Value.ToString();
-            this.txtChuThich.Text = dgvPHONG.Rows[r].Cells[4].Value.ToString();
-            this.txtTinhTrang.Text = dgvPHONG.Rows[r].Cells[5].Value.ToString();
-            this.txtMaNV.Text = dgvPHONG.Rows[r].Cells[6].Value.ToString();
-            this.txtMaDV.Text = dgvPHONG.Rows[r].Cells[7].Value.ToString();
+            
+            this.MaPhong_Textbox.Text = dgvPHONG.Rows[r].Cells[0].Value.ToString();
+            this.GiaPhong_TextBox.Text = dgvPHONG.Rows[r].Cells[3].Value.ToString();
+            this.SDT_TextBox.Text = dgvPHONG.Rows[r].Cells[4].Value.ToString();
+            this.MaNV_TextBox.Text = dgvPHONG.Rows[r].Cells[5].Value.ToString();
+
+            switch (dgvPHONG.Rows[r].Cells[1].Value.ToString())
+            {
+                case "Đơn":
+                    {
+                        LoaiPhong_ComboBox.Text = "Đơn";
+                        break;
+                    }
+                case "Đôi":
+                    {
+                        LoaiPhong_ComboBox.Text = "Đôi";
+                        break;
+                    }
+                case "Cao Cấp":
+                    {
+                        LoaiPhong_ComboBox.Text = "Cao Cấp";
+                        break;
+                    }
+            }
+            string Temp = dgvPHONG.Rows[r].Cells[2].Value.ToString();
+            if (Temp.Length == 8)
+            {
+                DaThue_RadioButton.Checked = true;
+            }
+            else
+            {
+                Trong_RadioButton.Checked = true;
+            }
         }
 
         private void btn_Reload_Click(object sender, EventArgs e)
@@ -79,40 +104,20 @@ namespace QuanLyKhachSan
         private void btn_Them_Click(object sender, EventArgs e)
         {
             Them = true;
-            //this.txtMaPhong.ResetText();
-            //this.txtTenPhong.ResetText();
-            //this.txtChuThich.ResetText();
-            this.panel1.ResetText();
-            this.btn_Luu.Enabled = true;
-            this.btn_Huy.Enabled = true;
-            this.panel1.Enabled = true;
 
-            this.btn_Them.Enabled = false;
-            this.btn_Sua.Enabled = false;
-            this.btn_Xoa.Enabled = false;
-            this.btn_Trove.Enabled = false;
+            this.Save_Button.Enabled = true;
+            this.Cancel_Button.Enabled = true;
+            this.panel.Enabled = true;
 
-            this.txtMaPhong.Focus();
+            this.Add_Button.Enabled = false;
+            this.Edit_Button.Enabled = false;
+            this.Delete_Button.Enabled = false;
+            this.Back_Button.Enabled = false;
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            if(Them == true)
-            {
-                BLPhong blP = new BLPhong();
-                if (blP.ThemPhong(this.txtMaPhong.Text, this.txtTenPhong.Text,
-                    this.txtLoaiPhong.Text, Convert.ToDouble(this.txtGiaPhong.Text),
-                    this.txtChuThich.Text, this.txtTinhTrang.Text,
-                    this.txtMaNV.Text, this.txtMaDV.Text, ref err) == false)
-                {
-                    LoadData();
-                    MessageBox.Show("Đã thêm xong!");
-                }
-                else
-                {
-                    MessageBox.Show("Không thêm được!");
-                }
-            }
+           
         }
     }
 }

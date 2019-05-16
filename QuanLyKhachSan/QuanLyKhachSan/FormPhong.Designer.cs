@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhachSan
 {
-    partial class FrmQuanLyDanhMucPhong
+    partial class QuanLyPhong_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,282 +29,330 @@
         private void InitializeComponent()
         {
             this.dgvPHONG = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_MaDV = new System.Windows.Forms.Label();
+            this.panel = new System.Windows.Forms.Panel();
+            this.MaNV_TextBox = new System.Windows.Forms.TextBox();
+            this.GiaPhong_TextBox = new System.Windows.Forms.TextBox();
+            this.MaPhong_Textbox = new System.Windows.Forms.TextBox();
             this.lb_MaNV = new System.Windows.Forms.Label();
             this.lb_TinhTrang = new System.Windows.Forms.Label();
-            this.lb_ChuThich = new System.Windows.Forms.Label();
             this.lb_GiaPhong = new System.Windows.Forms.Label();
             this.lb_LoaiPhong = new System.Windows.Forms.Label();
-            this.lb_TenPhong = new System.Windows.Forms.Label();
-            this.lb_MaPhong = new System.Windows.Forms.Label();
-            this.txtMaPhong = new System.Windows.Forms.TextBox();
-            this.txtLoaiPhong = new System.Windows.Forms.TextBox();
-            this.txtTenPhong = new System.Windows.Forms.TextBox();
-            this.txtTinhTrang = new System.Windows.Forms.TextBox();
-            this.txtGiaPhong = new System.Windows.Forms.TextBox();
-            this.txtMaDV = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.txtChuThich = new System.Windows.Forms.TextBox();
-            this.btn_Reload = new System.Windows.Forms.Button();
-            this.btn_Luu = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
-            this.btn_Huy = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_Trove = new System.Windows.Forms.Button();
+            this.MaPhong_Label = new System.Windows.Forms.Label();
+            this.Reload_Button = new System.Windows.Forms.Button();
+            this.Save_Button = new System.Windows.Forms.Button();
+            this.Add_Button = new System.Windows.Forms.Button();
+            this.Cancel_Button = new System.Windows.Forms.Button();
+            this.Edit_Button = new System.Windows.Forms.Button();
+            this.Delete_Button = new System.Windows.Forms.Button();
+            this.Back_Button = new System.Windows.Forms.Button();
+            this.DaThue_RadioButton = new System.Windows.Forms.RadioButton();
+            this.Trong_RadioButton = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SDT_TextBox = new System.Windows.Forms.TextBox();
+            this.LoaiPhong_ComboBox = new System.Windows.Forms.ComboBox();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHONG)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPHONG
             // 
             this.dgvPHONG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPHONG.Location = new System.Drawing.Point(29, 146);
+            this.dgvPHONG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaPhong,
+            this.LoaiPhong,
+            this.TinhTrang,
+            this.GiaPhong,
+            this.SDT,
+            this.MaNV});
+            this.dgvPHONG.Location = new System.Drawing.Point(22, 119);
+            this.dgvPHONG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPHONG.Name = "dgvPHONG";
             this.dgvPHONG.RowTemplate.Height = 24;
-            this.dgvPHONG.Size = new System.Drawing.Size(987, 454);
+            this.dgvPHONG.Size = new System.Drawing.Size(740, 369);
             this.dgvPHONG.TabIndex = 0;
             this.dgvPHONG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPHONG_CellClick);
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.Controls.Add(this.txtChuThich);
-            this.panel1.Controls.Add(this.txtMaNV);
-            this.panel1.Controls.Add(this.txtMaDV);
-            this.panel1.Controls.Add(this.txtGiaPhong);
-            this.panel1.Controls.Add(this.txtTinhTrang);
-            this.panel1.Controls.Add(this.txtTenPhong);
-            this.panel1.Controls.Add(this.txtLoaiPhong);
-            this.panel1.Controls.Add(this.txtMaPhong);
-            this.panel1.Controls.Add(this.lb_MaDV);
-            this.panel1.Controls.Add(this.lb_MaNV);
-            this.panel1.Controls.Add(this.lb_TinhTrang);
-            this.panel1.Controls.Add(this.lb_ChuThich);
-            this.panel1.Controls.Add(this.lb_GiaPhong);
-            this.panel1.Controls.Add(this.lb_LoaiPhong);
-            this.panel1.Controls.Add(this.lb_TenPhong);
-            this.panel1.Controls.Add(this.lb_MaPhong);
-            this.panel1.Location = new System.Drawing.Point(23, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 117);
-            this.panel1.TabIndex = 1;
+            this.panel.Controls.Add(this.LoaiPhong_ComboBox);
+            this.panel.Controls.Add(this.SDT_TextBox);
+            this.panel.Controls.Add(this.label1);
+            this.panel.Controls.Add(this.Trong_RadioButton);
+            this.panel.Controls.Add(this.DaThue_RadioButton);
+            this.panel.Controls.Add(this.MaNV_TextBox);
+            this.panel.Controls.Add(this.GiaPhong_TextBox);
+            this.panel.Controls.Add(this.MaPhong_Textbox);
+            this.panel.Controls.Add(this.lb_MaNV);
+            this.panel.Controls.Add(this.lb_TinhTrang);
+            this.panel.Controls.Add(this.lb_GiaPhong);
+            this.panel.Controls.Add(this.lb_LoaiPhong);
+            this.panel.Controls.Add(this.MaPhong_Label);
+            this.panel.Location = new System.Drawing.Point(17, 19);
+            this.panel.Margin = new System.Windows.Forms.Padding(2);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(744, 95);
+            this.panel.TabIndex = 1;
             // 
-            // lb_MaDV
+            // MaNV_TextBox
             // 
-            this.lb_MaDV.AutoSize = true;
-            this.lb_MaDV.Location = new System.Drawing.Point(515, 50);
-            this.lb_MaDV.Name = "lb_MaDV";
-            this.lb_MaDV.Size = new System.Drawing.Size(80, 17);
-            this.lb_MaDV.TabIndex = 7;
-            this.lb_MaDV.Text = "Mã Dịch Vụ";
+            this.MaNV_TextBox.Location = new System.Drawing.Point(464, 13);
+            this.MaNV_TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MaNV_TextBox.Name = "MaNV_TextBox";
+            this.MaNV_TextBox.Size = new System.Drawing.Size(63, 20);
+            this.MaNV_TextBox.TabIndex = 14;
+            // 
+            // GiaPhong_TextBox
+            // 
+            this.GiaPhong_TextBox.Location = new System.Drawing.Point(285, 13);
+            this.GiaPhong_TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.GiaPhong_TextBox.Name = "GiaPhong_TextBox";
+            this.GiaPhong_TextBox.Size = new System.Drawing.Size(90, 20);
+            this.GiaPhong_TextBox.TabIndex = 12;
+            // 
+            // MaPhong_Textbox
+            // 
+            this.MaPhong_Textbox.Location = new System.Drawing.Point(70, 13);
+            this.MaPhong_Textbox.Margin = new System.Windows.Forms.Padding(2);
+            this.MaPhong_Textbox.Name = "MaPhong_Textbox";
+            this.MaPhong_Textbox.Size = new System.Drawing.Size(137, 20);
+            this.MaPhong_Textbox.TabIndex = 8;
             // 
             // lb_MaNV
             // 
             this.lb_MaNV.AutoSize = true;
-            this.lb_MaNV.Location = new System.Drawing.Point(515, 16);
+            this.lb_MaNV.Location = new System.Drawing.Point(386, 13);
+            this.lb_MaNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_MaNV.Name = "lb_MaNV";
-            this.lb_MaNV.Size = new System.Drawing.Size(97, 17);
+            this.lb_MaNV.Size = new System.Drawing.Size(75, 13);
             this.lb_MaNV.TabIndex = 6;
             this.lb_MaNV.Text = "Mã Nhân Viên";
             // 
             // lb_TinhTrang
             // 
             this.lb_TinhTrang.AutoSize = true;
-            this.lb_TinhTrang.Location = new System.Drawing.Point(299, 50);
+            this.lb_TinhTrang.Location = new System.Drawing.Point(386, 48);
+            this.lb_TinhTrang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_TinhTrang.Name = "lb_TinhTrang";
-            this.lb_TinhTrang.Size = new System.Drawing.Size(78, 17);
+            this.lb_TinhTrang.Size = new System.Drawing.Size(59, 13);
             this.lb_TinhTrang.TabIndex = 5;
             this.lb_TinhTrang.Text = "Tình Trạng";
-            // 
-            // lb_ChuThich
-            // 
-            this.lb_ChuThich.AutoSize = true;
-            this.lb_ChuThich.Location = new System.Drawing.Point(721, 16);
-            this.lb_ChuThich.Name = "lb_ChuThich";
-            this.lb_ChuThich.Size = new System.Drawing.Size(72, 17);
-            this.lb_ChuThich.TabIndex = 4;
-            this.lb_ChuThich.Text = "Chú Thích";
             // 
             // lb_GiaPhong
             // 
             this.lb_GiaPhong.AutoSize = true;
-            this.lb_GiaPhong.Location = new System.Drawing.Point(299, 16);
+            this.lb_GiaPhong.Location = new System.Drawing.Point(224, 13);
+            this.lb_GiaPhong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_GiaPhong.Name = "lb_GiaPhong";
-            this.lb_GiaPhong.Size = new System.Drawing.Size(75, 17);
+            this.lb_GiaPhong.Size = new System.Drawing.Size(57, 13);
             this.lb_GiaPhong.TabIndex = 3;
             this.lb_GiaPhong.Text = "Giá Phòng";
             // 
             // lb_LoaiPhong
             // 
             this.lb_LoaiPhong.AutoSize = true;
-            this.lb_LoaiPhong.Location = new System.Drawing.Point(15, 88);
+            this.lb_LoaiPhong.Location = new System.Drawing.Point(11, 51);
+            this.lb_LoaiPhong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_LoaiPhong.Name = "lb_LoaiPhong";
-            this.lb_LoaiPhong.Size = new System.Drawing.Size(80, 17);
+            this.lb_LoaiPhong.Size = new System.Drawing.Size(61, 13);
             this.lb_LoaiPhong.TabIndex = 2;
             this.lb_LoaiPhong.Text = "Loại Phòng";
             // 
-            // lb_TenPhong
+            // MaPhong_Label
             // 
-            this.lb_TenPhong.AutoSize = true;
-            this.lb_TenPhong.Location = new System.Drawing.Point(15, 52);
-            this.lb_TenPhong.Name = "lb_TenPhong";
-            this.lb_TenPhong.Size = new System.Drawing.Size(78, 17);
-            this.lb_TenPhong.TabIndex = 1;
-            this.lb_TenPhong.Text = "Tên Phòng";
+            this.MaPhong_Label.AutoSize = true;
+            this.MaPhong_Label.Location = new System.Drawing.Point(11, 13);
+            this.MaPhong_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MaPhong_Label.Name = "MaPhong_Label";
+            this.MaPhong_Label.Size = new System.Drawing.Size(56, 13);
+            this.MaPhong_Label.TabIndex = 0;
+            this.MaPhong_Label.Text = "Mã Phòng";
             // 
-            // lb_MaPhong
+            // Reload_Button
             // 
-            this.lb_MaPhong.AutoSize = true;
-            this.lb_MaPhong.Location = new System.Drawing.Point(15, 16);
-            this.lb_MaPhong.Name = "lb_MaPhong";
-            this.lb_MaPhong.Size = new System.Drawing.Size(72, 17);
-            this.lb_MaPhong.TabIndex = 0;
-            this.lb_MaPhong.Text = "Mã Phòng";
+            this.Reload_Button.Location = new System.Drawing.Point(22, 492);
+            this.Reload_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Reload_Button.Name = "Reload_Button";
+            this.Reload_Button.Size = new System.Drawing.Size(100, 31);
+            this.Reload_Button.TabIndex = 2;
+            this.Reload_Button.Text = "Reload";
+            this.Reload_Button.UseVisualStyleBackColor = true;
+            this.Reload_Button.Click += new System.EventHandler(this.btn_Reload_Click);
             // 
-            // txtMaPhong
+            // Save_Button
             // 
-            this.txtMaPhong.Location = new System.Drawing.Point(93, 16);
-            this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(181, 22);
-            this.txtMaPhong.TabIndex = 8;
+            this.Save_Button.Location = new System.Drawing.Point(22, 542);
+            this.Save_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Save_Button.Name = "Save_Button";
+            this.Save_Button.Size = new System.Drawing.Size(100, 31);
+            this.Save_Button.TabIndex = 3;
+            this.Save_Button.Text = "Lưu";
+            this.Save_Button.UseVisualStyleBackColor = true;
+            this.Save_Button.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
-            // txtLoaiPhong
+            // Add_Button
             // 
-            this.txtLoaiPhong.Location = new System.Drawing.Point(93, 85);
-            this.txtLoaiPhong.Name = "txtLoaiPhong";
-            this.txtLoaiPhong.Size = new System.Drawing.Size(104, 22);
-            this.txtLoaiPhong.TabIndex = 9;
+            this.Add_Button.Location = new System.Drawing.Point(139, 492);
+            this.Add_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Add_Button.Name = "Add_Button";
+            this.Add_Button.Size = new System.Drawing.Size(100, 31);
+            this.Add_Button.TabIndex = 4;
+            this.Add_Button.Text = "Thêm";
+            this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // txtTenPhong
+            // Cancel_Button
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(93, 47);
-            this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(181, 22);
-            this.txtTenPhong.TabIndex = 10;
+            this.Cancel_Button.Location = new System.Drawing.Point(139, 542);
+            this.Cancel_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.Size = new System.Drawing.Size(100, 31);
+            this.Cancel_Button.TabIndex = 5;
+            this.Cancel_Button.Text = "Hủy";
+            this.Cancel_Button.UseVisualStyleBackColor = true;
             // 
-            // txtTinhTrang
+            // Edit_Button
             // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(380, 50);
-            this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(85, 22);
-            this.txtTinhTrang.TabIndex = 11;
+            this.Edit_Button.Location = new System.Drawing.Point(256, 492);
+            this.Edit_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.Size = new System.Drawing.Size(100, 31);
+            this.Edit_Button.TabIndex = 6;
+            this.Edit_Button.Text = "Sửa";
+            this.Edit_Button.UseVisualStyleBackColor = true;
             // 
-            // txtGiaPhong
+            // Delete_Button
             // 
-            this.txtGiaPhong.Location = new System.Drawing.Point(380, 16);
-            this.txtGiaPhong.Name = "txtGiaPhong";
-            this.txtGiaPhong.Size = new System.Drawing.Size(119, 22);
-            this.txtGiaPhong.TabIndex = 12;
+            this.Delete_Button.Location = new System.Drawing.Point(256, 542);
+            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Delete_Button.Name = "Delete_Button";
+            this.Delete_Button.Size = new System.Drawing.Size(100, 31);
+            this.Delete_Button.TabIndex = 7;
+            this.Delete_Button.Text = "Xóa";
+            this.Delete_Button.UseVisualStyleBackColor = true;
             // 
-            // txtMaDV
+            // Back_Button
             // 
-            this.txtMaDV.Location = new System.Drawing.Point(618, 56);
-            this.txtMaDV.Name = "txtMaDV";
-            this.txtMaDV.Size = new System.Drawing.Size(83, 22);
-            this.txtMaDV.TabIndex = 13;
+            this.Back_Button.Location = new System.Drawing.Point(378, 492);
+            this.Back_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Back_Button.Name = "Back_Button";
+            this.Back_Button.Size = new System.Drawing.Size(100, 31);
+            this.Back_Button.TabIndex = 8;
+            this.Back_Button.Text = "Trở về";
+            this.Back_Button.UseVisualStyleBackColor = true;
             // 
-            // txtMaNV
+            // DaThue_RadioButton
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(618, 16);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(83, 22);
-            this.txtMaNV.TabIndex = 14;
+            this.DaThue_RadioButton.AutoSize = true;
+            this.DaThue_RadioButton.Location = new System.Drawing.Point(477, 47);
+            this.DaThue_RadioButton.Name = "DaThue_RadioButton";
+            this.DaThue_RadioButton.Size = new System.Drawing.Size(91, 17);
+            this.DaThue_RadioButton.TabIndex = 15;
+            this.DaThue_RadioButton.TabStop = true;
+            this.DaThue_RadioButton.Text = "Đã được thuê";
+            this.DaThue_RadioButton.UseVisualStyleBackColor = true;
             // 
-            // txtChuThich
+            // Trong_RadioButton
             // 
-            this.txtChuThich.Location = new System.Drawing.Point(799, 16);
-            this.txtChuThich.Multiline = true;
-            this.txtChuThich.Name = "txtChuThich";
-            this.txtChuThich.Size = new System.Drawing.Size(181, 91);
-            this.txtChuThich.TabIndex = 15;
+            this.Trong_RadioButton.AutoSize = true;
+            this.Trong_RadioButton.Location = new System.Drawing.Point(477, 71);
+            this.Trong_RadioButton.Name = "Trong_RadioButton";
+            this.Trong_RadioButton.Size = new System.Drawing.Size(53, 17);
+            this.Trong_RadioButton.TabIndex = 16;
+            this.Trong_RadioButton.TabStop = true;
+            this.Trong_RadioButton.Text = "Trống";
+            this.Trong_RadioButton.UseVisualStyleBackColor = true;
             // 
-            // btn_Reload
+            // label1
             // 
-            this.btn_Reload.Location = new System.Drawing.Point(29, 606);
-            this.btn_Reload.Name = "btn_Reload";
-            this.btn_Reload.Size = new System.Drawing.Size(134, 38);
-            this.btn_Reload.TabIndex = 2;
-            this.btn_Reload.Text = "Reload";
-            this.btn_Reload.UseVisualStyleBackColor = true;
-            this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(224, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "SĐT";
             // 
-            // btn_Luu
+            // SDT_TextBox
             // 
-            this.btn_Luu.Location = new System.Drawing.Point(29, 667);
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(134, 38);
-            this.btn_Luu.TabIndex = 3;
-            this.btn_Luu.Text = "Lưu";
-            this.btn_Luu.UseVisualStyleBackColor = true;
-            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
+            this.SDT_TextBox.Location = new System.Drawing.Point(285, 51);
+            this.SDT_TextBox.Name = "SDT_TextBox";
+            this.SDT_TextBox.Size = new System.Drawing.Size(90, 20);
+            this.SDT_TextBox.TabIndex = 18;
             // 
-            // btn_Them
+            // LoaiPhong_ComboBox
             // 
-            this.btn_Them.Location = new System.Drawing.Point(185, 606);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(134, 38);
-            this.btn_Them.TabIndex = 4;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            this.LoaiPhong_ComboBox.FormattingEnabled = true;
+            this.LoaiPhong_ComboBox.Items.AddRange(new object[] {
+            "Đôi ",
+            "Đơn ",
+            "Cao Cấp"});
+            this.LoaiPhong_ComboBox.Location = new System.Drawing.Point(70, 48);
+            this.LoaiPhong_ComboBox.Name = "LoaiPhong_ComboBox";
+            this.LoaiPhong_ComboBox.Size = new System.Drawing.Size(90, 21);
+            this.LoaiPhong_ComboBox.TabIndex = 19;
             // 
-            // btn_Huy
+            // MaPhong
             // 
-            this.btn_Huy.Location = new System.Drawing.Point(185, 667);
-            this.btn_Huy.Name = "btn_Huy";
-            this.btn_Huy.Size = new System.Drawing.Size(134, 38);
-            this.btn_Huy.TabIndex = 5;
-            this.btn_Huy.Text = "Hủy";
-            this.btn_Huy.UseVisualStyleBackColor = true;
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng";
+            this.MaPhong.Name = "MaPhong";
             // 
-            // btn_Sua
+            // LoaiPhong
             // 
-            this.btn_Sua.Location = new System.Drawing.Point(342, 606);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(134, 38);
-            this.btn_Sua.TabIndex = 6;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.LoaiPhong.DataPropertyName = "LoaiPhong";
+            this.LoaiPhong.HeaderText = "Loại Phòng";
+            this.LoaiPhong.Name = "LoaiPhong";
             // 
-            // btn_Xoa
+            // TinhTrang
             // 
-            this.btn_Xoa.Location = new System.Drawing.Point(342, 667);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(134, 38);
-            this.btn_Xoa.TabIndex = 7;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "Tình Trạng";
+            this.TinhTrang.Name = "TinhTrang";
             // 
-            // btn_Trove
+            // GiaPhong
             // 
-            this.btn_Trove.Location = new System.Drawing.Point(501, 606);
-            this.btn_Trove.Name = "btn_Trove";
-            this.btn_Trove.Size = new System.Drawing.Size(134, 38);
-            this.btn_Trove.TabIndex = 8;
-            this.btn_Trove.Text = "Trở về";
-            this.btn_Trove.UseVisualStyleBackColor = true;
+            this.GiaPhong.DataPropertyName = "GiaPhong";
+            this.GiaPhong.HeaderText = "Giá Phòng";
+            this.GiaPhong.Name = "GiaPhong";
             // 
-            // FrmQuanLyDanhMucPhong
+            // SDT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Nhân Viên Phụ Trách";
+            this.MaNV.Name = "MaNV";
+            // 
+            // QuanLyPhong_Form
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 717);
-            this.Controls.Add(this.btn_Trove);
-            this.Controls.Add(this.btn_Xoa);
-            this.Controls.Add(this.btn_Sua);
-            this.Controls.Add(this.btn_Huy);
-            this.Controls.Add(this.btn_Them);
-            this.Controls.Add(this.btn_Luu);
-            this.Controls.Add(this.btn_Reload);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(784, 583);
+            this.Controls.Add(this.Back_Button);
+            this.Controls.Add(this.Delete_Button);
+            this.Controls.Add(this.Edit_Button);
+            this.Controls.Add(this.Cancel_Button);
+            this.Controls.Add(this.Add_Button);
+            this.Controls.Add(this.Save_Button);
+            this.Controls.Add(this.Reload_Button);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.dgvPHONG);
-            this.Name = "FrmQuanLyDanhMucPhong";
-            this.Text = "FrmQuanLyDanhMucPhong";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "QuanLyPhong_Form";
+            this.Text = "QuanLyPhong";
             this.Load += new System.EventHandler(this.FrmQuanLyDanhMucPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHONG)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,30 +360,33 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPHONG;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lb_MaDV;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Label lb_MaNV;
         private System.Windows.Forms.Label lb_TinhTrang;
-        private System.Windows.Forms.Label lb_ChuThich;
         private System.Windows.Forms.Label lb_GiaPhong;
         private System.Windows.Forms.Label lb_LoaiPhong;
-        private System.Windows.Forms.Label lb_TenPhong;
-        private System.Windows.Forms.Label lb_MaPhong;
-        private System.Windows.Forms.TextBox txtChuThich;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.TextBox txtMaDV;
-        private System.Windows.Forms.TextBox txtGiaPhong;
-        private System.Windows.Forms.TextBox txtTinhTrang;
-        private System.Windows.Forms.TextBox txtTenPhong;
-        private System.Windows.Forms.TextBox txtLoaiPhong;
-        private System.Windows.Forms.TextBox txtMaPhong;
-        private System.Windows.Forms.Button btn_Reload;
-        private System.Windows.Forms.Button btn_Luu;
-        private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.Button btn_Huy;
-        private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.Button btn_Trove;
+        private System.Windows.Forms.Label MaPhong_Label;
+        private System.Windows.Forms.TextBox MaNV_TextBox;
+        private System.Windows.Forms.TextBox GiaPhong_TextBox;
+        private System.Windows.Forms.TextBox MaPhong_Textbox;
+        private System.Windows.Forms.Button Reload_Button;
+        private System.Windows.Forms.Button Save_Button;
+        private System.Windows.Forms.Button Add_Button;
+        private System.Windows.Forms.Button Cancel_Button;
+        private System.Windows.Forms.Button Edit_Button;
+        private System.Windows.Forms.Button Delete_Button;
+        private System.Windows.Forms.Button Back_Button;
+        private System.Windows.Forms.RadioButton Trong_RadioButton;
+        private System.Windows.Forms.RadioButton DaThue_RadioButton;
+        private System.Windows.Forms.TextBox SDT_TextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.ComboBox LoaiPhong_ComboBox;
     }
 }
 

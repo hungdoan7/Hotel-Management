@@ -8,3 +8,15 @@ D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.
 D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
 D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 D:\Năm 2\LTWIN\DACuoiKi\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Login_Form.resources
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Main_Form.resources
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyPhong_Form.resources
