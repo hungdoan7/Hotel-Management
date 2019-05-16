@@ -61,38 +61,50 @@ namespace QuanLyKhachSan
         private void dgvPHONG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvPHONG.CurrentCell.RowIndex;
-            
-            this.MaPhong_Textbox.Text = dgvPHONG.Rows[r].Cells[0].Value.ToString();
-            this.GiaPhong_TextBox.Text = dgvPHONG.Rows[r].Cells[3].Value.ToString();
-            this.SDT_TextBox.Text = dgvPHONG.Rows[r].Cells[4].Value.ToString();
-            this.MaNV_TextBox.Text = dgvPHONG.Rows[r].Cells[5].Value.ToString();
+            if (dgvPHONG.Rows[r].Cells[0].Value.ToString() != "")
+            {
+                this.MaPhong_Textbox.Text = dgvPHONG.Rows[r].Cells[0].Value.ToString();
+                this.GiaPhong_TextBox.Text = dgvPHONG.Rows[r].Cells[3].Value.ToString();
+                this.SDT_TextBox.Text = dgvPHONG.Rows[r].Cells[4].Value.ToString();
+                this.MaNV_TextBox.Text = dgvPHONG.Rows[r].Cells[5].Value.ToString();
 
-            switch (dgvPHONG.Rows[r].Cells[1].Value.ToString())
-            {
-                case "Đơn":
-                    {
-                        LoaiPhong_ComboBox.Text = "Đơn";
-                        break;
-                    }
-                case "Đôi":
-                    {
-                        LoaiPhong_ComboBox.Text = "Đôi";
-                        break;
-                    }
-                case "Cao Cấp":
-                    {
-                        LoaiPhong_ComboBox.Text = "Cao Cấp";
-                        break;
-                    }
-            }
-            string Temp = dgvPHONG.Rows[r].Cells[2].Value.ToString();
-            if (Temp.Length == 8)
-            {
-                DaThue_RadioButton.Checked = true;
+                switch (dgvPHONG.Rows[r].Cells[1].Value.ToString())
+                {
+                    case "Đơn":
+                        {
+                            LoaiPhong_ComboBox.Text = "Đơn";
+                            break;
+                        }
+                    case "Đôi":
+                        {
+                            LoaiPhong_ComboBox.Text = "Đôi";
+                            break;
+                        }
+                    case "Cao Cấp":
+                        {
+                            LoaiPhong_ComboBox.Text = "Cao Cấp";
+                            break;
+                        }
+                }
+                string Temp = dgvPHONG.Rows[r].Cells[2].Value.ToString();
+                if (Temp.Length == 8)
+                {
+                    DaThue_RadioButton.Checked = true;
+                }
+                else
+                {
+                    Trong_RadioButton.Checked = true;
+                }
             }
             else
             {
-                Trong_RadioButton.Checked = true;
+                this.MaNV_TextBox.ResetText();
+                this.MaPhong_Textbox.ResetText();
+                this.SDT_TextBox.ResetText();
+                this.GiaPhong_TextBox.ResetText();
+                DaThue_RadioButton.Checked = false;
+                Trong_RadioButton.Checked = false;
+                LoaiPhong_ComboBox.ResetText();
             }
         }
 
