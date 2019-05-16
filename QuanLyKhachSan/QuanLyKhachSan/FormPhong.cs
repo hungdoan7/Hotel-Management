@@ -30,7 +30,7 @@ namespace QuanLyKhachSan
                 dtPhong = new DataTable();
                 dtPhong.Clear();
                 DataSet ds = blP.LayDSPhong();
-                dtPhong =ds.Tables[0];
+                dtPhong = ds.Tables[0];
                 dgvPHONG.DataSource = dtPhong;
                 this.MaNV_TextBox.ResetText();
                 this.MaPhong_Textbox.ResetText();
@@ -48,7 +48,7 @@ namespace QuanLyKhachSan
                 this.Save_Button.Enabled = false;
                 this.panel.Enabled = false;
             }
-            catch(SqlException)
+            catch (SqlException)
             {
                 MessageBox.Show("Không lấy được nội dung  trong table Phong !");
             }
@@ -87,7 +87,7 @@ namespace QuanLyKhachSan
                         }
                 }
                 string Temp = dgvPHONG.Rows[r].Cells[2].Value.ToString();
-                if (Temp.Length == 8)
+                if (Temp.Length == 7)
                 {
                     DaThue_RadioButton.Checked = true;
                 }
@@ -129,7 +129,90 @@ namespace QuanLyKhachSan
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-           
+            string TempTinhTrang;
+            if (DaThue_RadioButton.Checked == true)
+            {
+                TempTinhTrang = "Đã Thuê";
+            }
+            else
+            {
+                TempTinhTrang = "Trống";
+            }
+
+            if (Them)
+            {
+                if ((KiemTraTrung(MaPhong_Textbox.Text) == false))
+                {
+                    MessageBox.Show(" Mã phòng đã tồn tại");
+                    return;
+                }
+                blP = new BLPhong();
+                if (blP.ThemPhong(MaPhong_Textbox.Text, LoaiPhong_ComboBox.Text, GiaPhong_TextBox.Text, SDT_TextBox.Text, MaNV_TextBox.Text, TempTinhTrang) == true)
+                {
+                    LoadData();
+                    MessageBox.Show(" Them thanh cong");
+                }
+                else
+                {
+                    MessageBox.Show(" Them that bai");
+                }
+            }
+            else
+            {
+                blP = new BLPhong();
+                if (blP.CapNhatPhong(MaPhong_Textbox.Text, LoaiPhong_ComboBox.Text, GiaPhong_TextBox.Text, SDT_TextBox.Text, MaNV_TextBox.Text, TempTinhTrang) == true)
+                {
+                    LoadData();
+                    MessageBox.Show(" Cap nhat thanh cong");
+                }
+                else
+                {
+                    MessageBox.Show(" Cap nhat that bai");
+                }
+            }
+        }
+        private bool KiemTraTrung(string Ma)
+        {
+            for (int i = 0; i < dgvPHONG.Rows.Count; i++)
+            {
+                if (dgvPHONG.Rows[i].Cells[0].Value.ToString() == Ma)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private void Edit_Button_Click(object sender, EventArgs e)
+        {
+            Them = false;
+            this.Save_Button.Enabled = true;
+            this.Cancel_Button.Enabled = true;
+            this.panel.Enabled = true;
+
+            this.Add_Button.Enabled = false;
+            this.Edit_Button.Enabled = false;
+            this.Delete_Button.Enabled = false;
+            this.Back_Button.Enabled = false;
+            this.MaPhong_Textbox.Enabled = false;
+            this.LoaiPhong_ComboBox.Focus();
+        }
+
+        private void Cancel_Button_Click(object sender, EventArgs e)
+        {
+            this.Save_Button.Enabled = false;
+            this.Cancel_Button.Enabled = false;
+            this.panel.Enabled = false;
+
+            this.Add_Button.Enabled = true;
+            this.Edit_Button.Enabled = true;
+            this.Delete_Button.Enabled = true;
+            this.Back_Button.Enabled = true;
+
+        }
+
+        private void Back_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -29,7 +29,18 @@
         private void InitializeComponent()
         {
             this.dgvPHONG = new System.Windows.Forms.DataGridView();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel = new System.Windows.Forms.Panel();
+            this.LoaiPhong_ComboBox = new System.Windows.Forms.ComboBox();
+            this.SDT_TextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Trong_RadioButton = new System.Windows.Forms.RadioButton();
+            this.DaThue_RadioButton = new System.Windows.Forms.RadioButton();
             this.MaNV_TextBox = new System.Windows.Forms.TextBox();
             this.GiaPhong_TextBox = new System.Windows.Forms.TextBox();
             this.MaPhong_Textbox = new System.Windows.Forms.TextBox();
@@ -45,17 +56,6 @@
             this.Edit_Button = new System.Windows.Forms.Button();
             this.Delete_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
-            this.DaThue_RadioButton = new System.Windows.Forms.RadioButton();
-            this.Trong_RadioButton = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SDT_TextBox = new System.Windows.Forms.TextBox();
-            this.LoaiPhong_ComboBox = new System.Windows.Forms.ComboBox();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHONG)).BeginInit();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +74,45 @@
             this.dgvPHONG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPHONG.Name = "dgvPHONG";
             this.dgvPHONG.RowTemplate.Height = 24;
-            this.dgvPHONG.Size = new System.Drawing.Size(740, 369);
+            this.dgvPHONG.Size = new System.Drawing.Size(668, 369);
             this.dgvPHONG.TabIndex = 0;
             this.dgvPHONG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPHONG_CellClick);
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng";
+            this.MaPhong.Name = "MaPhong";
+            // 
+            // LoaiPhong
+            // 
+            this.LoaiPhong.DataPropertyName = "LoaiPhong";
+            this.LoaiPhong.HeaderText = "Loại Phòng";
+            this.LoaiPhong.Name = "LoaiPhong";
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "Tình Trạng";
+            this.TinhTrang.Name = "TinhTrang";
+            // 
+            // GiaPhong
+            // 
+            this.GiaPhong.DataPropertyName = "GiaPhong";
+            this.GiaPhong.HeaderText = "Giá Phòng";
+            this.GiaPhong.Name = "GiaPhong";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Nhân Viên Phụ Trách";
+            this.MaNV.Name = "MaNV";
             // 
             // panel
             // 
@@ -96,8 +132,58 @@
             this.panel.Location = new System.Drawing.Point(17, 19);
             this.panel.Margin = new System.Windows.Forms.Padding(2);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(744, 95);
+            this.panel.Size = new System.Drawing.Size(673, 95);
             this.panel.TabIndex = 1;
+            // 
+            // LoaiPhong_ComboBox
+            // 
+            this.LoaiPhong_ComboBox.FormattingEnabled = true;
+            this.LoaiPhong_ComboBox.Items.AddRange(new object[] {
+            "Đôi",
+            "Đơn",
+            "Cao Cấp"});
+            this.LoaiPhong_ComboBox.Location = new System.Drawing.Point(70, 48);
+            this.LoaiPhong_ComboBox.Name = "LoaiPhong_ComboBox";
+            this.LoaiPhong_ComboBox.Size = new System.Drawing.Size(90, 21);
+            this.LoaiPhong_ComboBox.TabIndex = 19;
+            // 
+            // SDT_TextBox
+            // 
+            this.SDT_TextBox.Location = new System.Drawing.Point(285, 51);
+            this.SDT_TextBox.Name = "SDT_TextBox";
+            this.SDT_TextBox.Size = new System.Drawing.Size(90, 20);
+            this.SDT_TextBox.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(224, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "SĐT";
+            // 
+            // Trong_RadioButton
+            // 
+            this.Trong_RadioButton.AutoSize = true;
+            this.Trong_RadioButton.Location = new System.Drawing.Point(477, 71);
+            this.Trong_RadioButton.Name = "Trong_RadioButton";
+            this.Trong_RadioButton.Size = new System.Drawing.Size(53, 17);
+            this.Trong_RadioButton.TabIndex = 16;
+            this.Trong_RadioButton.TabStop = true;
+            this.Trong_RadioButton.Text = "Trống";
+            this.Trong_RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // DaThue_RadioButton
+            // 
+            this.DaThue_RadioButton.AutoSize = true;
+            this.DaThue_RadioButton.Location = new System.Drawing.Point(477, 47);
+            this.DaThue_RadioButton.Name = "DaThue_RadioButton";
+            this.DaThue_RadioButton.Size = new System.Drawing.Size(91, 17);
+            this.DaThue_RadioButton.TabIndex = 15;
+            this.DaThue_RadioButton.TabStop = true;
+            this.DaThue_RadioButton.Text = "Đã được thuê";
+            this.DaThue_RadioButton.UseVisualStyleBackColor = true;
             // 
             // MaNV_TextBox
             // 
@@ -215,6 +301,7 @@
             this.Cancel_Button.TabIndex = 5;
             this.Cancel_Button.Text = "Hủy";
             this.Cancel_Button.UseVisualStyleBackColor = true;
+            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
             // 
             // Edit_Button
             // 
@@ -225,6 +312,7 @@
             this.Edit_Button.TabIndex = 6;
             this.Edit_Button.Text = "Sửa";
             this.Edit_Button.UseVisualStyleBackColor = true;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
             // Delete_Button
             // 
@@ -245,98 +333,13 @@
             this.Back_Button.TabIndex = 8;
             this.Back_Button.Text = "Trở về";
             this.Back_Button.UseVisualStyleBackColor = true;
-            // 
-            // DaThue_RadioButton
-            // 
-            this.DaThue_RadioButton.AutoSize = true;
-            this.DaThue_RadioButton.Location = new System.Drawing.Point(477, 47);
-            this.DaThue_RadioButton.Name = "DaThue_RadioButton";
-            this.DaThue_RadioButton.Size = new System.Drawing.Size(91, 17);
-            this.DaThue_RadioButton.TabIndex = 15;
-            this.DaThue_RadioButton.TabStop = true;
-            this.DaThue_RadioButton.Text = "Đã được thuê";
-            this.DaThue_RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // Trong_RadioButton
-            // 
-            this.Trong_RadioButton.AutoSize = true;
-            this.Trong_RadioButton.Location = new System.Drawing.Point(477, 71);
-            this.Trong_RadioButton.Name = "Trong_RadioButton";
-            this.Trong_RadioButton.Size = new System.Drawing.Size(53, 17);
-            this.Trong_RadioButton.TabIndex = 16;
-            this.Trong_RadioButton.TabStop = true;
-            this.Trong_RadioButton.Text = "Trống";
-            this.Trong_RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(224, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "SĐT";
-            // 
-            // SDT_TextBox
-            // 
-            this.SDT_TextBox.Location = new System.Drawing.Point(285, 51);
-            this.SDT_TextBox.Name = "SDT_TextBox";
-            this.SDT_TextBox.Size = new System.Drawing.Size(90, 20);
-            this.SDT_TextBox.TabIndex = 18;
-            // 
-            // LoaiPhong_ComboBox
-            // 
-            this.LoaiPhong_ComboBox.FormattingEnabled = true;
-            this.LoaiPhong_ComboBox.Items.AddRange(new object[] {
-            "Đôi ",
-            "Đơn ",
-            "Cao Cấp"});
-            this.LoaiPhong_ComboBox.Location = new System.Drawing.Point(70, 48);
-            this.LoaiPhong_ComboBox.Name = "LoaiPhong_ComboBox";
-            this.LoaiPhong_ComboBox.Size = new System.Drawing.Size(90, 21);
-            this.LoaiPhong_ComboBox.TabIndex = 19;
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã Phòng";
-            this.MaPhong.Name = "MaPhong";
-            // 
-            // LoaiPhong
-            // 
-            this.LoaiPhong.DataPropertyName = "LoaiPhong";
-            this.LoaiPhong.HeaderText = "Loại Phòng";
-            this.LoaiPhong.Name = "LoaiPhong";
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "Tình Trạng";
-            this.TinhTrang.Name = "TinhTrang";
-            // 
-            // GiaPhong
-            // 
-            this.GiaPhong.DataPropertyName = "GiaPhong";
-            this.GiaPhong.HeaderText = "Giá Phòng";
-            this.GiaPhong.Name = "GiaPhong";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Nhân Viên Phụ Trách";
-            this.MaNV.Name = "MaNV";
+            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
             // QuanLyPhong_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 583);
+            this.ClientSize = new System.Drawing.Size(709, 583);
             this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Edit_Button);

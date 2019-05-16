@@ -35,7 +35,7 @@ namespace QuanLyKhachSan.DB_layer
             da.Fill(ds);
             return ds;
         }
-        public bool MyExecuteNonQUery(string strSQL, CommandType ct,ref string error)
+        public bool MyExecuteNonQUery(string strSQL, CommandType ct)
         {
             bool f = false;
             if (conn.State == ConnectionState.Open)
@@ -52,7 +52,7 @@ namespace QuanLyKhachSan.DB_layer
             }
             catch (SqlException ex)
             {
-                error = ex.Message;
+                f = false;
             }
             finally
             {

@@ -24,10 +24,12 @@ namespace QuanLyKhachSan
             if (RadioButton_QuanLy.Checked == true)
             {
                 Flag = KiemTra.KiemTraDangNhap(txtUser.Text, txtPass.Text,"Quản Lý");
+                Main_Form.QuanLyMode = true;
             }
             else
             {
                 Flag = KiemTra.KiemTraDangNhap(txtUser.Text, txtPass.Text,"Lễ Tân");
+                Main_Form.QuanLyMode = false;
             }
             if (Flag == true)
             {

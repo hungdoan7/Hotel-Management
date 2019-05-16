@@ -12,10 +12,12 @@ namespace QuanLyKhachSan
 {
     public partial class Main_Form : Form
     {
-        public static bool isLogin; 
+        public static bool isLogin;
+        public static bool QuanLyMode;
         public Main_Form()
         {
-            isLogin = false;          
+            isLogin = false;
+            QuanLyMode = true;
             InitializeComponent();
             KhoiTaoMoi();
         }
@@ -25,6 +27,7 @@ namespace QuanLyKhachSan
             {
                 this.thốngKêToolStripMenuItem.Enabled = false;
                 this.quảnLýToolStripMenuItem.Enabled = false;
+                this.hoạtĐộngToolStripMenuItem.Enabled = false;
                 this.đăngNhậpToolStripMenuItem.Enabled = true;
                 this.đăngXuấtToolStripMenuItem.Enabled = false;
             }
@@ -35,7 +38,11 @@ namespace QuanLyKhachSan
             Temp.ShowDialog();
             if (Main_Form.isLogin == true)
             {
-                this.thốngKêToolStripMenuItem.Enabled = true;
+                if (QuanLyMode == true)
+                {
+                    this.thốngKêToolStripMenuItem.Enabled = true;
+                }
+                this.hoạtĐộngToolStripMenuItem.Enabled = true;
                 this.quảnLýToolStripMenuItem.Enabled = true;
                 this.đăngNhậpToolStripMenuItem.Enabled = false;
                 this.đăngXuấtToolStripMenuItem.Enabled = true;
