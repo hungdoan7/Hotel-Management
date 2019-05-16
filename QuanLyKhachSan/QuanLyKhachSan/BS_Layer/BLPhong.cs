@@ -34,7 +34,7 @@ namespace QuanLyKhachSan.BS_layer
         }
         public DataSet TimKiem(string column,string keyword)
         {
-            string sqlString = "select * from Phong where "+column+" like (N'"+keyword+"%')";
+            string sqlString = "select * from Phong where "+column+" like (N'%"+keyword+"%')";
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
     }

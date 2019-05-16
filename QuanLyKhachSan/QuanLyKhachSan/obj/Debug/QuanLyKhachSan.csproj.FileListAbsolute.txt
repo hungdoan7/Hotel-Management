@@ -20,3 +20,5 @@ C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Login_Form.resources
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Main_Form.resources
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyPhong_Form.resources
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyKhachHang_Form.resources
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyNhanVien_Form.resources

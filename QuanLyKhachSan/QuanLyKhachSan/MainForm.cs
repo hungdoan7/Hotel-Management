@@ -66,5 +66,10 @@ namespace QuanLyKhachSan
             Temp.ShowDialog();
         }
 
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyKhachHang_Form Temp = new QuanLyKhachHang_Form();
+            Temp.ShowDialog();
+        }
     }
 }

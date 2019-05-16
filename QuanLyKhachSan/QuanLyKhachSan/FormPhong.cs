@@ -33,10 +33,12 @@ namespace QuanLyKhachSan
                 dtPhong = ds.Tables[0];
                 dgvPHONG.DataSource = dtPhong;
                 this.MaNV_TextBox.ResetText();
-                this.MaPhong_Textbox.ResetText();
+                this.MaPhong_TextBox.ResetText();
                 this.GiaPhong_TextBox.ResetText();
                 this.SDT_TextBox.ResetText();
                 this.LoaiPhong_ComboBox.ResetText();
+                DaThue_RadioButton.Checked = false;
+                Trong_RadioButton.Checked = false;
 
                 this.Reload_Button.Enabled = true;
                 this.Edit_Button.Enabled = true;
@@ -63,7 +65,7 @@ namespace QuanLyKhachSan
             int r = dgvPHONG.CurrentCell.RowIndex;
             if (dgvPHONG.Rows[r].Cells[0].Value.ToString() != "")
             {
-                this.MaPhong_Textbox.Text = dgvPHONG.Rows[r].Cells[0].Value.ToString();
+                this.MaPhong_TextBox.Text = dgvPHONG.Rows[r].Cells[0].Value.ToString();
                 this.GiaPhong_TextBox.Text = dgvPHONG.Rows[r].Cells[3].Value.ToString();
                 this.SDT_TextBox.Text = dgvPHONG.Rows[r].Cells[4].Value.ToString();
                 this.MaNV_TextBox.Text = dgvPHONG.Rows[r].Cells[5].Value.ToString();
@@ -99,7 +101,7 @@ namespace QuanLyKhachSan
             else
             {
                 this.MaNV_TextBox.ResetText();
-                this.MaPhong_Textbox.ResetText();
+                this.MaPhong_TextBox.ResetText();
                 this.SDT_TextBox.ResetText();
                 this.GiaPhong_TextBox.ResetText();
                 DaThue_RadioButton.Checked = false;
@@ -141,13 +143,13 @@ namespace QuanLyKhachSan
 
             if (Them)
             {
-                if ((KiemTraTrung(MaPhong_Textbox.Text) == false))
+                if ((KiemTraTrung(MaPhong_TextBox.Text) == false))
                 {
                     MessageBox.Show(" Mã phòng đã tồn tại");
                     return;
                 }
                 blP = new BLPhong();
-                if (blP.ThemPhong(MaPhong_Textbox.Text, LoaiPhong_ComboBox.Text, GiaPhong_TextBox.Text, SDT_TextBox.Text, MaNV_TextBox.Text, TempTinhTrang) == true)
+                if (blP.ThemPhong(MaPhong_TextBox.Text, LoaiPhong_ComboBox.Text, GiaPhong_TextBox.Text, SDT_TextBox.Text, MaNV_TextBox.Text, TempTinhTrang) == true)
                 {
                     LoadData();
                     MessageBox.Show(" Them thanh cong");
@@ -160,7 +162,7 @@ namespace QuanLyKhachSan
             else
             {
                 blP = new BLPhong();
-                if (blP.CapNhatPhong(MaPhong_Textbox.Text, LoaiPhong_ComboBox.Text, GiaPhong_TextBox.Text, SDT_TextBox.Text, MaNV_TextBox.Text, TempTinhTrang) == true)
+                if (blP.CapNhatPhong(MaPhong_TextBox.Text, LoaiPhong_ComboBox.Text, GiaPhong_TextBox.Text, SDT_TextBox.Text, MaNV_TextBox.Text, TempTinhTrang) == true)
                 {
                     LoadData();
                     MessageBox.Show(" Cap nhat thanh cong");
@@ -193,7 +195,7 @@ namespace QuanLyKhachSan
             this.Edit_Button.Enabled = false;
             this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
-            this.MaPhong_Textbox.Enabled = false;
+            this.MaPhong_TextBox.Enabled = false;
             this.LoaiPhong_ComboBox.Focus();
         }
 
@@ -207,7 +209,6 @@ namespace QuanLyKhachSan
             this.Edit_Button.Enabled = true;
             this.Delete_Button.Enabled = true;
             this.Back_Button.Enabled = true;
-
         }
 
         private void Back_Button_Click(object sender, EventArgs e)

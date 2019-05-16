@@ -43,7 +43,7 @@
             this.DaThue_RadioButton = new System.Windows.Forms.RadioButton();
             this.MaNV_TextBox = new System.Windows.Forms.TextBox();
             this.GiaPhong_TextBox = new System.Windows.Forms.TextBox();
-            this.MaPhong_Textbox = new System.Windows.Forms.TextBox();
+            this.MaPhong_TextBox = new System.Windows.Forms.TextBox();
             this.lb_MaNV = new System.Windows.Forms.Label();
             this.lb_TinhTrang = new System.Windows.Forms.Label();
             this.lb_GiaPhong = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.Search_ComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHONG)).BeginInit();
             this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -127,7 +128,7 @@
             this.panel.Controls.Add(this.DaThue_RadioButton);
             this.panel.Controls.Add(this.MaNV_TextBox);
             this.panel.Controls.Add(this.GiaPhong_TextBox);
-            this.panel.Controls.Add(this.MaPhong_Textbox);
+            this.panel.Controls.Add(this.MaPhong_TextBox);
             this.panel.Controls.Add(this.lb_MaNV);
             this.panel.Controls.Add(this.lb_TinhTrang);
             this.panel.Controls.Add(this.lb_GiaPhong);
@@ -205,13 +206,13 @@
             this.GiaPhong_TextBox.Size = new System.Drawing.Size(90, 20);
             this.GiaPhong_TextBox.TabIndex = 12;
             // 
-            // MaPhong_Textbox
+            // MaPhong_TextBox
             // 
-            this.MaPhong_Textbox.Location = new System.Drawing.Point(70, 13);
-            this.MaPhong_Textbox.Margin = new System.Windows.Forms.Padding(2);
-            this.MaPhong_Textbox.Name = "MaPhong_Textbox";
-            this.MaPhong_Textbox.Size = new System.Drawing.Size(137, 20);
-            this.MaPhong_Textbox.TabIndex = 8;
+            this.MaPhong_TextBox.Location = new System.Drawing.Point(70, 13);
+            this.MaPhong_TextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.MaPhong_TextBox.Name = "MaPhong_TextBox";
+            this.MaPhong_TextBox.Size = new System.Drawing.Size(137, 20);
+            this.MaPhong_TextBox.TabIndex = 8;
             // 
             // lb_MaNV
             // 
@@ -343,7 +344,7 @@
             // 
             this.Search_TextBox.Location = new System.Drawing.Point(142, 24);
             this.Search_TextBox.Name = "Search_TextBox";
-            this.Search_TextBox.Size = new System.Drawing.Size(179, 20);
+            this.Search_TextBox.Size = new System.Drawing.Size(177, 20);
             this.Search_TextBox.TabIndex = 10;
             this.Search_TextBox.TextChanged += new System.EventHandler(this.Search_TextBox_TextChanged);
             // 
@@ -365,6 +366,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Search_ComboBox);
             this.panel1.Controls.Add(this.Search_TextBox);
             this.panel1.Location = new System.Drawing.Point(22, 407);
@@ -372,6 +374,15 @@
             this.panel1.Size = new System.Drawing.Size(334, 62);
             this.panel1.TabIndex = 13;
             this.panel1.Tag = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Tìm kiếm";
             // 
             // QuanLyPhong_Form
             // 
@@ -412,7 +423,7 @@
         private System.Windows.Forms.Label MaPhong_Label;
         private System.Windows.Forms.TextBox MaNV_TextBox;
         private System.Windows.Forms.TextBox GiaPhong_TextBox;
-        private System.Windows.Forms.TextBox MaPhong_Textbox;
+        private System.Windows.Forms.TextBox MaPhong_TextBox;
         private System.Windows.Forms.Button Reload_Button;
         private System.Windows.Forms.Button Save_Button;
         private System.Windows.Forms.Button Add_Button;
@@ -434,6 +445,7 @@
         private System.Windows.Forms.TextBox Search_TextBox;
         private System.Windows.Forms.ComboBox Search_ComboBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
