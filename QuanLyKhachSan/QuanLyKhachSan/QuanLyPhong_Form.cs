@@ -209,6 +209,7 @@ namespace QuanLyKhachSan
             this.Edit_Button.Enabled = true;
             this.Delete_Button.Enabled = true;
             this.Back_Button.Enabled = true;
+           // dgvPHONG_CellClick(null, null);
         }
 
         private void Back_Button_Click(object sender, EventArgs e)
