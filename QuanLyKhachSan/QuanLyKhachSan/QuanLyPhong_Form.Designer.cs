@@ -44,7 +44,7 @@
             this.MaNV_TextBox = new System.Windows.Forms.TextBox();
             this.GiaPhong_TextBox = new System.Windows.Forms.TextBox();
             this.MaPhong_TextBox = new System.Windows.Forms.TextBox();
-            this.lb_MaNV = new System.Windows.Forms.Label();
+            this.MaNV_Label = new System.Windows.Forms.Label();
             this.lb_TinhTrang = new System.Windows.Forms.Label();
             this.lb_GiaPhong = new System.Windows.Forms.Label();
             this.lb_LoaiPhong = new System.Windows.Forms.Label();
@@ -75,11 +75,11 @@
             this.GiaPhong,
             this.SDT,
             this.MaNV});
-            this.dgvPHONG.Location = new System.Drawing.Point(22, 119);
+            this.dgvPHONG.Location = new System.Drawing.Point(17, 119);
             this.dgvPHONG.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPHONG.Name = "dgvPHONG";
             this.dgvPHONG.RowTemplate.Height = 24;
-            this.dgvPHONG.Size = new System.Drawing.Size(668, 283);
+            this.dgvPHONG.Size = new System.Drawing.Size(673, 283);
             this.dgvPHONG.TabIndex = 0;
             this.dgvPHONG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPHONG_CellClick);
             // 
@@ -129,7 +129,7 @@
             this.panel.Controls.Add(this.MaNV_TextBox);
             this.panel.Controls.Add(this.GiaPhong_TextBox);
             this.panel.Controls.Add(this.MaPhong_TextBox);
-            this.panel.Controls.Add(this.lb_MaNV);
+            this.panel.Controls.Add(this.MaNV_Label);
             this.panel.Controls.Add(this.lb_TinhTrang);
             this.panel.Controls.Add(this.lb_GiaPhong);
             this.panel.Controls.Add(this.lb_LoaiPhong);
@@ -214,15 +214,15 @@
             this.MaPhong_TextBox.Size = new System.Drawing.Size(137, 20);
             this.MaPhong_TextBox.TabIndex = 8;
             // 
-            // lb_MaNV
+            // MaNV_Label
             // 
-            this.lb_MaNV.AutoSize = true;
-            this.lb_MaNV.Location = new System.Drawing.Point(386, 13);
-            this.lb_MaNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_MaNV.Name = "lb_MaNV";
-            this.lb_MaNV.Size = new System.Drawing.Size(75, 13);
-            this.lb_MaNV.TabIndex = 6;
-            this.lb_MaNV.Text = "Mã Nhân Viên";
+            this.MaNV_Label.AutoSize = true;
+            this.MaNV_Label.Location = new System.Drawing.Point(386, 13);
+            this.MaNV_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MaNV_Label.Name = "MaNV_Label";
+            this.MaNV_Label.Size = new System.Drawing.Size(75, 13);
+            this.MaNV_Label.TabIndex = 6;
+            this.MaNV_Label.Text = "Mã Nhân Viên";
             // 
             // lb_TinhTrang
             // 
@@ -369,9 +369,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Search_ComboBox);
             this.panel1.Controls.Add(this.Search_TextBox);
-            this.panel1.Location = new System.Drawing.Point(22, 407);
+            this.panel1.Location = new System.Drawing.Point(17, 407);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 62);
+            this.panel1.Size = new System.Drawing.Size(339, 62);
             this.panel1.TabIndex = 13;
             this.panel1.Tag = "";
             // 
@@ -416,7 +416,7 @@
 
         private System.Windows.Forms.DataGridView dgvPHONG;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Label lb_MaNV;
+        private System.Windows.Forms.Label MaNV_Label;
         private System.Windows.Forms.Label lb_TinhTrang;
         private System.Windows.Forms.Label lb_GiaPhong;
         private System.Windows.Forms.Label lb_LoaiPhong;

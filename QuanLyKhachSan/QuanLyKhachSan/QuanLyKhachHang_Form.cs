@@ -52,7 +52,7 @@ namespace QuanLyKhachSan
             }
             catch (SqlException)
             {
-                MessageBox.Show("Không lấy được nội dung  trong table Phong !");
+                MessageBox.Show("Không lấy được nội dung  trong table KhachHang !");
             }
         }
         private void Reload_Button_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace QuanLyKhachSan
         private void Add_Button_Click(object sender, EventArgs e)
         {
             Them = true;
-
+            SinhMa();
             this.Save_Button.Enabled = true;
             this.Cancel_Button.Enabled = true;
             this.panel.Enabled = true;
@@ -72,6 +72,7 @@ namespace QuanLyKhachSan
             this.Edit_Button.Enabled = false;
             this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
+            this.MaKH_TextBox.Enabled = false;
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -100,7 +101,19 @@ namespace QuanLyKhachSan
             this.Delete_Button.Enabled = true;
             this.Back_Button.Enabled = true;
         }
-
+        private void SinhMa()
+        {
+            string a = this.dgvKH.Rows[this.dgvKH.Rows.Count - 2].Cells[0].Value.ToString();
+            int b = Convert.ToInt32(a.Substring(1)) + 1;
+            if (b < 10)
+            {
+                MaKH_TextBox.Text = "K0" + b.ToString();
+            }
+            else
+            {
+                MaKH_TextBox.Text = "K" + b.ToString();
+            }
+        }
         private void Save_Button_Click(object sender, EventArgs e)
         {
             string TempGioiTinh;

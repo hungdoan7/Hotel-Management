@@ -20,6 +20,7 @@ namespace QuanLyKhachSan
         BLPhong blP = new BLPhong();
         public QuanLyPhong_Form()
         {
+            Them = false;
             InitializeComponent();
             LoadData();
         }
@@ -118,7 +119,7 @@ namespace QuanLyKhachSan
         private void btn_Them_Click(object sender, EventArgs e)
         {
             Them = true;
-
+            SinhMa();
             this.Save_Button.Enabled = true;
             this.Cancel_Button.Enabled = true;
             this.panel.Enabled = true;
@@ -127,6 +128,8 @@ namespace QuanLyKhachSan
             this.Edit_Button.Enabled = false;
             this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
+            this.MaPhong_Label.Enabled = false;
+            this.MaPhong_TextBox.Enabled = false;
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -143,11 +146,6 @@ namespace QuanLyKhachSan
 
             if (Them)
             {
-                if ((KiemTraTrung(MaPhong_TextBox.Text) == false))
-                {
-                    MessageBox.Show(" Mã phòng đã tồn tại");
-                    return;
-                }
                 blP = new BLPhong();
                 if (blP.ThemPhong(MaPhong_TextBox.Text, LoaiPhong_ComboBox.Text, GiaPhong_TextBox.Text, SDT_TextBox.Text, MaNV_TextBox.Text, TempTinhTrang) == true)
                 {
@@ -173,16 +171,18 @@ namespace QuanLyKhachSan
                 }
             }
         }
-        private bool KiemTraTrung(string Ma)
+        private void SinhMa()
         {
-            for (int i = 0; i < dgvPHONG.Rows.Count; i++)
+            string a = this.dgvPHONG.Rows[this.dgvPHONG.Rows.Count - 2].Cells[0].Value.ToString();
+            int b = Convert.ToInt32(a.Substring(1)) + 1;
+            if (b < 10)
             {
-                if (dgvPHONG.Rows[i].Cells[0].Value.ToString() == Ma)
-                {
-                    return false;
-                }
+                MaPhong_TextBox.Text = "P0" + b.ToString();
             }
-            return true;
+            else
+            {
+                MaPhong_TextBox.Text = "P" + b.ToString();
+            }
         }
         private void Edit_Button_Click(object sender, EventArgs e)
         {

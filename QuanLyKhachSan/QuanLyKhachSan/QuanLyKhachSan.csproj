@@ -46,35 +46,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS_Layer\BLDichVu.cs" />
     <Compile Include="BS_Layer\BLKhachHang.cs" />
     <Compile Include="BS_Layer\BLLogin.cs" />
+    <Compile Include="BS_Layer\BLNhanVien.cs" />
     <Compile Include="BS_Layer\BLPhong.cs" />
     <Compile Include="DB_Layer\DBMain.cs" />
-    <Compile Include="FormPhong.cs">
+    <Compile Include="QuanLyDichVu_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPhong.Designer.cs">
-      <DependentUpon>FormPhong.cs</DependentUpon>
+    <Compile Include="QuanLyDichVu_Form.Designer.cs">
+      <DependentUpon>QuanLyDichVu_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="QuanLyPhong_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="QuanLyPhong_Form.Designer.cs">
+      <DependentUpon>QuanLyPhong_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Login_Form.Designer.cs">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanPhong_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanPhong_Form.Designer.cs">
+      <DependentUpon>NhanPhong_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyKhachHang.cs">
+    <Compile Include="QuanLyKhachHang_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyKhachHang.Designer.cs">
-      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    <Compile Include="QuanLyKhachHang_Form.Designer.cs">
+      <DependentUpon>QuanLyKhachHang_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNhanVien_Form.cs">
       <SubType>Form</SubType>
@@ -82,14 +96,26 @@
     <Compile Include="QuanLyNhanVien_Form.Designer.cs">
       <DependentUpon>QuanLyNhanVien_Form.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormPhong.resx">
-      <DependentUpon>FormPhong.cs</DependentUpon>
+    <Compile Include="TraPhong_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraPhong_Form.Designer.cs">
+      <DependentUpon>TraPhong_Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QuanLyDichVu_Form.resx">
+      <DependentUpon>QuanLyDichVu_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyPhong_Form.resx">
+      <DependentUpon>QuanLyPhong_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Login_Form.resx">
+      <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanPhong_Form.resx">
+      <DependentUpon>NhanPhong_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,11 +126,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyKhachHang.resx">
-      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyKhachHang_Form.resx">
+      <DependentUpon>QuanLyKhachHang_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNhanVien_Form.resx">
       <DependentUpon>QuanLyNhanVien_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraPhong_Form.resx">
+      <DependentUpon>TraPhong_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
