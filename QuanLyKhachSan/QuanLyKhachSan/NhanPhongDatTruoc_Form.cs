@@ -12,15 +12,14 @@ using QuanLyKhachSan.BS_layer;
 
 namespace QuanLyKhachSan
 {
-    public partial class NhanPhong_Form : Form
+    public partial class NhanPhongDatTruoc_Form : Form
     {
+        int row;
         DataTable dtKH = null;
-        DataTable dtPhong = null;
+        DataTable dtND = null;
         DataTable dtHD = null;
         BLNhanPhong blNP = new BLNhanPhong();
-        string MaKHDuocChon;
-        string MaPhongDuocChon;
-        public NhanPhong_Form()
+        public NhanPhongDatTruoc_Form()
         {
             InitializeComponent();
         }
@@ -68,22 +67,6 @@ namespace QuanLyKhachSan
                 dgvHD.Rows[0].Cells[0].Value = "H" + b.ToString();
             }
         }
-        private void NhanPhong_Form_Load(object sender, EventArgs e)
-        {
-            if (Inside_RadioButton.Checked == true)
-            {
-                KhachHangMoi_Panel.Enabled = false;
-            }
-            LoadDataKH();
-            LoadDataPhong();
-            dgvHD.Rows[0].Cells[2].Value = Today_DateTimePicker.Value.Date.ToString();
-            DateTime Temp = Today_DateTimePicker.Value;
-            Temp = Today_DateTimePicker.Value.AddDays(1);
-            dgvHD.Rows[0].Cells[3].Value =Temp.Date.ToString();
-            SinhMaHD();
-            dgvHD.Rows[0].Cells[4].Value += "";
-            dgvHD.Rows[0].Cells[1].Value += "";
-        }
         private void LoadDataKH()
         {
             try
@@ -108,43 +91,32 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không lấy được nội dung  trong table KhachHang !");
             }
         }
-        void LoadDataPhong()
+        private void LoadDataNguoiDat()
         {
             try
             {
-                dtPhong = new DataTable();
-                dtPhong.Clear();
-                DataSet ds = blNP.LayDSPhong();
-                dtPhong = ds.Tables[0];
-                dgvPhong.DataSource = dtPhong;
+                dtND = new DataTable();
+                dtND.Clear();
+                DataSet ds = blNP.LayDSKhachDat();
+                dtND = ds.Tables[0];
+                dgvKhachDat.DataSource = dtND;
             }
             catch (SqlException)
             {
-                MessageBox.Show("Không lấy được nội dung trong table Phong !");
+                MessageBox.Show("Không lấy được nội dung trong table DanhSachDatTruoc !");
             }
         }
-        private void Add_Button_Click(object sender, EventArgs e)
+        private void ChonKH_Button_Click(object sender, EventArgs e)
         {
-            this.MaKH_TextBox.Enabled = false;
-            string TempGioiTinh;
-            if (Nam_RadioButton.Checked == true)
+            int r = dgvKH.CurrentCell.RowIndex;
+            if (r > dgvKH.Rows.Count - 2)
             {
-                TempGioiTinh = "Nam";
+                return;
             }
             else
             {
-                TempGioiTinh = "Nữ";
-            }
-            blNP = new BLNhanPhong();
-            if (blNP.ThemKH(MaKH_TextBox.Text, TenKH_TextBox.Text, CMND_TextBox.Text, SDT_TextBox.Text, XuatXu_TextBox.Text, TempGioiTinh) == true)
-            {
-                LoadDataKH();
-                this.KhachHangMoi_Panel.Enabled = true;
-                MessageBox.Show(" Them thanh cong");
-            }
-            else
-            {
-                MessageBox.Show(" Them that bai");
+                dgvHD.Rows[0].Cells[1].Value = dgvKH.Rows[r].Cells[0].Value;
+                this.ChonKhachHang_Panel.Enabled = false;
             }
         }
 
@@ -190,92 +162,42 @@ namespace QuanLyKhachSan
             dgvKH.DataSource = dtKH;
         }
 
-        private void ChonKH_Button_Click(object sender, EventArgs e)
+        private void Add_Button_Click(object sender, EventArgs e)
         {
-           int r = dgvKH.CurrentCell.RowIndex;
-            if (r > dgvKH.Rows.Count - 2)
+            this.MaKH_TextBox.Enabled = false;
+            string TempGioiTinh;
+            if (Nam_RadioButton.Checked == true)
             {
-                return;
+                TempGioiTinh = "Nam";
             }
             else
             {
-                dgvHD.Rows[0].Cells[1].Value = dgvKH.Rows[r].Cells[0].Value;
-                this.ChonKhachHang_Panel.Enabled = false;
+                TempGioiTinh = "Nữ";
+            }
+            blNP = new BLNhanPhong();
+            if (blNP.ThemKH(MaKH_TextBox.Text, TenKH_TextBox.Text, CMND_TextBox.Text, SDT_TextBox.Text, XuatXu_TextBox.Text, TempGioiTinh) == true)
+            {
+                LoadDataKH();
+                this.KhachHangMoi_Panel.Enabled = true;
+                MessageBox.Show(" Them thanh cong");
+            }
+            else
+            {
+                MessageBox.Show(" Them that bai");
             }
         }
 
-        private void SearchPhong_TextBox_TextChanged(object sender, EventArgs e)
-        {
-            string column;
-            switch (SearchPhong_ComboBox.Text)
-            {
-                case "Mã Phòng":
-                    {
-                        column = "MaPhong";
-                        break;
-                    }
-                case "Loại Phòng":
-                    {
-                        column = "LoaiPhong";
-                        break;
-                    }
-                case "Tình Trạng":
-                    {
-                        column = "TinhTrang";
-                        break;
-                    }
-                case "Mã Nhân Viên Phụ Trách":
-                    {
-                        column = "MaNV";
-                        break;
-                    }
-                case "SĐT":
-                    {
-                        column = "SDT";
-                        break;
-                    }
-                case "Giá Phòng":
-                    {
-                        column = "GiaPhong";
-                        break;
-                    }
-                default:
-                    {
-                        return;
-                    }
-            }
-            blNP = new BLNhanPhong();
-            DataSet ds = blNP.TimKiemPhong(column, SearchPhong_TextBox.Text);
-            dtPhong = new DataTable();
-            dtPhong = ds.Tables[0];
-            dgvPhong.DataSource = dtPhong;
-        }
         private void SoNgayO_NumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             DateTime Temp = DateTime.Now;
             TimeSpan ktg = new TimeSpan(Convert.ToInt32(SoNgayO_NumericUpDown.Value), 0, 0, 0);
-            Temp=Temp.Add(ktg);
+            Temp = Temp.Add(ktg);
             dgvHD.Rows[0].Cells[3].Value = Temp.Date.ToString();
         }
 
-        private void ChonPhong_Button_Click(object sender, EventArgs e)
+        private void Back_Button_Click(object sender, EventArgs e)
         {
-            int r = dgvPhong.CurrentCell.RowIndex;
-            if (r > dgvPhong.Rows.Count - 2)
-            {
-                return;
-            }
-            else
-            {
-                if (dgvHD.Rows[0].Cells[4].Value.ToString() == "")
-                {
-                    dgvHD.Rows[0].Cells[4].Value +=  dgvPhong.Rows[r].Cells[0].Value.ToString();
-                }
-                else
-                {
-                    dgvHD.Rows[0].Cells[4].Value += "," + dgvPhong.Rows[r].Cells[0].Value.ToString();
-                }
-            }
+            this.Close();
         }
 
         private void ThemHD_Button_Click(object sender, EventArgs e)
@@ -287,7 +209,7 @@ namespace QuanLyKhachSan
                 string[] A = a.Split(',');
 
                 blNP = new BLNhanPhong();
-                if (blNP.ThemHD(dgvHD.Rows[0].Cells[0].Value.ToString(), dgvHD.Rows[0].Cells[1].Value.ToString(),dgvHD.Rows[0].Cells[2].Value.ToString(), dgvHD.Rows[0].Cells[3].Value.ToString()) == true)
+                if (blNP.ThemHD(dgvHD.Rows[0].Cells[0].Value.ToString(), dgvHD.Rows[0].Cells[1].Value.ToString(), dgvHD.Rows[0].Cells[2].Value.ToString(), dgvHD.Rows[0].Cells[3].Value.ToString()) == true)
                 {
                     MessageBox.Show(" Nhan phong thanh cong");
                 }
@@ -301,6 +223,8 @@ namespace QuanLyKhachSan
                     blNP.ThemPhongvaHopDong(dgvHD.Rows[0].Cells[0].Value.ToString(), A[i]);
                     blNP.CapNhatPhong(A[i], "Đã Thuê");
                 }
+                blNP.XoaPhongvaKhachDat(dgvKhachDat.Rows[row].Cells[0].Value.ToString());
+                blNP.XoaKhachDat(dgvKhachDat.Rows[row].Cells[0].Value.ToString());
             }
             else
             {
@@ -308,9 +232,41 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void Back_Button_Click(object sender, EventArgs e)
+        private void NhanPhongDatTruoc_Form_Load(object sender, EventArgs e)
         {
-            this.Close();
+            if (Inside_RadioButton.Checked == true)
+            {
+                KhachHangMoi_Panel.Enabled = false;
+            }
+            LoadDataKH();
+            LoadDataNguoiDat();
+            dgvHD.Rows[0].Cells[2].Value = DateTime.Now.ToString();
+            DateTime Temp = Today_DateTimePicker.Value;
+            Temp = Today_DateTimePicker.Value.AddDays(1);
+            dgvHD.Rows[0].Cells[3].Value = Temp.Date.ToString();
+            SinhMaHD();
+            dgvHD.Rows[0].Cells[4].Value += "";
+            dgvHD.Rows[0].Cells[1].Value += "";
+        }
+
+        private void ChonKhachDat_Button_Click(object sender, EventArgs e)
+        {
+            int r = dgvKhachDat.CurrentCell.RowIndex;
+            row = r;
+            for (int i = 0; i< dgvKhachDat.Rows.Count-1; i++)
+            {
+                if (dgvKhachDat.Rows[i].Cells[0].Value.ToString() == dgvKhachDat.Rows[r].Cells[0].Value.ToString())
+                {
+                    if (dgvHD.Rows[0].Cells[4].Value.ToString() == "")
+                    {
+                        dgvHD.Rows[0].Cells[4].Value += dgvKhachDat.Rows[i].Cells[4].Value.ToString();
+                    }
+                    else
+                    {
+                        dgvHD.Rows[0].Cells[4].Value += ","+dgvKhachDat.Rows[i].Cells[4].Value.ToString();
+                    }
+                }
+            }
         }
     }
 }

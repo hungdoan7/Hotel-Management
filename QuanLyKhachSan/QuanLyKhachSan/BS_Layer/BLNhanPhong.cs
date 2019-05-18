@@ -42,7 +42,7 @@ namespace QuanLyKhachSan.BS_layer
         {
             return db.ExecuteQueryDataSet("select * from HopDong", CommandType.Text);
         }
-        public bool ThemHD(string mahd, string makh, string ngaythue,string ngaytra)
+        public bool ThemHD(string mahd, string makh, string ngaythue, string ngaytra)
         {
             string sqlString = "Insert HopDong values('" + mahd + "','" + makh + "','" + ngaythue + "','" + ngaytra + "') ";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
@@ -56,6 +56,19 @@ namespace QuanLyKhachSan.BS_layer
         {
             string sqlString = "Update Phong set TinhTrang=N'" + tinhtrang + "' where MaPhong ='" + maphong + "' ";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
+        }
+        public DataSet LayDSKhachDat()
+        {
+            string sqlSTR = "select NguoiDat.MaNguoiDat,NguoiDat.TenNguoiDat,NguoiDat.NgayHetHan,NguoiDat.SDT,Phong.MaPhong,Phong.LoaiPhong from NguoiDat, PhongvaNguoiDat, Phong where NguoiDat.MaNguoiDat = PhongvaNguoiDat.MaNguoiDat and Phong.MaPhong = PhongvaNguoiDat.MaPhong";
+            return db.ExecuteQueryDataSet(sqlSTR, CommandType.Text);
+        }
+        public bool XoaKhachDat(string makd)
+        {
+            return db.MyExecuteNonQUery("Delete from NguoiDat where MaNguoiDat='" +makd + "'", CommandType.Text);
+        }
+        public bool XoaPhongvaKhachDat(string makd)
+        {
+            return db.MyExecuteNonQUery("Delete from PhongvaNguoiDat where MaNguoiDat='" + makd + "'", CommandType.Text);
         }
     }
 }

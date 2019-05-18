@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Search_ComboBox = new System.Windows.Forms.ComboBox();
@@ -72,7 +72,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Search_ComboBox);
             this.panel1.Controls.Add(this.Search_TextBox);
-            this.panel1.Location = new System.Drawing.Point(12, 173);
+            this.panel1.Location = new System.Drawing.Point(381, 183);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(339, 61);
             this.panel1.TabIndex = 50;
@@ -106,6 +106,7 @@
             this.Search_TextBox.Name = "Search_TextBox";
             this.Search_TextBox.Size = new System.Drawing.Size(177, 20);
             this.Search_TextBox.TabIndex = 10;
+            this.Search_TextBox.TextChanged += new System.EventHandler(this.Search_TextBox_TextChanged);
             // 
             // dgvHD
             // 
@@ -116,7 +117,7 @@
             this.TenKH,
             this.NgayThue,
             this.NgayTraPhong});
-            this.dgvHD.Location = new System.Drawing.Point(11, 4);
+            this.dgvHD.Location = new System.Drawing.Point(381, 11);
             this.dgvHD.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHD.Name = "dgvHD";
             this.dgvHD.RowTemplate.Height = 24;
@@ -158,9 +159,9 @@
             // 
             // TinhTien_RichTextBox
             // 
-            this.TinhTien_RichTextBox.Location = new System.Drawing.Point(28, 441);
+            this.TinhTien_RichTextBox.Location = new System.Drawing.Point(12, 441);
             this.TinhTien_RichTextBox.Name = "TinhTien_RichTextBox";
-            this.TinhTien_RichTextBox.Size = new System.Drawing.Size(554, 146);
+            this.TinhTien_RichTextBox.Size = new System.Drawing.Size(570, 146);
             this.TinhTien_RichTextBox.TabIndex = 53;
             this.TinhTien_RichTextBox.Text = "";
             // 
@@ -199,9 +200,9 @@
             // MaPhong
             // 
             this.MaPhong.DataPropertyName = "MaPhong";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.NullValue = null;
-            this.MaPhong.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.NullValue = null;
+            this.MaPhong.DefaultCellStyle = dataGridViewCellStyle7;
             this.MaPhong.HeaderText = "Mã Phòng";
             this.MaPhong.Name = "MaPhong";
             // 
@@ -220,24 +221,24 @@
             // đajdasd
             // 
             this.đajdasd.DataPropertyName = "NgayThue";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle4.NullValue = null;
-            this.đajdasd.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle8.NullValue = null;
+            this.đajdasd.DefaultCellStyle = dataGridViewCellStyle8;
             this.đajdasd.HeaderText = "Ngày Thuê";
             this.đajdasd.Name = "đajdasd";
             // 
             // NgayTra
             // 
             this.NgayTra.DataPropertyName = "NgayDuKienTraPhong";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle5.NullValue = null;
-            this.NgayTra.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle9.NullValue = null;
+            this.NgayTra.DefaultCellStyle = dataGridViewCellStyle9;
             this.NgayTra.HeaderText = "Ngày Hết Hạn Phòng";
             this.NgayTra.Name = "NgayTra";
             // 
             // Choose_Button
             // 
-            this.Choose_Button.Location = new System.Drawing.Point(506, 211);
+            this.Choose_Button.Location = new System.Drawing.Point(876, 211);
             this.Choose_Button.Name = "Choose_Button";
             this.Choose_Button.Size = new System.Drawing.Size(75, 23);
             this.Choose_Button.TabIndex = 57;
@@ -266,10 +267,10 @@
             // NgayThue
             // 
             this.NgayThue.DataPropertyName = "NgayThue";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle6.NullValue = null;
+            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle6;
             this.NgayThue.HeaderText = "Ngày Bắt Đầu Thuê";
             this.NgayThue.Name = "NgayThue";
             // 
@@ -300,9 +301,9 @@
             // SoNgaySD
             // 
             this.SoNgaySD.DataPropertyName = "SoNgaySD";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.NullValue = null;
-            this.SoNgaySD.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.NullValue = null;
+            this.SoNgaySD.DefaultCellStyle = dataGridViewCellStyle10;
             this.SoNgaySD.HeaderText = "Số Lần Sử Dụng";
             this.SoNgaySD.Name = "SoNgaySD";
             // 

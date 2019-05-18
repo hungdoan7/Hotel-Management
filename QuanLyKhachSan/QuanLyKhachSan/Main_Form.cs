@@ -107,13 +107,31 @@ namespace QuanLyKhachSan
 
         private void nhậnPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NhanPhong_Form Temp = new NhanPhong_Form();
-            Temp.ShowDialog();
+            DialogResult dlr = MessageBox.Show("Khách có đặt phòng trước không?", "Tùy Chọn", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dlr == DialogResult.No)
+            {
+                NhanPhongKhongDatTruoc_Form Temp = new NhanPhongKhongDatTruoc_Form();
+                Temp.ShowDialog();
+            }
+            else
+            {
+                if (dlr == DialogResult.Yes)
+                {
+                    NhanPhongDatTruoc_Form Temp = new NhanPhongDatTruoc_Form();
+                    Temp.ShowDialog();
+                }
+            }
         }
 
         private void trảPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TraPhong_Form Temp = new TraPhong_Form();
+            Temp.ShowDialog();
+        }
+
+        private void nhậnĐặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyDatPhong_Form Temp = new QuanLyDatPhong_Form();
             Temp.ShowDialog();
         }
     }

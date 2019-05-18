@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhachSan
 {
-    partial class NhanPhong_Form
+    partial class NhanPhongKhongDatTruoc_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Inside_RadioButton = new System.Windows.Forms.RadioButton();
             this.Outside_RadioButton = new System.Windows.Forms.RadioButton();
             this.KhachHangMoi_Panel = new System.Windows.Forms.Panel();
@@ -75,17 +75,19 @@
             this.ChonPhong_Panel = new System.Windows.Forms.Panel();
             this.ChonPhong_Button = new System.Windows.Forms.Button();
             this.HopDongMoi_Panel = new System.Windows.Forms.Panel();
+            this.Back_Button = new System.Windows.Forms.Button();
             this.ThemHD_Button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvHD = new System.Windows.Forms.DataGridView();
-            this.SoNgayO_NumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhongThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Back_Button = new System.Windows.Forms.Button();
+            this.SoNgayO_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.KhachHangMoi_Panel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
@@ -124,6 +126,7 @@
             // 
             // KhachHangMoi_Panel
             // 
+            this.KhachHangMoi_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.KhachHangMoi_Panel.Controls.Add(this.TenKH_TextBox);
             this.KhachHangMoi_Panel.Controls.Add(this.SDT_TextBox);
             this.KhachHangMoi_Panel.Controls.Add(this.SDT_Label);
@@ -280,9 +283,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.SearchPhong_ComboBox);
             this.panel1.Controls.Add(this.SearchPhong_TextBox);
-            this.panel1.Location = new System.Drawing.Point(25, 136);
+            this.panel1.Location = new System.Drawing.Point(25, 146);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 50);
+            this.panel1.Size = new System.Drawing.Size(334, 40);
             this.panel1.TabIndex = 23;
             this.panel1.Tag = "";
             // 
@@ -305,7 +308,7 @@
             "Giá Phòng",
             "Mã Nhân Viên Phụ Trách",
             "SĐT"});
-            this.SearchPhong_ComboBox.Location = new System.Drawing.Point(9, 23);
+            this.SearchPhong_ComboBox.Location = new System.Drawing.Point(42, 9);
             this.SearchPhong_ComboBox.Name = "SearchPhong_ComboBox";
             this.SearchPhong_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.SearchPhong_ComboBox.TabIndex = 12;
@@ -313,9 +316,9 @@
             // 
             // SearchPhong_TextBox
             // 
-            this.SearchPhong_TextBox.Location = new System.Drawing.Point(142, 24);
+            this.SearchPhong_TextBox.Location = new System.Drawing.Point(169, 9);
             this.SearchPhong_TextBox.Name = "SearchPhong_TextBox";
-            this.SearchPhong_TextBox.Size = new System.Drawing.Size(177, 20);
+            this.SearchPhong_TextBox.Size = new System.Drawing.Size(162, 20);
             this.SearchPhong_TextBox.TabIndex = 10;
             this.SearchPhong_TextBox.TextChanged += new System.EventHandler(this.SearchPhong_TextBox_TextChanged);
             // 
@@ -329,7 +332,7 @@
             this.GiaPhong,
             this.SDT,
             this.MaNV});
-            this.dgvPhong.Location = new System.Drawing.Point(12, 2);
+            this.dgvPhong.Location = new System.Drawing.Point(14, 27);
             this.dgvPhong.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowTemplate.Height = 24;
@@ -377,9 +380,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.SearchKH_ComboBox);
             this.panel2.Controls.Add(this.SearchKH_TextBox);
-            this.panel2.Location = new System.Drawing.Point(25, 142);
+            this.panel2.Location = new System.Drawing.Point(25, 159);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 53);
+            this.panel2.Size = new System.Drawing.Size(334, 36);
             this.panel2.TabIndex = 25;
             this.panel2.Tag = "";
             // 
@@ -402,17 +405,17 @@
             "Giới Tính",
             "SĐT",
             "Xuất Xứ"});
-            this.SearchKH_ComboBox.Location = new System.Drawing.Point(9, 23);
+            this.SearchKH_ComboBox.Location = new System.Drawing.Point(42, 10);
             this.SearchKH_ComboBox.Name = "SearchKH_ComboBox";
-            this.SearchKH_ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.SearchKH_ComboBox.Size = new System.Drawing.Size(109, 21);
             this.SearchKH_ComboBox.TabIndex = 12;
             this.SearchKH_ComboBox.Text = "Mã KH";
             // 
             // SearchKH_TextBox
             // 
-            this.SearchKH_TextBox.Location = new System.Drawing.Point(142, 24);
+            this.SearchKH_TextBox.Location = new System.Drawing.Point(157, 11);
             this.SearchKH_TextBox.Name = "SearchKH_TextBox";
-            this.SearchKH_TextBox.Size = new System.Drawing.Size(177, 20);
+            this.SearchKH_TextBox.Size = new System.Drawing.Size(174, 20);
             this.SearchKH_TextBox.TabIndex = 10;
             this.SearchKH_TextBox.TextChanged += new System.EventHandler(this.SearchKH_TextBox_TextChanged);
             // 
@@ -425,11 +428,11 @@
             this.CMND,
             this.dataGridViewTextBoxColumn1,
             this.XuatXu});
-            this.dgvKH.Location = new System.Drawing.Point(25, 8);
+            this.dgvKH.Location = new System.Drawing.Point(12, 36);
             this.dgvKH.Margin = new System.Windows.Forms.Padding(2);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowTemplate.Height = 24;
-            this.dgvKH.Size = new System.Drawing.Size(634, 129);
+            this.dgvKH.Size = new System.Drawing.Size(634, 100);
             this.dgvKH.TabIndex = 24;
             // 
             // MaKH
@@ -480,17 +483,21 @@
             // 
             // ChonKhachHang_Panel
             // 
+            this.ChonKhachHang_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ChonKhachHang_Panel.Controls.Add(this.label5);
+            this.ChonKhachHang_Panel.Controls.Add(this.SoNgayO_NumericUpDown);
             this.ChonKhachHang_Panel.Controls.Add(this.ChonKH_Button);
+            this.ChonKhachHang_Panel.Controls.Add(this.label4);
             this.ChonKhachHang_Panel.Controls.Add(this.panel2);
             this.ChonKhachHang_Panel.Controls.Add(this.dgvKH);
-            this.ChonKhachHang_Panel.Location = new System.Drawing.Point(53, 158);
+            this.ChonKhachHang_Panel.Location = new System.Drawing.Point(53, 144);
             this.ChonKhachHang_Panel.Name = "ChonKhachHang_Panel";
-            this.ChonKhachHang_Panel.Size = new System.Drawing.Size(682, 204);
+            this.ChonKhachHang_Panel.Size = new System.Drawing.Size(682, 203);
             this.ChonKhachHang_Panel.TabIndex = 29;
             // 
             // ChonKH_Button
             // 
-            this.ChonKH_Button.Location = new System.Drawing.Point(568, 159);
+            this.ChonKH_Button.Location = new System.Drawing.Point(579, 164);
             this.ChonKH_Button.Margin = new System.Windows.Forms.Padding(2);
             this.ChonKH_Button.Name = "ChonKH_Button";
             this.ChonKH_Button.Size = new System.Drawing.Size(100, 31);
@@ -501,6 +508,8 @@
             // 
             // ChonPhong_Panel
             // 
+            this.ChonPhong_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ChonPhong_Panel.Controls.Add(this.label6);
             this.ChonPhong_Panel.Controls.Add(this.ChonPhong_Button);
             this.ChonPhong_Panel.Controls.Add(this.panel1);
             this.ChonPhong_Panel.Controls.Add(this.dgvPhong);
@@ -511,7 +520,7 @@
             // 
             // ChonPhong_Button
             // 
-            this.ChonPhong_Button.Location = new System.Drawing.Point(568, 155);
+            this.ChonPhong_Button.Location = new System.Drawing.Point(578, 162);
             this.ChonPhong_Button.Margin = new System.Windows.Forms.Padding(2);
             this.ChonPhong_Button.Name = "ChonPhong_Button";
             this.ChonPhong_Button.Size = new System.Drawing.Size(100, 31);
@@ -522,6 +531,7 @@
             // 
             // HopDongMoi_Panel
             // 
+            this.HopDongMoi_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HopDongMoi_Panel.Controls.Add(this.Back_Button);
             this.HopDongMoi_Panel.Controls.Add(this.ThemHD_Button);
             this.HopDongMoi_Panel.Controls.Add(this.label3);
@@ -531,9 +541,19 @@
             this.HopDongMoi_Panel.Size = new System.Drawing.Size(682, 111);
             this.HopDongMoi_Panel.TabIndex = 31;
             // 
+            // Back_Button
+            // 
+            this.Back_Button.Location = new System.Drawing.Point(580, 33);
+            this.Back_Button.Name = "Back_Button";
+            this.Back_Button.Size = new System.Drawing.Size(99, 27);
+            this.Back_Button.TabIndex = 44;
+            this.Back_Button.Text = "Trở về ";
+            this.Back_Button.UseVisualStyleBackColor = true;
+            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
+            // 
             // ThemHD_Button
             // 
-            this.ThemHD_Button.Location = new System.Drawing.Point(579, 78);
+            this.ThemHD_Button.Location = new System.Drawing.Point(580, 65);
             this.ThemHD_Button.Margin = new System.Windows.Forms.Padding(2);
             this.ThemHD_Button.Name = "ThemHD_Button";
             this.ThemHD_Button.Size = new System.Drawing.Size(100, 31);
@@ -567,28 +587,6 @@
             this.dgvHD.Size = new System.Drawing.Size(550, 63);
             this.dgvHD.TabIndex = 41;
             // 
-            // SoNgayO_NumericUpDown
-            // 
-            this.SoNgayO_NumericUpDown.Location = new System.Drawing.Point(238, 580);
-            this.SoNgayO_NumericUpDown.Name = "SoNgayO_NumericUpDown";
-            this.SoNgayO_NumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.SoNgayO_NumericUpDown.TabIndex = 32;
-            this.SoNgayO_NumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.SoNgayO_NumericUpDown.ValueChanged += new System.EventHandler(this.SoNgayO_NumericUpDown_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(78, 587);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Số ngày ở dự kiến";
-            // 
             // MaHD
             // 
             this.MaHD.DataPropertyName = "MaHopDong";
@@ -604,19 +602,19 @@
             // NgayThue
             // 
             this.NgayThue.DataPropertyName = "NgayThue";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle5.NullValue = null;
+            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle5;
             this.NgayThue.HeaderText = "Ngày Bắt Đầu Thuê";
             this.NgayThue.Name = "NgayThue";
             // 
             // NgayKetThuc
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Format = "dd//MM/yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Format = "dd//MM/yyyy";
+            dataGridViewCellStyle6.NullValue = null;
+            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle6;
             this.NgayKetThuc.HeaderText = "Ngày dự kiến kết thúc";
             this.NgayKetThuc.Name = "NgayKetThuc";
             // 
@@ -625,23 +623,51 @@
             this.PhongThue.HeaderText = "Những phòng được thuê";
             this.PhongThue.Name = "PhongThue";
             // 
-            // Back_Button
+            // SoNgayO_NumericUpDown
             // 
-            this.Back_Button.Location = new System.Drawing.Point(580, 46);
-            this.Back_Button.Name = "Back_Button";
-            this.Back_Button.Size = new System.Drawing.Size(99, 27);
-            this.Back_Button.TabIndex = 44;
-            this.Back_Button.Text = "Trở về ";
-            this.Back_Button.UseVisualStyleBackColor = true;
-            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
+            this.SoNgayO_NumericUpDown.Location = new System.Drawing.Point(464, 168);
+            this.SoNgayO_NumericUpDown.Name = "SoNgayO_NumericUpDown";
+            this.SoNgayO_NumericUpDown.Size = new System.Drawing.Size(98, 20);
+            this.SoNgayO_NumericUpDown.TabIndex = 32;
+            this.SoNgayO_NumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SoNgayO_NumericUpDown.ValueChanged += new System.EventHandler(this.SoNgayO_NumericUpDown_ValueChanged);
             // 
-            // NhanPhong_Form
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(365, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Số ngày ở dự kiến";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Chọn khách hàng:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Chọn Phòng: ";
+            // 
+            // NhanPhongKhongDatTruoc_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 729);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.SoNgayO_NumericUpDown);
             this.Controls.Add(this.HopDongMoi_Panel);
             this.Controls.Add(this.ChonPhong_Panel);
             this.Controls.Add(this.ChonKhachHang_Panel);
@@ -650,7 +676,7 @@
             this.Controls.Add(this.KhachHangMoi_Panel);
             this.Controls.Add(this.Outside_RadioButton);
             this.Controls.Add(this.Inside_RadioButton);
-            this.Name = "NhanPhong_Form";
+            this.Name = "NhanPhongKhongDatTruoc_Form";
             this.Text = "NhanPhong_Form";
             this.Load += new System.EventHandler(this.NhanPhong_Form_Load);
             this.KhachHangMoi_Panel.ResumeLayout(false);
@@ -662,7 +688,9 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             this.ChonKhachHang_Panel.ResumeLayout(false);
+            this.ChonKhachHang_Panel.PerformLayout();
             this.ChonPhong_Panel.ResumeLayout(false);
+            this.ChonPhong_Panel.PerformLayout();
             this.HopDongMoi_Panel.ResumeLayout(false);
             this.HopDongMoi_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
@@ -730,5 +758,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhongThue;
         private System.Windows.Forms.Button Back_Button;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

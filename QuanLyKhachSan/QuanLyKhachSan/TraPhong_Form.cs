@@ -153,5 +153,10 @@ namespace QuanLyKhachSan
                 MaHoaDon = "P" + b.ToString();
             }
         }
+
+        private void Search_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
