@@ -128,11 +128,6 @@ namespace QuanLyKhachSan
 
             if (Them)
             {
-                if ((KiemTraTrung(MaKH_TextBox.Text) == false))
-                {
-                    MessageBox.Show(" Mã khách hàng đã tồn tại");
-                    return;
-                }
                 blKH = new BLKhachHang();
                 if (blKH.ThemKH(MaKH_TextBox.Text, TenKH_TextBox.Text, CMND_TextBox.Text, SDT_TextBox.Text, XuatXu_TextBox.Text, TempGioiTinh) == true)
                 {
@@ -157,17 +152,6 @@ namespace QuanLyKhachSan
                     MessageBox.Show(" Cap nhat that bai");
                 }
             }
-        }
-        private bool KiemTraTrung(string Ma)
-        {
-            for (int i = 0; i < dgvKH.Rows.Count; i++)
-            {
-                if (dgvKH.Rows[i].Cells[0].Value.ToString() == Ma)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
         private void Back_Button_Click(object sender, EventArgs e)
         {

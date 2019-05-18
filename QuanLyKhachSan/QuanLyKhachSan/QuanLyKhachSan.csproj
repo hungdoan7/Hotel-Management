@@ -50,9 +50,11 @@
     <Compile Include="BS_Layer\BLDVvaHD.cs" />
     <Compile Include="BS_Layer\BLKhachHang.cs" />
     <Compile Include="BS_Layer\BLLogin.cs" />
+    <Compile Include="BS_Layer\BLNhanPhong.cs" />
     <Compile Include="BS_Layer\BLNhanVien.cs" />
     <Compile Include="BS_Layer\BLPhong.cs" />
     <Compile Include="BS_Layer\BLHopDong.cs" />
+    <Compile Include="BS_Layer\BLTraPhong.cs" />
     <Compile Include="DB_Layer\DBMain.cs" />
     <Compile Include="QuanLyDichVuVaHopDong_Form.cs">
       <SubType>Form</SubType>

@@ -26,8 +26,8 @@ namespace QuanLyKhachSan
             if (isLogin == false)
             {
                 this.thốngKêToolStripMenuItem.Enabled = false;
-                this.quảnLýToolStripMenuItem.Enabled = false;
-                this.hoạtĐộngToolStripMenuItem.Enabled = false;
+               // this.quảnLýToolStripMenuItem.Enabled = false;
+                //this.hoạtĐộngToolStripMenuItem.Enabled = false;
                 this.đăngNhậpToolStripMenuItem.Enabled = true;
                 this.đăngXuấtToolStripMenuItem.Enabled = false;
             }
@@ -107,12 +107,14 @@ namespace QuanLyKhachSan
 
         private void nhậnPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            NhanPhong_Form Temp = new NhanPhong_Form();
+            Temp.ShowDialog();
         }
 
         private void trảPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TraPhong_Form Temp = new TraPhong_Form();
+            Temp.ShowDialog();
         }
     }
 }

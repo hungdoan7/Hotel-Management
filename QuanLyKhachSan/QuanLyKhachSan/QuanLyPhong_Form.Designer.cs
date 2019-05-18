@@ -60,6 +60,7 @@
             this.Search_ComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.DaDat_RadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPHONG)).BeginInit();
             this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -121,6 +122,7 @@
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.DaDat_RadioButton);
             this.panel.Controls.Add(this.LoaiPhong_ComboBox);
             this.panel.Controls.Add(this.SDT_TextBox);
             this.panel.Controls.Add(this.label1);
@@ -384,6 +386,17 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Tìm kiếm";
             // 
+            // DaDat_RadioButton
+            // 
+            this.DaDat_RadioButton.AutoSize = true;
+            this.DaDat_RadioButton.Location = new System.Drawing.Point(554, 70);
+            this.DaDat_RadioButton.Name = "DaDat_RadioButton";
+            this.DaDat_RadioButton.Size = new System.Drawing.Size(86, 17);
+            this.DaDat_RadioButton.TabIndex = 20;
+            this.DaDat_RadioButton.TabStop = true;
+            this.DaDat_RadioButton.Text = "Đã được đặt";
+            this.DaDat_RadioButton.UseVisualStyleBackColor = true;
+            // 
             // QuanLyPhong_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,6 +459,7 @@
         private System.Windows.Forms.ComboBox Search_ComboBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton DaDat_RadioButton;
     }
 }
 

@@ -50,6 +50,9 @@ namespace QuanLyKhachSan
                 this.Cancel_Button.Enabled = false;
                 this.Save_Button.Enabled = false;
                 this.panel.Enabled = false;
+                DaThue_RadioButton.Checked = false;
+                Trong_RadioButton.Checked = false;
+                DaDat_RadioButton.Checked = false;
             }
             catch (SqlException)
             {
@@ -96,7 +99,14 @@ namespace QuanLyKhachSan
                 }
                 else
                 {
-                    Trong_RadioButton.Checked = true;
+                    if (Temp.Length == 5)
+                    {
+                        Trong_RadioButton.Checked = true;
+                    }
+                    else
+                    {
+                        DaDat_RadioButton.Checked = true;
+                    }
                 }
             }
             else
@@ -107,6 +117,7 @@ namespace QuanLyKhachSan
                 this.GiaPhong_TextBox.ResetText();
                 DaThue_RadioButton.Checked = false;
                 Trong_RadioButton.Checked = false;
+                DaDat_RadioButton.Checked = false;
                 LoaiPhong_ComboBox.ResetText();
             }
         }
@@ -130,6 +141,9 @@ namespace QuanLyKhachSan
             this.Back_Button.Enabled = false;
             this.MaPhong_Label.Enabled = false;
             this.MaPhong_TextBox.Enabled = false;
+            DaThue_RadioButton.Enabled = true;
+            Trong_RadioButton.Enabled = true;
+            DaDat_RadioButton.Enabled = true;
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -141,7 +155,14 @@ namespace QuanLyKhachSan
             }
             else
             {
-                TempTinhTrang = "Trống";
+                if (Trong_RadioButton.Checked == true)
+                {
+                    TempTinhTrang = "Trống";
+                }
+                else
+                {
+                    TempTinhTrang = "Được Đặt";
+                }
             }
 
             if (Them)
@@ -156,6 +177,9 @@ namespace QuanLyKhachSan
                 {
                     MessageBox.Show(" Them that bai");
                 }
+                DaThue_RadioButton.Enabled = false;
+                Trong_RadioButton.Enabled = false;
+                DaDat_RadioButton.Enabled = false;
             }
             else
             {
@@ -196,6 +220,9 @@ namespace QuanLyKhachSan
             this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
             this.MaPhong_TextBox.Enabled = false;
+            DaThue_RadioButton.Enabled = false;
+            Trong_RadioButton.Enabled = false;
+            DaDat_RadioButton.Enabled = false;
             this.LoaiPhong_ComboBox.Focus();
         }
 
@@ -208,8 +235,7 @@ namespace QuanLyKhachSan
             this.Add_Button.Enabled = true;
             this.Edit_Button.Enabled = true;
             this.Delete_Button.Enabled = true;
-            this.Back_Button.Enabled = true;
-           // dgvPHONG_CellClick(null, null);
+            this.Back_Button.Enabled = true;           
         }
 
         private void Back_Button_Click(object sender, EventArgs e)
