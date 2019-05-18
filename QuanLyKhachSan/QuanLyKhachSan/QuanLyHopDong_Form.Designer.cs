@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
             this.NgayThue_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.NgayThue_Label = new System.Windows.Forms.Label();
@@ -47,9 +47,12 @@
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.Save_Button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NgayTra_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDuKienTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
@@ -57,6 +60,9 @@
             // 
             // panel
             // 
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Controls.Add(this.NgayTra_DateTimePicker);
+            this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.NgayThue_DateTimePicker);
             this.panel.Controls.Add(this.NgayThue_Label);
             this.panel.Controls.Add(this.MaKH_Label);
@@ -120,6 +126,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Search_ComboBox);
             this.panel1.Controls.Add(this.Search_TextBox);
@@ -219,7 +226,8 @@
             this.dgvHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
             this.MaKH,
-            this.NgayThue});
+            this.NgayThue,
+            this.NgayDuKienTra});
             this.dgvHD.Location = new System.Drawing.Point(44, 126);
             this.dgvHD.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHD.Name = "dgvHD";
@@ -239,6 +247,24 @@
             this.Save_Button.UseVisualStyleBackColor = true;
             this.Save_Button.Click += new System.EventHandler(this.Save_Button_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(220, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Ngày Trả Phòng";
+            // 
+            // NgayTra_DateTimePicker
+            // 
+            this.NgayTra_DateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.NgayTra_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayTra_DateTimePicker.Location = new System.Drawing.Point(325, 63);
+            this.NgayTra_DateTimePicker.Name = "NgayTra_DateTimePicker";
+            this.NgayTra_DateTimePicker.Size = new System.Drawing.Size(97, 20);
+            this.NgayTra_DateTimePicker.TabIndex = 31;
+            // 
             // MaHD
             // 
             this.MaHD.DataPropertyName = "MaHopDong";
@@ -254,12 +280,18 @@
             // NgayThue
             // 
             this.NgayThue.DataPropertyName = "NgayThue";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle2;
             this.NgayThue.HeaderText = "Ngày Bắt Đầu Thuê";
             this.NgayThue.Name = "NgayThue";
+            // 
+            // NgayDuKienTra
+            // 
+            this.NgayDuKienTra.DataPropertyName = "NgayDuKienTraPhong";
+            this.NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả";
+            this.NgayDuKienTra.Name = "NgayDuKienTra";
             // 
             // QuanLyHopDong_Form
             // 
@@ -306,8 +338,11 @@
         private System.Windows.Forms.DataGridView dgvHD;
         private System.Windows.Forms.Button Save_Button;
         private System.Windows.Forms.DateTimePicker NgayThue_DateTimePicker;
+        private System.Windows.Forms.DateTimePicker NgayTra_DateTimePicker;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayThue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDuKienTra;
     }
 }

@@ -31,6 +31,7 @@ namespace QuanLyKhachSan
                 dtKH.Clear();
                 DataSet ds = blKH.LayDSKH();
                 dtKH = ds.Tables[0];
+                dtKH.Columns.Remove("Hide");
                 dgvKH.DataSource = dtKH;
                 this.MaKH_TextBox.ResetText();
                 this.TenKH_TextBox.ResetText();
@@ -103,15 +104,25 @@ namespace QuanLyKhachSan
         }
         private void SinhMa()
         {
-            string a = this.dgvKH.Rows[this.dgvKH.Rows.Count - 2].Cells[0].Value.ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            dtKH = new DataTable();
+            DataSet ds = blKH.LayDSKHSinhMa();
+            dtKH = ds.Tables[0];
+            if (dtKH.Rows.Count == 0)
             {
-                MaKH_TextBox.Text = "K0" + b.ToString();
+                MaKH_TextBox.Text = "K01";
             }
             else
             {
-                MaKH_TextBox.Text = "K" + b.ToString();
+                string a = this.dgvKH.Rows[this.dgvKH.Rows.Count - 2].Cells[0].Value.ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    MaKH_TextBox.Text = "K0" + b.ToString();
+                }
+                else
+                {
+                    MaKH_TextBox.Text = "K" + b.ToString();
+                }
             }
         }
         private void Save_Button_Click(object sender, EventArgs e)
@@ -229,6 +240,7 @@ namespace QuanLyKhachSan
             DataSet ds = blKH.TimKiem(column, Search_TextBox.Text);
             dtKH = new DataTable();
             dtKH = ds.Tables[0];
+            dtKH.Columns.Remove("Hide");
             dgvKH.DataSource = dtKH;
         }
     }

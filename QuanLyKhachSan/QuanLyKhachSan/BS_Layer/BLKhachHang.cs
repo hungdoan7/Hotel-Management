@@ -17,6 +17,10 @@ namespace QuanLyKhachSan.BS_layer
         }
         public DataSet LayDSKH()
         {
+            return db.ExecuteQueryDataSet(" select * from KhachHang where Hide=0", CommandType.Text);
+        }
+        public DataSet LayDSKHSinhMa()
+        {
             return db.ExecuteQueryDataSet(" select * from KhachHang", CommandType.Text);
         }
         public bool CapNhatKH(string makh, string tenkh, string cmnd, string sdt, string xuatxu, string gioitinh)
@@ -26,12 +30,12 @@ namespace QuanLyKhachSan.BS_layer
         }
         public bool ThemKH(string makh, string tenkh, string cmnd, string sdt, string xuatxu, string gioitinh)
         {
-            string sqlString = "Insert into KhachHang values ('" + makh + "',N'" + tenkh + "','" + cmnd + "',N'" + gioitinh + "','" + sdt + "',N'" + xuatxu + "')";
+            string sqlString = "Insert into KhachHang values ('" + makh + "',N'" + tenkh + "','" + cmnd + "',N'" + gioitinh + "','" + sdt + "',N'" + xuatxu + "',0)";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
         }
         public DataSet TimKiem(string column, string keyword)
         {
-            string sqlString = "select * from KhachHang where " + column + " like (N'%" + keyword + "%')";
+            string sqlString = "select * from KhachHang where " + column + " like (N'%" + keyword + "%') and Hide=0";
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
     }

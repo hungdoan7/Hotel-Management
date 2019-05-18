@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Inside_RadioButton = new System.Windows.Forms.RadioButton();
             this.Outside_RadioButton = new System.Windows.Forms.RadioButton();
             this.KhachHangMoi_Panel = new System.Windows.Forms.Panel();
@@ -71,8 +71,12 @@
             this.Today_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Today_Label = new System.Windows.Forms.Label();
             this.ChonKhachHang_Panel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.SoNgayO_NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ChonKH_Button = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.ChonPhong_Panel = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.ChonPhong_Button = new System.Windows.Forms.Button();
             this.HopDongMoi_Panel = new System.Windows.Forms.Panel();
             this.Back_Button = new System.Windows.Forms.Button();
@@ -84,20 +88,17 @@
             this.NgayThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhongThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoNgayO_NumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Reset_Button = new System.Windows.Forms.Button();
             this.KhachHangMoi_Panel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.ChonKhachHang_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoNgayO_NumericUpDown)).BeginInit();
             this.ChonPhong_Panel.SuspendLayout();
             this.HopDongMoi_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SoNgayO_NumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Inside_RadioButton
@@ -495,6 +496,28 @@
             this.ChonKhachHang_Panel.Size = new System.Drawing.Size(682, 203);
             this.ChonKhachHang_Panel.TabIndex = 29;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Chọn khách hàng:";
+            // 
+            // SoNgayO_NumericUpDown
+            // 
+            this.SoNgayO_NumericUpDown.Location = new System.Drawing.Point(464, 168);
+            this.SoNgayO_NumericUpDown.Name = "SoNgayO_NumericUpDown";
+            this.SoNgayO_NumericUpDown.Size = new System.Drawing.Size(98, 20);
+            this.SoNgayO_NumericUpDown.TabIndex = 32;
+            this.SoNgayO_NumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SoNgayO_NumericUpDown.ValueChanged += new System.EventHandler(this.SoNgayO_NumericUpDown_ValueChanged);
+            // 
             // ChonKH_Button
             // 
             this.ChonKH_Button.Location = new System.Drawing.Point(579, 164);
@@ -505,6 +528,15 @@
             this.ChonKH_Button.Text = "Chọn";
             this.ChonKH_Button.UseVisualStyleBackColor = true;
             this.ChonKH_Button.Click += new System.EventHandler(this.ChonKH_Button_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(365, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Số ngày ở dự kiến";
             // 
             // ChonPhong_Panel
             // 
@@ -517,6 +549,15 @@
             this.ChonPhong_Panel.Name = "ChonPhong_Panel";
             this.ChonPhong_Panel.Size = new System.Drawing.Size(682, 197);
             this.ChonPhong_Panel.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Chọn Phòng: ";
             // 
             // ChonPhong_Button
             // 
@@ -532,6 +573,7 @@
             // HopDongMoi_Panel
             // 
             this.HopDongMoi_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HopDongMoi_Panel.Controls.Add(this.Reset_Button);
             this.HopDongMoi_Panel.Controls.Add(this.Back_Button);
             this.HopDongMoi_Panel.Controls.Add(this.ThemHD_Button);
             this.HopDongMoi_Panel.Controls.Add(this.label3);
@@ -602,19 +644,19 @@
             // NgayThue
             // 
             this.NgayThue.DataPropertyName = "NgayThue";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle5.NullValue = null;
-            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle1;
             this.NgayThue.HeaderText = "Ngày Bắt Đầu Thuê";
             this.NgayThue.Name = "NgayThue";
             // 
             // NgayKetThuc
             // 
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Format = "dd//MM/yyyy";
-            dataGridViewCellStyle6.NullValue = null;
-            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Format = "dd//MM/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle2;
             this.NgayKetThuc.HeaderText = "Ngày dự kiến kết thúc";
             this.NgayKetThuc.Name = "NgayKetThuc";
             // 
@@ -623,45 +665,15 @@
             this.PhongThue.HeaderText = "Những phòng được thuê";
             this.PhongThue.Name = "PhongThue";
             // 
-            // SoNgayO_NumericUpDown
+            // Reset_Button
             // 
-            this.SoNgayO_NumericUpDown.Location = new System.Drawing.Point(464, 168);
-            this.SoNgayO_NumericUpDown.Name = "SoNgayO_NumericUpDown";
-            this.SoNgayO_NumericUpDown.Size = new System.Drawing.Size(98, 20);
-            this.SoNgayO_NumericUpDown.TabIndex = 32;
-            this.SoNgayO_NumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.SoNgayO_NumericUpDown.ValueChanged += new System.EventHandler(this.SoNgayO_NumericUpDown_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(365, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Số ngày ở dự kiến";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 13);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Chọn khách hàng:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(-1, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Chọn Phòng: ";
+            this.Reset_Button.Location = new System.Drawing.Point(580, 3);
+            this.Reset_Button.Name = "Reset_Button";
+            this.Reset_Button.Size = new System.Drawing.Size(97, 23);
+            this.Reset_Button.TabIndex = 14;
+            this.Reset_Button.Text = "Reset";
+            this.Reset_Button.UseVisualStyleBackColor = true;
+            this.Reset_Button.Click += new System.EventHandler(this.Reset_Button_Click);
             // 
             // NhanPhongKhongDatTruoc_Form
             // 
@@ -689,12 +701,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             this.ChonKhachHang_Panel.ResumeLayout(false);
             this.ChonKhachHang_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SoNgayO_NumericUpDown)).EndInit();
             this.ChonPhong_Panel.ResumeLayout(false);
             this.ChonPhong_Panel.PerformLayout();
             this.HopDongMoi_Panel.ResumeLayout(false);
             this.HopDongMoi_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SoNgayO_NumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,5 +772,6 @@
         private System.Windows.Forms.Button Back_Button;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Reset_Button;
     }
 }

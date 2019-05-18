@@ -33,6 +33,7 @@ namespace QuanLyKhachSan
                 dtNV = ds.Tables[0];
                 dtNV.Columns.RemoveAt(6);
                 dgvNV.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
+                dtNV.Columns.Remove("Hide");
                 dgvNV.DataSource = dtNV;     
                 this.MaNV_TextBox.ResetText();
                 this.TenNV_TextBox.ResetText();
@@ -95,6 +96,7 @@ namespace QuanLyKhachSan
             this.TenNV_TextBox.Focus();
             this.MaNV_TextBox.Enabled = false;
             this.MaNV_Label.Enabled = false;
+            this.Password_TextBox.Enabled = false;
         }
 
         private void Back_Button_Click(object sender, EventArgs e)
@@ -129,14 +131,23 @@ namespace QuanLyKhachSan
             {
 
                 blNV = new BLNhanVien();
-                if (blNV.ThemNV(MaNV_TextBox.Text, TenNV_TextBox.Text, ChucVu_ComboBox.Text, Luong_TextBox.Text, NgaySinh_DateTimePicker.Value.Date.ToString(), TempGioiTinh) == true)
+                if (Password_TextBox.Text == "")
                 {
-                    LoadData();
-                    MessageBox.Show(" Them thanh cong");
+                    MessageBox.Show("Chưa nhập mật khẩu");
                 }
                 else
                 {
-                    MessageBox.Show(" Them that bai");
+                    if (blNV.ThemNV(MaNV_TextBox.Text, TenNV_TextBox.Text, ChucVu_ComboBox.Text, Luong_TextBox.Text, NgaySinh_DateTimePicker.Value.Date.ToString(),TempGioiTinh,Password_TextBox.Text) == true)
+                    {
+                        LoadData();
+                        MessageBox.Show(" Them thanh cong");
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Them that bai");
+                    }
+                    this.Password_TextBox.ResetText();
+                    this.Password_TextBox.Enabled = false;
                 }
             }
             else
@@ -155,15 +166,25 @@ namespace QuanLyKhachSan
         }
         private void SinhMa()
         {
-            string a = this.dgvNV.Rows[this.dgvNV.Rows.Count - 2].Cells[0].Value.ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            dtNV = new DataTable();
+            DataSet ds = blNV.LayDSNVSinhMa();
+            dtNV = ds.Tables[0];
+            if (dtNV.Rows.Count == 0)
             {
-                MaNV_TextBox.Text = "N0" + b.ToString();
+                MaNV_TextBox.Text = "N01";
             }
             else
             {
-                MaNV_TextBox.Text = "N" + b.ToString();
+                string a = this.dgvNV.Rows[this.dgvNV.Rows.Count - 2].Cells[0].Value.ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    MaNV_TextBox.Text = "N0" + b.ToString();
+                }
+                else
+                {
+                    MaNV_TextBox.Text = "N" + b.ToString();
+                }
             }
         }
         private void dgvNV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -262,6 +283,7 @@ namespace QuanLyKhachSan
             DataSet ds = blNV.TimKiem(column, Search_TextBox.Text);
             dtNV = new DataTable();
             dtNV = ds.Tables[0];
+            dtNV.Columns.Remove("Hide");
             dgvNV.DataSource = dtNV;
         }
 

@@ -37,6 +37,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,17 +131,28 @@
             this.txtUser.Size = new System.Drawing.Size(139, 20);
             this.txtUser.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(142, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Đăng Nhập";
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 229);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Name = "Login_Form";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -155,5 +167,6 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.RadioButton RadioButton_LeTan;
         private System.Windows.Forms.RadioButton RadioButton_QuanLy;
+        private System.Windows.Forms.Label label3;
     }
 }

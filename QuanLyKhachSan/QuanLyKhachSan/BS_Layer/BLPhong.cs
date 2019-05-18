@@ -18,7 +18,11 @@ namespace QuanLyKhachSan.BS_layer
         }
         public DataSet LayDSPhong()
         {
-            return db.ExecuteQueryDataSet(" select * from Phong", CommandType.Text);
+            return db.ExecuteQueryDataSet(" select * from Phong where Hide=0", CommandType.Text);
+        }
+        public DataSet LayDSPhongSinhMa()
+        {
+            return db.ExecuteQueryDataSet(" select * from Phong ", CommandType.Text);
         }
         public bool CapNhatPhong(string maphong, string loaiphong, string giaphong, string sdt, string manhanvien, string tinhtrang)
         {
@@ -27,12 +31,12 @@ namespace QuanLyKhachSan.BS_layer
         }
         public bool ThemPhong(string maphong, string loaiphong, string giaphong, string sdt, string manhanvien, string tinhtrang)
         {            
-            string sqlString = "Insert into Phong values ('" + maphong + "',N'" + loaiphong + "','" + tinhtrang + "','" + giaphong + "','" + sdt + "',N'" + manhanvien + "')";
+            string sqlString = "Insert into Phong values ('" + maphong + "',N'" + loaiphong + "','" + tinhtrang + "','" + giaphong + "','" + sdt + "',N'" + manhanvien + "',0)";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
         }
         public DataSet TimKiem(string column,string keyword)
         {
-            string sqlString = "select * from Phong where "+column+" like (N'%"+keyword+"%')";
+            string sqlString = "select * from Phong where "+column+" like (N'%"+keyword+"%') and Hide=0";
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
     }

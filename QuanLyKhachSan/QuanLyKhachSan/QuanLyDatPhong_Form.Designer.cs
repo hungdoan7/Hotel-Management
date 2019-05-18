@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ChonPhong_Panel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.ChonPhong_Button = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.Reset_Button = new System.Windows.Forms.Button();
             this.ChonPhong_Panel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
@@ -91,7 +92,7 @@
             // 
             // ChonPhong_Button
             // 
-            this.ChonPhong_Button.Location = new System.Drawing.Point(568, 155);
+            this.ChonPhong_Button.Location = new System.Drawing.Point(577, 153);
             this.ChonPhong_Button.Margin = new System.Windows.Forms.Padding(2);
             this.ChonPhong_Button.Name = "ChonPhong_Button";
             this.ChonPhong_Button.Size = new System.Drawing.Size(100, 31);
@@ -200,6 +201,7 @@
             // HopDongMoi_Panel
             // 
             this.HopDongMoi_Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HopDongMoi_Panel.Controls.Add(this.Reset_Button);
             this.HopDongMoi_Panel.Controls.Add(this.Back_Button);
             this.HopDongMoi_Panel.Controls.Add(this.ThemNguoiDatvaPhongDat_Button);
             this.HopDongMoi_Panel.Controls.Add(this.label3);
@@ -267,18 +269,18 @@
             // 
             // NgayThue
             // 
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.NullValue = null;
-            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.NullValue = null;
+            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle1;
             this.NgayThue.HeaderText = "Số Điện Thoại";
             this.NgayThue.Name = "NgayThue";
             // 
             // NgayKetThuc
             // 
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.Format = "dd//MM/yyyy";
-            dataGridViewCellStyle14.NullValue = null;
-            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Format = "dd//MM/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.NgayKetThuc.DefaultCellStyle = dataGridViewCellStyle2;
             this.NgayKetThuc.HeaderText = "Ngày được đặt";
             this.NgayKetThuc.Name = "NgayKetThuc";
             // 
@@ -347,6 +349,16 @@
             this.label7.TabIndex = 40;
             this.label7.Text = "Nhập vào thông tin:";
             // 
+            // Reset_Button
+            // 
+            this.Reset_Button.Location = new System.Drawing.Point(578, 3);
+            this.Reset_Button.Name = "Reset_Button";
+            this.Reset_Button.Size = new System.Drawing.Size(99, 23);
+            this.Reset_Button.TabIndex = 45;
+            this.Reset_Button.Text = "Reset";
+            this.Reset_Button.UseVisualStyleBackColor = true;
+            this.Reset_Button.Click += new System.EventHandler(this.Reset_Button_Click);
+            // 
             // QuanLyDatPhong_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,5 +421,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button Reset_Button;
     }
 }

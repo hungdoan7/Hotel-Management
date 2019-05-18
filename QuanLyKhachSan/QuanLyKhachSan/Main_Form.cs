@@ -26,8 +26,8 @@ namespace QuanLyKhachSan
             if (isLogin == false)
             {
                 this.thốngKêToolStripMenuItem.Enabled = false;
-               // this.quảnLýToolStripMenuItem.Enabled = false;
-                //this.hoạtĐộngToolStripMenuItem.Enabled = false;
+               //this.quảnLýToolStripMenuItem.Enabled = false;
+               //this.hoạtĐộngToolStripMenuItem.Enabled = false;
                 this.đăngNhậpToolStripMenuItem.Enabled = true;
                 this.đăngXuấtToolStripMenuItem.Enabled = false;
             }

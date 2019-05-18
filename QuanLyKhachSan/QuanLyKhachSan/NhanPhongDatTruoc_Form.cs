@@ -39,32 +39,50 @@ namespace QuanLyKhachSan
         }
         private void SinhMaKH()
         {
-            string a = this.dgvKH.Rows[this.dgvKH.Rows.Count - 2].Cells[0].Value.ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            dtKH = new DataTable();
+            dtKH.Clear();
+            DataSet ds = blNP.LayDSKHSinhMa();
+            dtKH = ds.Tables[0];
+            if (dtKH.Rows.Count >= 1)
             {
-                MaKH_TextBox.Text = "K0" + b.ToString();
+                string a = dtKH.Rows[dtKH.Rows.Count-1].ItemArray[0].ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    MaKH_TextBox.Text = "K0" + b.ToString();
+                }
+                else
+                {
+                    MaKH_TextBox.Text = "K" + b.ToString();
+                }
             }
             else
             {
-                MaKH_TextBox.Text = "K" + b.ToString();
+                MaKH_TextBox.Text = "K01";
             }
         }
         private void SinhMaHD()
         {
             dtHD = new DataTable();
             dtHD.Clear();
-            DataSet ds = blNP.LayDSHD();
+            DataSet ds = blNP.LayDSHDSinhMa();
             dtHD = ds.Tables[0];
-            string a = dtHD.Rows[dtHD.Rows.Count - 1].ItemArray[0].ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            if (dtHD.Rows.Count >= 1)
             {
-                dgvHD.Rows[0].Cells[0].Value = "H0" + b.ToString();
+                string a = dtHD.Rows[dtHD.Rows.Count - 1].ItemArray[0].ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    dgvHD.Rows[0].Cells[0].Value = "H0" + b.ToString();
+                }
+                else
+                {
+                    dgvHD.Rows[0].Cells[0].Value = "H" + b.ToString();
+                }
             }
             else
             {
-                dgvHD.Rows[0].Cells[0].Value = "H" + b.ToString();
+                dgvHD.Rows[0].Cells[0].Value = "H01";
             }
         }
         private void LoadDataKH()
@@ -75,6 +93,7 @@ namespace QuanLyKhachSan
                 dtKH.Clear();
                 DataSet ds = blNP.LayDSKH();
                 dtKH = ds.Tables[0];
+                dtKH.Columns.Remove("Hide");
                 dgvKH.DataSource = dtKH;
                 this.MaKH_TextBox.ResetText();
                 this.TenKH_TextBox.ResetText();
@@ -99,6 +118,7 @@ namespace QuanLyKhachSan
                 dtND.Clear();
                 DataSet ds = blNP.LayDSKhachDat();
                 dtND = ds.Tables[0];
+                dtND.Columns.Remove("Hide");
                 dgvKhachDat.DataSource = dtND;
             }
             catch (SqlException)
@@ -159,6 +179,7 @@ namespace QuanLyKhachSan
             DataSet ds = blNP.TimKiemKH(column, SearchKH_TextBox.Text);
             dtKH = new DataTable();
             dtKH = ds.Tables[0];
+            dtKH.Columns.Remove("Hide");
             dgvKH.DataSource = dtKH;
         }
 
@@ -267,6 +288,54 @@ namespace QuanLyKhachSan
                     }
                 }
             }
+        }
+
+        private void SearchKhachDat_TextBox_TextChanged(object sender, EventArgs e)
+        {
+            string column;
+            switch (SearchKH_ComboBox.Text)
+            {
+                case "Mã Người Đặt":
+                    {
+                        column = "MaNguoiDat";
+                        break;
+                    }
+                case "Tên Người Đặt":
+                    {
+                        column = "TenNguoiDat";
+                        break;
+                    }
+                case "SĐT":
+                    {
+                        column = "SDT";
+                        break;
+                    }
+                case "Ngày Hết Hạn":
+                    {
+                        column = "NgayHetHan";
+                        break;
+                    }
+                case "Mã Phòng":
+                    {
+                        column = "MaPhong";
+                        break;
+                    }
+                case "Loại Phòng":
+                    {
+                        column = "LoaiPhong";
+                        break;
+                    }
+                default:
+                    {
+                        return;
+                    }
+            }
+            blNP = new BLNhanPhong();
+            DataSet ds = blNP.TimKiemKH(column, SearchKH_TextBox.Text);
+            dtND = new DataTable();
+            dtND = ds.Tables[0];
+            dtND.Columns.Remove("Hide");
+            dgvKhachDat.DataSource = dtND;
         }
     }
 }

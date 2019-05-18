@@ -15,7 +15,7 @@ namespace QuanLyKhachSan.BS_layer
         }
         public bool KiemTraDangNhap(string user,string password,string chucvu)
         {
-            string strString = "Select * From NhanVien Where MaNV = '" + user + "' and Password = '" + password + "' and ChucVu = N'"+ chucvu +"'";
+            string strString = "Select * From NhanVien Where MaNV = '" + user + "' and Password = '" + password + "' and ChucVu = N'"+ chucvu +"'and Hide=0";
             return db.TestLogin(strString,System.Data.CommandType.Text);
         }
     }

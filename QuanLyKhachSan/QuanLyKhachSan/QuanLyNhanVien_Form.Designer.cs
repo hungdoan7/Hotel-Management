@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvNV = new System.Windows.Forms.DataGridView();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +43,7 @@
             this.Search_ComboBox = new System.Windows.Forms.ComboBox();
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.ChucVu_ComboBox = new System.Windows.Forms.ComboBox();
             this.NgaySinh_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Luong_TextBox = new System.Windows.Forms.TextBox();
             this.Luong_Label = new System.Windows.Forms.Label();
@@ -60,7 +61,8 @@
             this.Reload_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
             this.Delete_Button = new System.Windows.Forms.Button();
-            this.ChucVu_ComboBox = new System.Windows.Forms.ComboBox();
+            this.Password_TextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
@@ -111,10 +113,10 @@
             // Ngay_Sinh
             // 
             this.Ngay_Sinh.DataPropertyName = "NgaySinh";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Ngay_Sinh.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Ngay_Sinh.DefaultCellStyle = dataGridViewCellStyle1;
             this.Ngay_Sinh.HeaderText = "Ngày Sinh";
             this.Ngay_Sinh.Name = "Ngay_Sinh";
             // 
@@ -144,6 +146,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Search_ComboBox);
             this.panel1.Controls.Add(this.Search_TextBox);
@@ -188,6 +191,9 @@
             // 
             // panel
             // 
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Controls.Add(this.label1);
+            this.panel.Controls.Add(this.Password_TextBox);
             this.panel.Controls.Add(this.ChucVu_ComboBox);
             this.panel.Controls.Add(this.NgaySinh_DateTimePicker);
             this.panel.Controls.Add(this.TenNV_TextBox);
@@ -207,10 +213,23 @@
             this.panel.Size = new System.Drawing.Size(673, 95);
             this.panel.TabIndex = 25;
             // 
+            // ChucVu_ComboBox
+            // 
+            this.ChucVu_ComboBox.FormattingEnabled = true;
+            this.ChucVu_ComboBox.Items.AddRange(new object[] {
+            "Quản Lý",
+            "Lễ Tân",
+            "Phục Vụ"});
+            this.ChucVu_ComboBox.Location = new System.Drawing.Point(285, 11);
+            this.ChucVu_ComboBox.Name = "ChucVu_ComboBox";
+            this.ChucVu_ComboBox.Size = new System.Drawing.Size(90, 21);
+            this.ChucVu_ComboBox.TabIndex = 21;
+            this.ChucVu_ComboBox.Text = "Quản Lý";
+            // 
             // NgaySinh_DateTimePicker
             // 
             this.NgaySinh_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.NgaySinh_DateTimePicker.Location = new System.Drawing.Point(460, 13);
+            this.NgaySinh_DateTimePicker.Location = new System.Drawing.Point(447, 13);
             this.NgaySinh_DateTimePicker.MinDate = new System.DateTime(1754, 6, 12, 0, 0, 0, 0);
             this.NgaySinh_DateTimePicker.Name = "NgaySinh_DateTimePicker";
             this.NgaySinh_DateTimePicker.Size = new System.Drawing.Size(96, 20);
@@ -236,7 +255,7 @@
             // Nu_RadioButton
             // 
             this.Nu_RadioButton.AutoSize = true;
-            this.Nu_RadioButton.Location = new System.Drawing.Point(477, 71);
+            this.Nu_RadioButton.Location = new System.Drawing.Point(442, 70);
             this.Nu_RadioButton.Name = "Nu_RadioButton";
             this.Nu_RadioButton.Size = new System.Drawing.Size(39, 17);
             this.Nu_RadioButton.TabIndex = 16;
@@ -247,7 +266,7 @@
             // Nam_RadioButton
             // 
             this.Nam_RadioButton.AutoSize = true;
-            this.Nam_RadioButton.Location = new System.Drawing.Point(477, 47);
+            this.Nam_RadioButton.Location = new System.Drawing.Point(442, 47);
             this.Nam_RadioButton.Name = "Nam_RadioButton";
             this.Nam_RadioButton.Size = new System.Drawing.Size(47, 17);
             this.Nam_RadioButton.TabIndex = 15;
@@ -379,18 +398,21 @@
             this.Delete_Button.Text = "Xóa";
             this.Delete_Button.UseVisualStyleBackColor = true;
             // 
-            // ChucVu_ComboBox
+            // Password_TextBox
             // 
-            this.ChucVu_ComboBox.FormattingEnabled = true;
-            this.ChucVu_ComboBox.Items.AddRange(new object[] {
-            "Quản Lý",
-            "Lễ Tân",
-            "Phục Vụ"});
-            this.ChucVu_ComboBox.Location = new System.Drawing.Point(285, 11);
-            this.ChucVu_ComboBox.Name = "ChucVu_ComboBox";
-            this.ChucVu_ComboBox.Size = new System.Drawing.Size(90, 21);
-            this.ChucVu_ComboBox.TabIndex = 21;
-            this.ChucVu_ComboBox.Text = "Quản Lý";
+            this.Password_TextBox.Location = new System.Drawing.Point(568, 53);
+            this.Password_TextBox.Name = "Password_TextBox";
+            this.Password_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.Password_TextBox.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(506, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Password";
             // 
             // QuanLyNhanVien_Form
             // 
@@ -451,5 +473,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Sinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.ComboBox ChucVu_ComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox Password_TextBox;
     }
 }

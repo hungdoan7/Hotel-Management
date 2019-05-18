@@ -32,6 +32,7 @@ namespace QuanLyKhachSan
                 dtPhong.Clear();
                 DataSet ds = blP.LayDSPhong();
                 dtPhong = ds.Tables[0];
+                dtPhong.Columns.Remove("Hide");
                 dgvPHONG.DataSource = dtPhong;
                 this.MaNV_TextBox.ResetText();
                 this.MaPhong_TextBox.ResetText();
@@ -197,15 +198,26 @@ namespace QuanLyKhachSan
         }
         private void SinhMa()
         {
-            string a = this.dgvPHONG.Rows[this.dgvPHONG.Rows.Count - 2].Cells[0].Value.ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            dtPhong = new DataTable();
+            dtPhong.Clear();
+            DataSet ds = blP.LayDSPhongSinhMa();
+            dtPhong = ds.Tables[0];
+            if (dtPhong.Rows.Count == 0)
             {
-                MaPhong_TextBox.Text = "P0" + b.ToString();
+                MaPhong_TextBox.Text = "P01";
             }
             else
             {
-                MaPhong_TextBox.Text = "P" + b.ToString();
+                string a = dtPhong.Rows[dtPhong.Rows.Count-1].ItemArray[0].ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    MaPhong_TextBox.Text = "P0" + b.ToString();
+                }
+                else
+                {
+                    MaPhong_TextBox.Text = "P" + b.ToString();
+                }
             }
         }
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -287,6 +299,7 @@ namespace QuanLyKhachSan
             DataSet ds = blP.TimKiem(column, Search_TextBox.Text);
             dtPhong = new DataTable();
             dtPhong = ds.Tables[0];
+            dtPhong.Columns.Remove("Hide");
             dgvPHONG.DataSource = dtPhong;
         }
     }

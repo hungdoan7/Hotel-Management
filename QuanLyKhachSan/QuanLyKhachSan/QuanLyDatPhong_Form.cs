@@ -59,7 +59,7 @@ namespace QuanLyKhachSan
         {
             dtHD = new DataTable();
             dtHD.Clear();
-            DataSet ds = blDP.LayDSNguoiDat();
+            DataSet ds = blDP.LayDSNguoiDatSinhMa();
             dtHD = ds.Tables[0];
             if (dtHD.Rows.Count == 0)
             {
@@ -123,6 +123,7 @@ namespace QuanLyKhachSan
             DataSet ds = blDP.TimKiemPhong(column, SearchPhong_TextBox.Text);
             dtPhong = new DataTable();
             dtPhong = ds.Tables[0];
+            dtPhong.Columns.Remove("Hide");
             dgvPhong.DataSource = dtPhong;
         }
 
@@ -179,6 +180,11 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show("Chưa nhập đầy đủ thông tin");
             }
+        }
+
+        private void Reset_Button_Click(object sender, EventArgs e)
+        {
+            dgvHD.Rows[0].Cells[4].Value = "";
         }
     }
 }

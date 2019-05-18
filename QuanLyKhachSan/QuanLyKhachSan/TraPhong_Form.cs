@@ -42,7 +42,7 @@ namespace QuanLyKhachSan
             }
             catch (SqlException)
             {
-                MessageBox.Show("Không lấy được nội dung trong table Phong !");
+                MessageBox.Show("Không lấy được nội dung trong table HopDong !");
             }
         }
         private void LoadDataDichVuvaHopDong(string mahd)
@@ -142,21 +142,71 @@ namespace QuanLyKhachSan
             dtHD.Clear();
             DataSet ds = blTP.LayDSHoaDon();
             dtHD = ds.Tables[0];
-            string a = dtHD.Rows[dtHD.Rows.Count - 1].ItemArray[0].ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            if (dtHD.Rows.Count >= 1)
             {
-                MaHoaDon = "P0" + b.ToString();
+                string a = dtHD.Rows[dtHD.Rows.Count - 1].ItemArray[0].ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    MaHoaDon = "P0" + b.ToString();
+                }
+                else
+                {
+                    MaHoaDon = "P" + b.ToString();
+                }
             }
             else
             {
-                MaHoaDon = "P" + b.ToString();
+                MaHoaDon = "P01";
             }
         }
 
         private void Search_TextBox_TextChanged(object sender, EventArgs e)
         {
+            string column;
+            switch (Search_ComboBox.Text)
+            {
+                case "Mã Hợp Đồng":
+                    {
+                        column = "MaHopDong";
+                        break;
+                    }
+                case "Mã Khách Hàng":
+                    {
+                        column = "MaKH";
+                        break;
+                    }
+                case "Ngày Thuê Phòng":
+                    {
+                        column = "NgayThue";
+                        break;
+                    }
+                case "Ngày Dự Kiến Trả":
+                    {
+                        column = "NgayDuKienTraPhong";
+                        break;
+                    }
+                case "Tên Khách Hàng":
+                    {
+                        column = "TenKH";
+                        break;
+                    }
+                default:
+                    {
+                        return;
+                    }
+            }
+            blTP = new BLTraPhong();
+            DataSet ds = blTP.TimKiemHopDong(column, Search_TextBox.Text);
+            dtHD = new DataTable();
+            dtHD = ds.Tables[0];
+            dtHD.Columns.Remove("Hide");
+            dgvHD.DataSource = dtHD;
+        }
 
+        private void Back_Button_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

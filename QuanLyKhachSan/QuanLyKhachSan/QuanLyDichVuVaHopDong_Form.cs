@@ -15,11 +15,9 @@ namespace QuanLyKhachSan
     public partial class QuanLyDichVuVaHopDong_Form : Form
     {
         DataTable dtDVvaHD = null;
-        bool Them;
         BLDVvaHD blDVvaHD = new BLDVvaHD();
         public QuanLyDichVuVaHopDong_Form()
         {
-            Them = false;
             InitializeComponent();
             LoadData();
         }
@@ -31,6 +29,7 @@ namespace QuanLyKhachSan
                 dtDVvaHD.Clear();
                 DataSet ds = blDVvaHD.LayDSDVvaHD();
                 dtDVvaHD = ds.Tables[0];
+                dtDVvaHD.Columns.Remove("Hide");
                 dgvDVvaHD.DataSource = dtDVvaHD;
                 this.MaDV_TextBox.ResetText();
                 this.MaHD_TextBox.ResetText();
@@ -40,7 +39,6 @@ namespace QuanLyKhachSan
                 this.Edit_Button.Enabled = true;
                 this.Delete_Button.Enabled = true;
                 this.Back_Button.Enabled = true;
-                this.Add_Button.Enabled = true;
 
                 this.Cancel_Button.Enabled = false;
                 this.Save_Button.Enabled = false;
@@ -51,26 +49,12 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Không lấy được nội dung trong table DichVu&HD !");
             }
         }
-        private void Add_Button_Click(object sender, EventArgs e)
-        {
-            Them = true;
-            this.Save_Button.Enabled = true;
-            this.Cancel_Button.Enabled = true;
-            this.panel.Enabled = true;
-
-            this.Add_Button.Enabled = false;
-            this.Edit_Button.Enabled = false;
-            this.Delete_Button.Enabled = false;
-            this.Back_Button.Enabled = false;
-        }
         private void Edit_Button_Click(object sender, EventArgs e)
         {
-            Them = false;
             this.Save_Button.Enabled = true;
             this.Cancel_Button.Enabled = true;
             this.panel.Enabled = true;
 
-            this.Add_Button.Enabled = false;
             this.Edit_Button.Enabled = false;
             this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
@@ -78,7 +62,7 @@ namespace QuanLyKhachSan
             this.MaHD_TextBox.Enabled = false;
             this.SoNgaySD_TextBox.Focus();
         }
-
+       
         private void Reload_Button_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -86,31 +70,15 @@ namespace QuanLyKhachSan
 
         private void Save_Button_Click(object sender, EventArgs e)
         {
-            if (Them)
+            blDVvaHD = new BLDVvaHD();
+            if (blDVvaHD.CapNhatDVvaHD(MaDV_TextBox.Text, MaHD_TextBox.Text, SoNgaySD_TextBox.Text) == true)
             {
-                blDVvaHD = new BLDVvaHD();
-                if (blDVvaHD.ThemDVvaHD(MaDV_TextBox.Text, MaHD_TextBox.Text, SoNgaySD_TextBox.Text) == true)
-                {
-                    LoadData();
-                    MessageBox.Show(" Them thanh cong");
-                }
-                else
-                {
-                    MessageBox.Show(" Them that bai");
-                }
+                LoadData();
+                MessageBox.Show(" Cap nhat thanh cong");
             }
             else
             {
-                blDVvaHD = new BLDVvaHD();
-                if (blDVvaHD.CapNhatDVvaHD(MaDV_TextBox.Text, MaHD_TextBox.Text, SoNgaySD_TextBox.Text) == true)
-                {
-                    LoadData();
-                    MessageBox.Show(" Cap nhat thanh cong");
-                }
-                else
-                {
-                    MessageBox.Show(" Cap nhat that bai");
-                }
+                MessageBox.Show(" Cap nhat that bai");
             }
         }
 
@@ -125,11 +93,9 @@ namespace QuanLyKhachSan
             this.Cancel_Button.Enabled = false;
             this.panel.Enabled = false;
 
-            this.Add_Button.Enabled = true;
             this.Edit_Button.Enabled = true;
             this.Delete_Button.Enabled = true;
-            this.Back_Button.Enabled = true;
-           
+            this.Back_Button.Enabled = true;          
         }
 
         private void dgvDVvaHD_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -178,6 +144,7 @@ namespace QuanLyKhachSan
             DataSet ds = blDVvaHD.TimKiem(column, Search_TextBox.Text);
             dtDVvaHD = new DataTable();
             dtDVvaHD = ds.Tables[0];
+            dtDVvaHD.Columns.Remove("Hide");
             dgvDVvaHD.DataSource = dtDVvaHD;
         }
     }

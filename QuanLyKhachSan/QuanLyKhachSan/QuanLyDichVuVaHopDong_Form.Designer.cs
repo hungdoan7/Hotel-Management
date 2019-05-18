@@ -44,7 +44,6 @@
             this.Delete_Button = new System.Windows.Forms.Button();
             this.Edit_Button = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
-            this.Add_Button = new System.Windows.Forms.Button();
             this.dgvDVvaHD = new System.Windows.Forms.DataGridView();
             this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@
             // 
             // panel
             // 
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel.Controls.Add(this.SoNgaySD_Label);
             this.panel.Controls.Add(this.MaHD_Label);
             this.panel.Controls.Add(this.SoNgaySD_TextBox);
@@ -118,6 +118,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Search_ComboBox);
             this.panel1.Controls.Add(this.Search_TextBox);
@@ -170,7 +171,7 @@
             // 
             // Back_Button
             // 
-            this.Back_Button.Location = new System.Drawing.Point(403, 506);
+            this.Back_Button.Location = new System.Drawing.Point(281, 506);
             this.Back_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(100, 31);
@@ -191,7 +192,7 @@
             // 
             // Edit_Button
             // 
-            this.Edit_Button.Location = new System.Drawing.Point(281, 506);
+            this.Edit_Button.Location = new System.Drawing.Point(164, 506);
             this.Edit_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Edit_Button.Name = "Edit_Button";
             this.Edit_Button.Size = new System.Drawing.Size(100, 31);
@@ -210,17 +211,6 @@
             this.Cancel_Button.Text = "Hủy";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
-            // 
-            // Add_Button
-            // 
-            this.Add_Button.Location = new System.Drawing.Point(164, 506);
-            this.Add_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Add_Button.Name = "Add_Button";
-            this.Add_Button.Size = new System.Drawing.Size(100, 31);
-            this.Add_Button.TabIndex = 33;
-            this.Add_Button.Text = "Thêm";
-            this.Add_Button.UseVisualStyleBackColor = true;
-            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // dgvDVvaHD
             // 
@@ -278,7 +268,6 @@
             this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Edit_Button);
             this.Controls.Add(this.Cancel_Button);
-            this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.dgvDVvaHD);
             this.Controls.Add(this.Save_Button);
             this.Name = "QuanLyDichVuVaHopDong_Form";
@@ -310,7 +299,6 @@
         private System.Windows.Forms.Button Delete_Button;
         private System.Windows.Forms.Button Edit_Button;
         private System.Windows.Forms.Button Cancel_Button;
-        private System.Windows.Forms.Button Add_Button;
         private System.Windows.Forms.DataGridView dgvDVvaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;

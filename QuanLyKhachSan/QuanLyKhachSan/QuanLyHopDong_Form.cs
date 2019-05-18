@@ -29,11 +29,14 @@ namespace QuanLyKhachSan
                 dtHD.Clear();
                 DataSet ds = blHD.LayDSHD();
                 dtHD = ds.Tables[0];
+                dtHD.Columns.Remove("Hide");
                 dgvHD.DataSource = dtHD;
                 this.MaHD_TextBox.ResetText();
                 this.MaKH_TextBox.ResetText();
                 NgayThue_DateTimePicker.Format = DateTimePickerFormat.Custom;
                 NgayThue_DateTimePicker.CustomFormat = " ";
+                NgayTra_DateTimePicker.Format = DateTimePickerFormat.Custom;
+                NgayTra_DateTimePicker.CustomFormat = " ";
 
                 this.Reload_Button.Enabled = true;
                 this.Edit_Button.Enabled = true;
@@ -105,7 +108,9 @@ namespace QuanLyKhachSan
                 this.MaHD_TextBox.Text = dgvHD.Rows[r].Cells[0].Value.ToString();
                 this.MaKH_TextBox.Text = dgvHD.Rows[r].Cells[1].Value.ToString();
                 NgayThue_DateTimePicker.Format = DateTimePickerFormat.Short;
+                NgayTra_DateTimePicker.Format = DateTimePickerFormat.Short;
                 this.NgayThue_DateTimePicker.Value = Convert.ToDateTime(dgvHD.Rows[r].Cells[2].Value.ToString());
+                this.NgayTra_DateTimePicker.Value = Convert.ToDateTime(dgvHD.Rows[r].Cells[3].Value.ToString());
             }
             else
             {
@@ -113,6 +118,8 @@ namespace QuanLyKhachSan
                 this.MaKH_TextBox.ResetText();
                 NgayThue_DateTimePicker.Format = DateTimePickerFormat.Custom;
                 NgayThue_DateTimePicker.CustomFormat = " ";
+                NgayTra_DateTimePicker.Format = DateTimePickerFormat.Custom;
+                NgayTra_DateTimePicker.CustomFormat = " ";
             }
         }
 
@@ -136,6 +143,11 @@ namespace QuanLyKhachSan
                         column = "NgayThue";
                         break;
                     }
+                case "Ngày Dự Kiến Trả":
+                    {
+                        column = "NgayDuKienTraPhong";
+                        break;
+                    }
                 default:
                     {
                         return;
@@ -145,6 +157,7 @@ namespace QuanLyKhachSan
             DataSet ds = blHD.TimKiem(column, Search_TextBox.Text);
             dtHD = new DataTable();
             dtHD = ds.Tables[0];
+            dtHD.Columns.Remove("Hide");
             dgvHD.DataSource = dtHD;
         }
     }

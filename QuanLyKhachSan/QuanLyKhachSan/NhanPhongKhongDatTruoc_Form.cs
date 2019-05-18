@@ -21,6 +21,7 @@ namespace QuanLyKhachSan
         public NhanPhongKhongDatTruoc_Form()
         {
             InitializeComponent();
+            Today_DateTimePicker.Enabled = false;
         }
 
         private void Inside_RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -38,32 +39,50 @@ namespace QuanLyKhachSan
         }
         private void SinhMaKH()
         {
-            string a = this.dgvKH.Rows[this.dgvKH.Rows.Count - 2].Cells[0].Value.ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            dtKH = new DataTable();
+            dtKH.Clear();
+            DataSet ds = blNP.LayDSKHSinhMa();
+            dtKH = ds.Tables[0];
+            if (dtKH.Rows.Count >= 1)
             {
-                MaKH_TextBox.Text = "K0" + b.ToString();
+                string a = dtKH.Rows[dtKH.Rows.Count - 1].ItemArray[0].ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    MaKH_TextBox.Text = "K0" + b.ToString();
+                }
+                else
+                {
+                    MaKH_TextBox.Text = "K" + b.ToString();
+                }
             }
             else
             {
-                MaKH_TextBox.Text = "K" + b.ToString();
+                MaKH_TextBox.Text = "K01";
             }
         }
         private void SinhMaHD()
         {
             dtHD = new DataTable();
             dtHD.Clear();
-            DataSet ds = blNP.LayDSHD();
+            DataSet ds = blNP.LayDSHDSinhMa();
             dtHD = ds.Tables[0];
-            string a = dtHD.Rows[dtHD.Rows.Count - 1].ItemArray[0].ToString();
-            int b = Convert.ToInt32(a.Substring(1)) + 1;
-            if (b < 10)
+            if (dtHD.Rows.Count >= 1)
             {
-                dgvHD.Rows[0].Cells[0].Value = "H0" + b.ToString();
+                string a = dtHD.Rows[dtHD.Rows.Count - 1].ItemArray[0].ToString();
+                int b = Convert.ToInt32(a.Substring(1)) + 1;
+                if (b < 10)
+                {
+                    dgvHD.Rows[0].Cells[0].Value = "H0" + b.ToString();
+                }
+                else
+                {
+                    dgvHD.Rows[0].Cells[0].Value = "H" + b.ToString();
+                }
             }
             else
             {
-                dgvHD.Rows[0].Cells[0].Value = "H" + b.ToString();
+                dgvHD.Rows[0].Cells[0].Value = "H01";
             }
         }
         private void NhanPhong_Form_Load(object sender, EventArgs e)
@@ -74,9 +93,9 @@ namespace QuanLyKhachSan
             }
             LoadDataKH();
             LoadDataPhong();
-            dgvHD.Rows[0].Cells[2].Value = Today_DateTimePicker.Value.Date.ToString();
-            DateTime Temp = Today_DateTimePicker.Value;
-            Temp = Today_DateTimePicker.Value.AddDays(1);
+            dgvHD.Rows[0].Cells[2].Value = DateTime.Now.Date.ToString();
+            DateTime Temp = DateTime.Now;
+            Temp = DateTime.Now.AddDays(1);
             dgvHD.Rows[0].Cells[3].Value =Temp.Date.ToString();
             SinhMaHD();
             dgvHD.Rows[0].Cells[4].Value += "";
@@ -90,6 +109,7 @@ namespace QuanLyKhachSan
                 dtKH.Clear();
                 DataSet ds = blNP.LayDSKH();
                 dtKH = ds.Tables[0];
+                dtKH.Columns.Remove("Hide");
                 dgvKH.DataSource = dtKH;
                 this.MaKH_TextBox.ResetText();
                 this.TenKH_TextBox.ResetText();
@@ -114,6 +134,7 @@ namespace QuanLyKhachSan
                 dtPhong.Clear();
                 DataSet ds = blNP.LayDSPhong();
                 dtPhong = ds.Tables[0];
+                dtPhong.Columns.Remove("Hide");
                 dgvPhong.DataSource = dtPhong;
             }
             catch (SqlException)
@@ -185,6 +206,7 @@ namespace QuanLyKhachSan
             DataSet ds = blNP.TimKiemKH(column, SearchKH_TextBox.Text);
             dtKH = new DataTable();
             dtKH = ds.Tables[0];
+            dtKH.Columns.Remove("Hide");
             dgvKH.DataSource = dtKH;
         }
 
@@ -246,6 +268,7 @@ namespace QuanLyKhachSan
             DataSet ds = blNP.TimKiemPhong(column, SearchPhong_TextBox.Text);
             dtPhong = new DataTable();
             dtPhong = ds.Tables[0];
+            dtPhong.Columns.Remove("Hide");
             dgvPhong.DataSource = dtPhong;
         }
         private void SoNgayO_NumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -309,6 +332,13 @@ namespace QuanLyKhachSan
         private void Back_Button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Reset_Button_Click(object sender, EventArgs e)
+        {
+            ChonKhachHang_Panel.Enabled = true;
+            dgvHD.Rows[0].Cells[1].Value = "";
+            dgvHD.Rows[0].Cells[4].Value = "";
         }
     }
 }
