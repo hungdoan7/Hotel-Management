@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyKhachSan.BS_layer;
-
 namespace QuanLyKhachSan
 {
-    public partial class QuanLyHopDong_Form : Form
+    public partial class QuanLyHoaDon_Form : Form
     {
         DataTable dtHD = null;
-        BLHopDong blHD = new BLHopDong();
-        public QuanLyHopDong_Form()
+        BLHoaDon blHD = new BLHoaDon();
+        public QuanLyHoaDon_Form()
         {
             InitializeComponent();
             LoadData();
@@ -37,6 +36,8 @@ namespace QuanLyKhachSan
                 NgayThue_DateTimePicker.CustomFormat = " ";
                 NgayTra_DateTimePicker.Format = DateTimePickerFormat.Custom;
                 NgayTra_DateTimePicker.CustomFormat = " ";
+                NgayThanhToan_DateTimePicker.Format = DateTimePickerFormat.Custom;
+                NgayThanhToan_DateTimePicker.CustomFormat = " ";
 
                 this.Reload_Button.Enabled = true;
                 this.Edit_Button.Enabled = true;
@@ -65,6 +66,25 @@ namespace QuanLyKhachSan
             this.MaKH_TextBox.Focus();
         }
 
+        private void Reload_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Save_Button_Click(object sender, EventArgs e)
+        {
+            blHD = new BLHoaDon();
+            if (blHD.CapNhatHD(MaHD_TextBox.Text, MaKH_TextBox.Text, NgayThue_DateTimePicker.Value.Date.ToString(), NgayTra_DateTimePicker.Value.ToString(),TongTien_TextBox.Text,NgayThanhToan_DateTimePicker.Value.ToString()) == true)
+            {
+                LoadData();
+                MessageBox.Show(" Cap nhat thanh cong");
+            }
+            else
+            {
+                MessageBox.Show(" Cap nhat that bai");
+            }
+        }
+
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
             this.Save_Button.Enabled = false;
@@ -76,51 +96,9 @@ namespace QuanLyKhachSan
             this.Back_Button.Enabled = true;
         }
 
-        private void Save_Button_Click(object sender, EventArgs e)
-        {
-            blHD = new BLHopDong();
-            if (blHD.CapNhatHD(MaHD_TextBox.Text, MaKH_TextBox.Text,NgayThue_DateTimePicker.Value.Date.ToString(),NgayTra_DateTimePicker.Value.ToString()) == true)
-            {
-                LoadData();
-                MessageBox.Show(" Cap nhat thanh cong");
-            }
-            else
-            {
-                MessageBox.Show(" Cap nhat that bai");
-            }
-        }
-
-        private void Reload_Button_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
         private void Back_Button_Click(object sender, EventArgs e)
         {
-            this.Close(); 
-        }
-
-        private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int r = dgvHD.CurrentCell.RowIndex;
-            if (dgvHD.Rows[r].Cells[0].Value.ToString() != "")
-            {
-                this.MaHD_TextBox.Text = dgvHD.Rows[r].Cells[0].Value.ToString();
-                this.MaKH_TextBox.Text = dgvHD.Rows[r].Cells[1].Value.ToString();
-                NgayThue_DateTimePicker.Format = DateTimePickerFormat.Short;
-                NgayTra_DateTimePicker.Format = DateTimePickerFormat.Short;
-                this.NgayThue_DateTimePicker.Value = Convert.ToDateTime(dgvHD.Rows[r].Cells[2].Value.ToString());
-                this.NgayTra_DateTimePicker.Value = Convert.ToDateTime(dgvHD.Rows[r].Cells[3].Value.ToString());
-            }
-            else
-            {
-                this.MaHD_TextBox.ResetText();
-                this.MaKH_TextBox.ResetText();
-                NgayThue_DateTimePicker.Format = DateTimePickerFormat.Custom;
-                NgayThue_DateTimePicker.CustomFormat = " ";
-                NgayTra_DateTimePicker.Format = DateTimePickerFormat.Custom;
-                NgayTra_DateTimePicker.CustomFormat = " ";
-            }
+            this.Close();
         }
 
         private void Search_TextBox_TextChanged(object sender, EventArgs e)
@@ -145,7 +123,17 @@ namespace QuanLyKhachSan
                     }
                 case "Ngày Dự Kiến Trả":
                     {
-                        column = "NgayDuKienTraPhong";
+                        column = "NgayTraPhong";
+                        break;
+                    }
+                case "Giá Tiền":
+                    {
+                        column = "GiaTien";
+                        break;
+                    }
+                case "Ngày Xuất Hóa Đơn":
+                    {
+                        column = "NgayXuatHoaDon";
                         break;
                     }
                 default:
@@ -153,7 +141,7 @@ namespace QuanLyKhachSan
                         return;
                     }
             }
-            blHD = new BLHopDong();
+            blHD = new BLHoaDon();
             DataSet ds = blHD.TimKiem(column, Search_TextBox.Text);
             dtHD = new DataTable();
             dtHD = ds.Tables[0];

@@ -30,7 +30,6 @@ C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyDatPhong_Form.resources
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.NhanPhongKhongDatTruoc_Form.resources
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyHoatDongDichVu_Form.resources
-C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Presentation.QuanLyKhachDat.resources
 E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
 E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
 E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
@@ -54,3 +53,5 @@ E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.cspro
 E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyKhachDat.resources
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyHoaDon_Form.resources

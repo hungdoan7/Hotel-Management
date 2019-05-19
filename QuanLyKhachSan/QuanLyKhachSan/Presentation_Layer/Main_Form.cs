@@ -138,7 +138,38 @@ namespace QuanLyKhachSan
 
         private void quảnLýKháchĐặtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            QuanLyKhachDat Temp = new QuanLyKhachDat();
+            Temp.ShowDialog();
+        }
 
+        private void Main_Form_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            BS_layer.BLMain bl = new BS_layer.BLMain();
+            DataSet ds = new DataSet();
+            ds = bl.LayDSPhongHetHan();
+            dt = ds.Tables[0];
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                TimeSpan ts = DateTime.Now.Subtract(Convert.ToDateTime(dt.Rows[i].ItemArray[1]));
+                if (ts.Days > 0)
+                {
+                    News_RichTextBox.AppendText(" Khách hàng có mã "+ dt.Rows[i].ItemArray[2]+ " đang nợ tiền phòng "+ dt.Rows[i].ItemArray[0]+" "+ ts.Days+" ngày \n");
+                }
+            }
+            dt.Clear();
+            ds = bl.LayDSPhongDatHetHan();
+            dt=ds.Tables[0];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                TimeSpan ts = DateTime.Now.Subtract(Convert.ToDateTime(dt.Rows[i].ItemArray[2]));
+                if (ts.Days > 0)
+                {
+                    News_RichTextBox.AppendText(" Người đặt có mã " + dt.Rows[i].ItemArray[0] + " không đến lấy phòng " + dt.Rows[i].ItemArray[1] + " đã đặt quá " + ts.Days + " ngày nên sẽ được tự động chuyển phòng thành trống \n");
+                    bl.CapNhatPhong(dt.Rows[i].ItemArray[0].ToString());
+                }
+            }
         }
     }
 }

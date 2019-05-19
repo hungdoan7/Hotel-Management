@@ -19,13 +19,9 @@ namespace QuanLyKhachSan.BS_layer
         {
             return db.ExecuteQueryDataSet("select * from HopDong where Hide=0", CommandType.Text);
         }
-        public DataSet LayDSHDSinhMa()
+        public bool CapNhatHD(string mahd, string makh, string ngaythue,string NgayTra)
         {
-            return db.ExecuteQueryDataSet("select * from HopDong", CommandType.Text);
-        }
-        public bool CapNhatHD(string mahd, string makh, string ngaythue)
-        {
-            string sqlString = "Update HopDong set MaKH='" + makh + "' where NgayThue ='" + ngaythue + "' and MaHD='" + mahd + "'";
+            string sqlString = "Update HopDong set MaKH='" + makh + "',NgayThue ='" + ngaythue + "',NgayDuKienTraPhong='"+NgayTra+"' where MaHopDong='" + mahd + "'";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
         }
         public DataSet TimKiem(string column, string keyword)

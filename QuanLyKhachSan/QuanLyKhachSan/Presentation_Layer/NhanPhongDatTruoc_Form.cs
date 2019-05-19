@@ -292,7 +292,7 @@ namespace QuanLyKhachSan
         private void SearchKhachDat_TextBox_TextChanged(object sender, EventArgs e)
         {
             string column;
-            switch (SearchKH_ComboBox.Text)
+            switch (SearchKhachDat_ComboBox.Text)
             {
                 case "Mã Người Đặt":
                     {
@@ -330,7 +330,7 @@ namespace QuanLyKhachSan
                     }
             }
             blNP = new BLNhanPhong();
-            DataSet ds = blNP.TimKiemKH(column, SearchKH_TextBox.Text);
+            DataSet ds = blNP.TimKiemKH(column, SearchKhachDat_TextBox.Text);
             dtND = new DataTable();
             dtND = ds.Tables[0];
             dtND.Columns.Remove("Hide");

@@ -49,10 +49,12 @@
     <Compile Include="BS_Layer\BLDatPhong.cs" />
     <Compile Include="BS_Layer\BLDichVu.cs" />
     <Compile Include="BS_Layer\BLDVvaHD.cs" />
+    <Compile Include="BS_Layer\BLHoaDon.cs" />
     <Compile Include="BS_Layer\BlHoatDongDichVu.cs" />
-    <Compile Include="BS_Layer\BlKhachDat.cs" />
+    <Compile Include="BS_Layer\BLKhachDat.cs" />
     <Compile Include="BS_Layer\BLKhachHang.cs" />
     <Compile Include="BS_Layer\BLLogin.cs" />
+    <Compile Include="BS_Layer\BLMain.cs" />
     <Compile Include="BS_Layer\BLNhanPhong.cs" />
     <Compile Include="BS_Layer\BLNhanVien.cs" />
     <Compile Include="BS_Layer\BLPhong.cs" />
@@ -145,6 +147,12 @@
     <Compile Include="Presentation_Layer\TraPhong_Form.Designer.cs">
       <DependentUpon>TraPhong_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyHoaDon_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyHoaDon_Form.Designer.cs">
+      <DependentUpon>QuanLyHoaDon_Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Presentation_Layer\NhanPhongDatTruoc_Form.resx">
       <DependentUpon>NhanPhongDatTruoc_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation_Layer\TraPhong_Form.resx">
       <DependentUpon>TraPhong_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyHoaDon_Form.resx">
+      <DependentUpon>QuanLyHoaDon_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
