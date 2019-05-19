@@ -51,6 +51,10 @@
             this.biểuĐồTàiChínhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.News_RichTextBox = new System.Windows.Forms.RichTextBox();
+            this.Phong_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Main_MonthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.News_Label = new System.Windows.Forms.Label();
+            this.App_Label = new System.Windows.Forms.Label();
             this.MenuStrip_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +67,7 @@
             this.thốngKêToolStripMenuItem});
             this.MenuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip_Main.Name = "MenuStrip_Main";
-            this.MenuStrip_Main.Size = new System.Drawing.Size(976, 24);
+            this.MenuStrip_Main.Size = new System.Drawing.Size(969, 24);
             this.MenuStrip_Main.TabIndex = 0;
             this.MenuStrip_Main.Text = "Menu";
             // 
@@ -145,7 +149,7 @@
             // 
             this.quanLyHoaDonToolStripMenuItem.Name = "quanLyHoaDonToolStripMenuItem";
             this.quanLyHoaDonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.quanLyHoaDonToolStripMenuItem.Text = "Quan lý hóa đơn";
+            this.quanLyHoaDonToolStripMenuItem.Text = "Quản lý hóa đơn";
             this.quanLyHoaDonToolStripMenuItem.Click += new System.EventHandler(this.quanLyHoaDonToolStripMenuItem_Click);
             // 
             // quanLyHopToolStripMenuItem
@@ -222,26 +226,68 @@
             this.biểuĐồTàiChínhToolStripMenuItem.Name = "biểuĐồTàiChínhToolStripMenuItem";
             this.biểuĐồTàiChínhToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.biểuĐồTàiChínhToolStripMenuItem.Text = "Biểu Đồ Tài Chính";
+            this.biểuĐồTàiChínhToolStripMenuItem.Click += new System.EventHandler(this.biểuĐồTàiChínhToolStripMenuItem_Click);
             // 
             // biểuĐồKháchSửDụngDịchVụToolStripMenuItem
             // 
             this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Name = "biểuĐồKháchSửDụngDịchVụToolStripMenuItem";
-            this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Text = "Biểu Đồ Khách Sử Dụng Dịch Vụ";
+            this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Text = "Biểu Đồ Dịch Vụ";
+            this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Click += new System.EventHandler(this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem_Click);
             // 
             // News_RichTextBox
             // 
-            this.News_RichTextBox.Location = new System.Drawing.Point(694, 27);
+            this.News_RichTextBox.Location = new System.Drawing.Point(694, 237);
             this.News_RichTextBox.Name = "News_RichTextBox";
-            this.News_RichTextBox.Size = new System.Drawing.Size(270, 112);
+            this.News_RichTextBox.Size = new System.Drawing.Size(270, 341);
             this.News_RichTextBox.TabIndex = 1;
             this.News_RichTextBox.Text = "";
+            // 
+            // Phong_GroupBox
+            // 
+            this.Phong_GroupBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Phong_GroupBox.Location = new System.Drawing.Point(13, 41);
+            this.Phong_GroupBox.Name = "Phong_GroupBox";
+            this.Phong_GroupBox.Size = new System.Drawing.Size(675, 537);
+            this.Phong_GroupBox.TabIndex = 2;
+            this.Phong_GroupBox.TabStop = false;
+            this.Phong_GroupBox.Text = "Danh Sách Phòng";
+            // 
+            // Main_MonthCalendar
+            // 
+            this.Main_MonthCalendar.Location = new System.Drawing.Point(715, 41);
+            this.Main_MonthCalendar.Name = "Main_MonthCalendar";
+            this.Main_MonthCalendar.TabIndex = 3;
+            // 
+            // News_Label
+            // 
+            this.News_Label.AutoSize = true;
+            this.News_Label.Location = new System.Drawing.Point(694, 218);
+            this.News_Label.Name = "News_Label";
+            this.News_Label.Size = new System.Drawing.Size(97, 13);
+            this.News_Label.TabIndex = 4;
+            this.News_Label.Text = "Thông tin cập nhật";
+            // 
+            // App_Label
+            // 
+            this.App_Label.BackColor = System.Drawing.Color.Transparent;
+            this.App_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F);
+            this.App_Label.Location = new System.Drawing.Point(194, 196);
+            this.App_Label.Name = "App_Label";
+            this.App_Label.Size = new System.Drawing.Size(613, 142);
+            this.App_Label.TabIndex = 5;
+            this.App_Label.Text = "Quản Lý Khách Sạn";
+            this.App_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 616);
+            this.ClientSize = new System.Drawing.Size(969, 590);
+            this.Controls.Add(this.App_Label);
+            this.Controls.Add(this.News_Label);
+            this.Controls.Add(this.Main_MonthCalendar);
+            this.Controls.Add(this.Phong_GroupBox);
             this.Controls.Add(this.News_RichTextBox);
             this.Controls.Add(this.MenuStrip_Main);
             this.MainMenuStrip = this.MenuStrip_Main;
@@ -280,5 +326,9 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýKháchĐặtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem biểuĐồKháchSửDụngDịchVụToolStripMenuItem;
         private System.Windows.Forms.RichTextBox News_RichTextBox;
+        private System.Windows.Forms.GroupBox Phong_GroupBox;
+        private System.Windows.Forms.MonthCalendar Main_MonthCalendar;
+        private System.Windows.Forms.Label News_Label;
+        private System.Windows.Forms.Label App_Label;
     }
 }
