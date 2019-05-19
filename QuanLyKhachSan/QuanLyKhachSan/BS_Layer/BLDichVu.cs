@@ -17,6 +17,10 @@ namespace QuanLyKhachSan.BS_layer
         }
         public DataSet LayDSDV()
         {
+            return db.ExecuteQueryDataSet(" select * from DichVu where Hide=0", CommandType.Text);
+        }
+        public DataSet LayDSDVSinhMa()
+        {
             return db.ExecuteQueryDataSet(" select * from DichVu", CommandType.Text);
         }
         public bool CapNhatDV(string madv, string tendv, string giadv)
@@ -26,12 +30,12 @@ namespace QuanLyKhachSan.BS_layer
         }
         public bool ThemDV(string madv, string tendv, string giadv)
         {
-            string sqlString = "Insert into DichVu values ('" + madv + "',N'" + tendv + "','" + giadv + "')";
+            string sqlString = "Insert into DichVu values ('" + madv + "',N'" + tendv + "','" + giadv + "',0)";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
         }
         public DataSet TimKiem(string column, string keyword)
         {
-            string sqlString = "select * from DichVu where " + column + " like (N'%" + keyword + "%')";
+            string sqlString = "select * from DichVu where " + column + " like (N'%" + keyword + "%') and Hide=0";
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
     }
