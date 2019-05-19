@@ -50,6 +50,7 @@
     <Compile Include="BS_Layer\BLDichVu.cs" />
     <Compile Include="BS_Layer\BLDVvaHD.cs" />
     <Compile Include="BS_Layer\BlHoatDongDichVu.cs" />
+    <Compile Include="BS_Layer\BlKhachDat.cs" />
     <Compile Include="BS_Layer\BLKhachHang.cs" />
     <Compile Include="BS_Layer\BLLogin.cs" />
     <Compile Include="BS_Layer\BLNhanPhong.cs" />
@@ -58,114 +59,123 @@
     <Compile Include="BS_Layer\BLHopDong.cs" />
     <Compile Include="BS_Layer\BLTraPhong.cs" />
     <Compile Include="DB_Layer\DBMain.cs" />
-    <Compile Include="Presentation\NhanPhongDatTruoc_Form.cs">
+    <Compile Include="Presentation_Layer\NhanPhongDatTruoc_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\NhanPhongDatTruoc_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\NhanPhongDatTruoc_Form.Designer.cs">
       <DependentUpon>NhanPhongDatTruoc_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyDatPhong_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyDatPhong_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyDatPhong_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyDatPhong_Form.Designer.cs">
       <DependentUpon>QuanLyDatPhong_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyDichVuVaHopDong_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyDichVuVaHopDong_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyDichVuVaHopDong_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyDichVuVaHopDong_Form.Designer.cs">
       <DependentUpon>QuanLyDichVuVaHopDong_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyDichVu_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyDichVu_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyDichVu_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyDichVu_Form.Designer.cs">
       <DependentUpon>QuanLyDichVu_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyHoatDongDichVu_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyHoatDongDichVu_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyHoatDongDichVu_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyHoatDongDichVu_Form.Designer.cs">
       <DependentUpon>QuanLyHoatDongDichVu_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyHopDong_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyHopDong_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyHopDong_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyHopDong_Form.Designer.cs">
       <DependentUpon>QuanLyHopDong_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyPhong_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyKhachDat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyPhong_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyKhachDat.Designer.cs">
+      <DependentUpon>QuanLyKhachDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation_Layer\QuanLyPhong_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation_Layer\QuanLyPhong_Form.Designer.cs">
       <DependentUpon>QuanLyPhong_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Login_Form.cs">
+    <Compile Include="Presentation_Layer\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Login_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Main_Form.cs">
+    <Compile Include="Presentation_Layer\Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Main_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\NhanPhongKhongDatTruoc_Form.cs">
+    <Compile Include="Presentation_Layer\NhanPhongKhongDatTruoc_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\NhanPhongKhongDatTruoc_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\NhanPhongKhongDatTruoc_Form.Designer.cs">
       <DependentUpon>NhanPhongKhongDatTruoc_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Presentation\QuanLyKhachHang_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyKhachHang_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyKhachHang_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyKhachHang_Form.Designer.cs">
       <DependentUpon>QuanLyKhachHang_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyNhanVien_Form.cs">
+    <Compile Include="Presentation_Layer\QuanLyNhanVien_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyNhanVien_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\QuanLyNhanVien_Form.Designer.cs">
       <DependentUpon>QuanLyNhanVien_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\TraPhong_Form.cs">
+    <Compile Include="Presentation_Layer\TraPhong_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\TraPhong_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\TraPhong_Form.Designer.cs">
       <DependentUpon>TraPhong_Form.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Presentation\NhanPhongDatTruoc_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\NhanPhongDatTruoc_Form.resx">
       <DependentUpon>NhanPhongDatTruoc_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyDatPhong_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyDatPhong_Form.resx">
       <DependentUpon>QuanLyDatPhong_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyDichVuVaHopDong_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyDichVuVaHopDong_Form.resx">
       <DependentUpon>QuanLyDichVuVaHopDong_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyDichVu_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyDichVu_Form.resx">
       <DependentUpon>QuanLyDichVu_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyHoatDongDichVu_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyHoatDongDichVu_Form.resx">
       <DependentUpon>QuanLyHoatDongDichVu_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyHopDong_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyHopDong_Form.resx">
       <DependentUpon>QuanLyHopDong_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyPhong_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyKhachDat.resx">
+      <DependentUpon>QuanLyKhachDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation_Layer\QuanLyPhong_Form.resx">
       <DependentUpon>QuanLyPhong_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Login_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Main_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\NhanPhongKhongDatTruoc_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\NhanPhongKhongDatTruoc_Form.resx">
       <DependentUpon>NhanPhongKhongDatTruoc_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -177,13 +187,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Presentation\QuanLyKhachHang_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyKhachHang_Form.resx">
       <DependentUpon>QuanLyKhachHang_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyNhanVien_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\QuanLyNhanVien_Form.resx">
       <DependentUpon>QuanLyNhanVien_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\TraPhong_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\TraPhong_Form.resx">
       <DependentUpon>TraPhong_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

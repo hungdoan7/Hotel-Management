@@ -30,3 +30,27 @@ C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyDatPhong_Form.resources
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.NhanPhongKhongDatTruoc_Form.resources
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyHoatDongDichVu_Form.resources
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Presentation.QuanLyKhachDat.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.NhanPhongDatTruoc_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyDatPhong_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyDichVuVaHopDong_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyDichVu_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyHoatDongDichVu_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyHopDong_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Presentation.QuanLyKhachDat.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyPhong_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Login_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Main_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.NhanPhongKhongDatTruoc_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyKhachHang_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.QuanLyNhanVien_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.TraPhong_Form.resources
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+E:\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
