@@ -31,7 +31,7 @@ namespace QuanLyKhachSan.BS_layer
         }
         public bool ThemPhong(string maphong, string loaiphong, string giaphong, string sdt, string manhanvien, string tinhtrang)
         {            
-            string sqlString = "Insert into Phong values ('" + maphong + "',N'" + loaiphong + "','" + tinhtrang + "','" + giaphong + "','" + sdt + "',N'" + manhanvien + "',0)";
+            string sqlString = "Insert into Phong values ('" + maphong + "',N'" + loaiphong + "',N'" + tinhtrang + "','" + giaphong + "','" + sdt + "',N'" + manhanvien + "',0)";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
         }
         public DataSet TimKiem(string column,string keyword)

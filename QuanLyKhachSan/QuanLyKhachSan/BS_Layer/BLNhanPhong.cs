@@ -66,7 +66,7 @@ namespace QuanLyKhachSan.BS_layer
         }
         public bool CapNhatPhong(string maphong, string tinhtrang)
         {
-            string sqlString = "Update Phong set TinhTrang=N'" + tinhtrang + "' where MaPhong ='" + maphong + "' and Hide=0";
+            string sqlString = "Update Phong set TinhTrang=N'" + tinhtrang +"' where MaPhong ='" + maphong + "' and Hide=0";
             return db.MyExecuteNonQUery(sqlString, CommandType.Text);
         }
         public DataSet LayDSKhachDat()
