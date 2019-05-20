@@ -55,7 +55,6 @@
             this.Add_Button = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.Edit_Button = new System.Windows.Forms.Button();
-            this.Delete_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.Search_ComboBox = new System.Windows.Forms.ComboBox();
@@ -333,19 +332,9 @@
             this.Edit_Button.UseVisualStyleBackColor = true;
             this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Location = new System.Drawing.Point(256, 542);
-            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(100, 31);
-            this.Delete_Button.TabIndex = 7;
-            this.Delete_Button.Text = "Xóa";
-            this.Delete_Button.UseVisualStyleBackColor = true;
-            // 
             // Back_Button
             // 
-            this.Back_Button.Location = new System.Drawing.Point(378, 492);
+            this.Back_Button.Location = new System.Drawing.Point(256, 541);
             this.Back_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(100, 31);
@@ -406,7 +395,6 @@
             this.ClientSize = new System.Drawing.Size(709, 583);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Back_Button);
-            this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Edit_Button);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Add_Button);
@@ -444,7 +432,6 @@
         private System.Windows.Forms.Button Add_Button;
         private System.Windows.Forms.Button Cancel_Button;
         private System.Windows.Forms.Button Edit_Button;
-        private System.Windows.Forms.Button Delete_Button;
         private System.Windows.Forms.Button Back_Button;
         private System.Windows.Forms.RadioButton Trong_RadioButton;
         private System.Windows.Forms.RadioButton DaThue_RadioButton;

@@ -43,6 +43,8 @@
             this.Search_ComboBox = new System.Windows.Forms.ComboBox();
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Password_TextBox = new System.Windows.Forms.TextBox();
             this.ChucVu_ComboBox = new System.Windows.Forms.ComboBox();
             this.NgaySinh_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Luong_TextBox = new System.Windows.Forms.TextBox();
@@ -60,9 +62,6 @@
             this.Save_Button = new System.Windows.Forms.Button();
             this.Reload_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
-            this.Delete_Button = new System.Windows.Forms.Button();
-            this.Password_TextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
@@ -212,6 +211,22 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(673, 95);
             this.panel.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(506, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Password";
+            // 
+            // Password_TextBox
+            // 
+            this.Password_TextBox.Location = new System.Drawing.Point(568, 53);
+            this.Password_TextBox.Name = "Password_TextBox";
+            this.Password_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.Password_TextBox.TabIndex = 22;
             // 
             // ChucVu_ComboBox
             // 
@@ -379,7 +394,7 @@
             // 
             // Back_Button
             // 
-            this.Back_Button.Location = new System.Drawing.Point(398, 503);
+            this.Back_Button.Location = new System.Drawing.Point(277, 553);
             this.Back_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(100, 31);
@@ -387,32 +402,6 @@
             this.Back_Button.Text = "Trở về";
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
-            // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Location = new System.Drawing.Point(276, 553);
-            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(100, 31);
-            this.Delete_Button.TabIndex = 31;
-            this.Delete_Button.Text = "Xóa";
-            this.Delete_Button.UseVisualStyleBackColor = true;
-            // 
-            // Password_TextBox
-            // 
-            this.Password_TextBox.Location = new System.Drawing.Point(568, 53);
-            this.Password_TextBox.Name = "Password_TextBox";
-            this.Password_TextBox.Size = new System.Drawing.Size(100, 20);
-            this.Password_TextBox.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(506, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Password";
             // 
             // QuanLyNhanVien_Form
             // 
@@ -428,7 +417,6 @@
             this.Controls.Add(this.Save_Button);
             this.Controls.Add(this.Reload_Button);
             this.Controls.Add(this.Back_Button);
-            this.Controls.Add(this.Delete_Button);
             this.Name = "QuanLyNhanVien_Form";
             this.Text = "QuanLyNhanVien_Form";
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
@@ -463,8 +451,6 @@
         private System.Windows.Forms.Button Add_Button;
         private System.Windows.Forms.Button Save_Button;
         private System.Windows.Forms.Button Reload_Button;
-        private System.Windows.Forms.Button Back_Button;
-        private System.Windows.Forms.Button Delete_Button;
         private System.Windows.Forms.DateTimePicker NgaySinh_DateTimePicker;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
@@ -475,5 +461,6 @@
         private System.Windows.Forms.ComboBox ChucVu_ComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Password_TextBox;
+        private System.Windows.Forms.Button Back_Button;
     }
 }

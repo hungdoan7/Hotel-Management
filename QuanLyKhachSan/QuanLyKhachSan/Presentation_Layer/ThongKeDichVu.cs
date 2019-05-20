@@ -42,5 +42,10 @@ namespace QuanLyKhachSan
                 //ChartDT.Series["TienDV"].Points[i].AxisLabel = dt.Rows[i].ItemArray[1].ToString();
             }
         }
+
+        private void Back_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

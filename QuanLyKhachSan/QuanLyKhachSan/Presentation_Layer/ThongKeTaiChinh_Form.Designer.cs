@@ -38,18 +38,29 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetReport = new QuanLyKhachSan.DataSetReport();
             this.HoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetReport = new QuanLyKhachSan.DataSetReport();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.HoaDonTableAdapter = new QuanLyKhachSan.DataSetReportTableAdapters.HoaDonTableAdapter();
             this.ChartDT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Stand_Label = new System.Windows.Forms.Label();
             this.ChartWeek = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetReport)).BeginInit();
+            this.Back_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.HoaDonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartWeek)).BeginInit();
             this.SuspendLayout();
+            // 
+            // HoaDonBindingSource
+            // 
+            this.HoaDonBindingSource.DataMember = "HoaDon";
+            this.HoaDonBindingSource.DataSource = this.DataSetReport;
+            // 
+            // DataSetReport
+            // 
+            this.DataSetReport.DataSetName = "DataSetReport";
+            this.DataSetReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -62,16 +73,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(633, 678);
             this.reportViewer1.TabIndex = 52;
-            // 
-            // DataSetReport
-            // 
-            this.DataSetReport.DataSetName = "DataSetReport";
-            this.DataSetReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // HoaDonBindingSource
-            // 
-            this.HoaDonBindingSource.DataMember = "HoaDon";
-            this.HoaDonBindingSource.DataSource = this.DataSetReport;
             // 
             // HoaDonTableAdapter
             // 
@@ -123,14 +124,25 @@
             this.ChartWeek.TabIndex = 55;
             this.ChartWeek.Text = "chart1";
             title2.Name = "Thống kê danh thu mỗi tháng ";
-            title2.Text = "Thống kê danh thu mỗi tháng ";
+            title2.Text = "Thống kê danh thu 7 ngày gần nhất ";
             this.ChartWeek.Titles.Add(title2);
+            // 
+            // Back_Button
+            // 
+            this.Back_Button.Location = new System.Drawing.Point(1079, 734);
+            this.Back_Button.Name = "Back_Button";
+            this.Back_Button.Size = new System.Drawing.Size(75, 23);
+            this.Back_Button.TabIndex = 56;
+            this.Back_Button.Text = "Trở về";
+            this.Back_Button.UseVisualStyleBackColor = true;
+            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
             // ThongKeTaiChinh_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 738);
+            this.ClientSize = new System.Drawing.Size(1252, 777);
+            this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.ChartWeek);
             this.Controls.Add(this.Stand_Label);
             this.Controls.Add(this.ChartDT);
@@ -138,8 +150,8 @@
             this.Name = "ThongKeTaiChinh_Form";
             this.Text = "ThongKeTaiChinh_Form";
             this.Load += new System.EventHandler(this.ThongKeTaiChinh_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoaDonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartDT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartWeek)).EndInit();
             this.ResumeLayout(false);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartDT;
         private System.Windows.Forms.Label Stand_Label;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartWeek;
+        private System.Windows.Forms.Button Back_Button;
     }
 }

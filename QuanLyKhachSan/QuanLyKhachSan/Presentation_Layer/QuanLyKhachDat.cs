@@ -98,7 +98,6 @@ namespace QuanLyKhachSan
             this.panel.Enabled = true;
 
             this.Edit_Button.Enabled = false;
-            this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
         }
 
@@ -133,7 +132,6 @@ namespace QuanLyKhachSan
             this.panel.Enabled = false;
 
             this.Edit_Button.Enabled = true;
-            this.Delete_Button.Enabled = true;
             this.Back_Button.Enabled = true;
         }
 

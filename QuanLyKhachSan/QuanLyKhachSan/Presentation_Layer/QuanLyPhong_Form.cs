@@ -44,7 +44,6 @@ namespace QuanLyKhachSan
 
                 this.Reload_Button.Enabled = true;
                 this.Edit_Button.Enabled = true;
-                this.Delete_Button.Enabled = true;
                 this.Back_Button.Enabled = true;
                 this.Add_Button.Enabled = true;
 
@@ -138,7 +137,6 @@ namespace QuanLyKhachSan
 
             this.Add_Button.Enabled = false;
             this.Edit_Button.Enabled = false;
-            this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
             this.MaPhong_Label.Enabled = false;
             this.MaPhong_TextBox.Enabled = false;
@@ -229,7 +227,6 @@ namespace QuanLyKhachSan
 
             this.Add_Button.Enabled = false;
             this.Edit_Button.Enabled = false;
-            this.Delete_Button.Enabled = false;
             this.Back_Button.Enabled = false;
             this.MaPhong_TextBox.Enabled = false;
             DaThue_RadioButton.Enabled = false;
@@ -246,7 +243,6 @@ namespace QuanLyKhachSan
 
             this.Add_Button.Enabled = true;
             this.Edit_Button.Enabled = true;
-            this.Delete_Button.Enabled = true;
             this.Back_Button.Enabled = true;           
         }
 

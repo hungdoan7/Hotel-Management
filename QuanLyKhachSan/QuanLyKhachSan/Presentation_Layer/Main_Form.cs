@@ -26,17 +26,19 @@ namespace QuanLyKhachSan
             News_RichTextBox.Hide();
             Phong_GroupBox.Hide();
             News_Label.Hide();
+            this.NV_Label.Hide();
             App_Label.Show();
         }
         private void KhoiTaoMoi()
         {
             if (isLogin == false)
             {
-                //this.thốngKêToolStripMenuItem.Enabled = false;
-               //this.quảnLýToolStripMenuItem.Enabled = false;
-               //this.hoạtĐộngToolStripMenuItem.Enabled = false;
+                this.thốngKêToolStripMenuItem.Enabled = false;
+                this.quảnLýToolStripMenuItem.Enabled = false;
+               this.hoạtĐộngToolStripMenuItem.Enabled = false;
                 this.đăngNhậpToolStripMenuItem.Enabled = true;
                 this.đăngXuấtToolStripMenuItem.Enabled = false;
+                
             }
         }
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +59,7 @@ namespace QuanLyKhachSan
                 News_RichTextBox.Show();
                 Phong_GroupBox.Show();
                 App_Label.Hide();
+                NV_Label.Show();
                 News_Label.Show();
 
                 BS_layer.BLNhanVien bl = new BS_layer.BLNhanVien();

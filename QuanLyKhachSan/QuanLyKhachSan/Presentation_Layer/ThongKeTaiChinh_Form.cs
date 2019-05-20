@@ -16,6 +16,7 @@ namespace QuanLyKhachSan
         DataTable dtHD = null;
         BLHoaDon blHD = new BLHoaDon();
         int[] S;
+        int[] S1;
         public ThongKeTaiChinh_Form()
         {
             InitializeComponent();
@@ -56,8 +57,33 @@ namespace QuanLyKhachSan
                 ChartDT.Series["DoanhThu"].Points[i].AxisLabel = "Tháng "+(i+1).ToString();
             }
 
-            //int SoNgay = DateTime.Now.Day;
-            //S = int[7];
+
+            int SoNgayBatDauWeek = DateTime.Now.Day - 6;
+            S1 = new int[7];
+                for (int i = SoNgayBatDauWeek; i <= DateTime.Now.Day; i++)
+                {
+                    S1[i - SoNgayBatDauWeek] = 0;
+                    for (int j = 0; j < dtHD.Rows.Count; j++)
+                    {
+                        string[] a = dtHD.Rows[j].ItemArray[5].ToString().Split('/');
+                        if (Convert.ToInt32(a[1]) == i)
+                        {
+                            S1[i - SoNgayBatDauWeek] += Convert.ToInt32(dtHD.Rows[j].ItemArray[4]);
+                        }
+                    }
+                }
+            for (int i = 0; i < 7; i++)
+            {
+                ChartWeek.Series["DoanhThu"].Points.Add(S1[i]);
+                ChartWeek.Series["DoanhThu"].Points[i].Label = S1[i].ToString();
+                ChartWeek.Series["DoanhThu"].Points[i].Color = Color.Blue;
+                ChartWeek.Series["DoanhThu"].Points[i].AxisLabel = "Ngày" + (i + SoNgayBatDauWeek).ToString();
+            }
+        }
+
+        private void Back_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
