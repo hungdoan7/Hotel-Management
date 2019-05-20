@@ -38,7 +38,8 @@ namespace QuanLyKhachSan
                this.hoạtĐộngToolStripMenuItem.Enabled = false;
                 this.đăngNhậpToolStripMenuItem.Enabled = true;
                 this.đăngXuấtToolStripMenuItem.Enabled = false;
-                
+                this.quảnLýNhânViênToolStripMenuItem.Enabled = false;
+
             }
         }
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace QuanLyKhachSan
                 if (QuanLyMode == true)
                 {
                     this.thốngKêToolStripMenuItem.Enabled = true;
+                    this.quảnLýNhânViênToolStripMenuItem.Enabled = true;
                 }
                 this.hoạtĐộngToolStripMenuItem.Enabled = true;
                 this.quảnLýToolStripMenuItem.Enabled = true;
