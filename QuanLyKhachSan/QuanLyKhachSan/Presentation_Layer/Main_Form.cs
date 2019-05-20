@@ -39,7 +39,6 @@ namespace QuanLyKhachSan
                 this.đăngNhậpToolStripMenuItem.Enabled = true;
                 this.đăngXuấtToolStripMenuItem.Enabled = false;
                 this.quảnLýNhânViênToolStripMenuItem.Enabled = false;
-
             }
         }
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
