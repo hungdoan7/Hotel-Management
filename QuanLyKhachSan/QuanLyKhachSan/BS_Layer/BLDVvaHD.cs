@@ -38,5 +38,10 @@ namespace QuanLyKhachSan.BS_layer
             string sqlString = " select A.MaDV,DichVu.TenDV,DichVu.GiaDV,A.SoLanSD from(select MaDV, sum(SoNgaySD)as SoLanSD from DichVuvaHD group by DichVuvaHD.MaDV) as A,DichVu where A.MaDV = DichVu.MaDV ";
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
+        public bool XoaDVvaHD(string madv, string mahd)
+        {
+            string sqlString = "Update DichVuvaHD set Hide= 1 where MaDV ='" + madv + "' and MaHD='" + mahd + "'";
+            return db.MyExecuteNonQUery(sqlString, CommandType.Text);
+        }
     }
 }

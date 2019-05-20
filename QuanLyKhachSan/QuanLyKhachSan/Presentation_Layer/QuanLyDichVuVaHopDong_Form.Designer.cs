@@ -189,6 +189,7 @@
             this.Delete_Button.TabIndex = 36;
             this.Delete_Button.Text = "Xóa";
             this.Delete_Button.UseVisualStyleBackColor = true;
+            this.Delete_Button.Click += new System.EventHandler(this.Delete_Button_Click);
             // 
             // Edit_Button
             // 

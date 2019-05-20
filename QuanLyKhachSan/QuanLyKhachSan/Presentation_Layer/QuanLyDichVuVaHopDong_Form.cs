@@ -147,5 +147,10 @@ namespace QuanLyKhachSan
             dtDVvaHD.Columns.Remove("Hide");
             dgvDVvaHD.DataSource = dtDVvaHD;
         }
+
+        private void Delete_Button_Click(object sender, EventArgs e)
+        {
+            blDVvaHD.XoaDVvaHD(MaDV_TextBox.Text, MaHD_TextBox.Text);
+        }
     }
 }

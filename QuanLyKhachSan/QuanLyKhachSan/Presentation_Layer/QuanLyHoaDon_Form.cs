@@ -176,5 +176,10 @@ namespace QuanLyKhachSan
                 NgayThanhToan_DateTimePicker.CustomFormat = " ";
             }
         }
+
+        private void Delete_Button_Click(object sender, EventArgs e)
+        {
+            blHD.XoaHD(MaHD_TextBox.Text);
+        }
     }
 }

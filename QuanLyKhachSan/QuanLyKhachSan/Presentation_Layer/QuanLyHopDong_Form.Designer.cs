@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
+            this.NgayTra_DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.NgayThue_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.NgayThue_Label = new System.Windows.Forms.Label();
             this.MaKH_Label = new System.Windows.Forms.Label();
@@ -42,17 +44,14 @@
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.Reload_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
-            this.Delete_Button = new System.Windows.Forms.Button();
             this.Edit_Button = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.dgvHD = new System.Windows.Forms.DataGridView();
-            this.Save_Button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.NgayTra_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDuKienTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Save_Button = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
@@ -73,6 +72,24 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(461, 100);
             this.panel.TabIndex = 49;
+            // 
+            // NgayTra_DateTimePicker
+            // 
+            this.NgayTra_DateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.NgayTra_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayTra_DateTimePicker.Location = new System.Drawing.Point(325, 63);
+            this.NgayTra_DateTimePicker.Name = "NgayTra_DateTimePicker";
+            this.NgayTra_DateTimePicker.Size = new System.Drawing.Size(97, 20);
+            this.NgayTra_DateTimePicker.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(220, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Ngày Trả Phòng";
             // 
             // NgayThue_DateTimePicker
             // 
@@ -188,16 +205,6 @@
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Location = new System.Drawing.Point(283, 549);
-            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(100, 31);
-            this.Delete_Button.TabIndex = 46;
-            this.Delete_Button.Text = "Xóa";
-            this.Delete_Button.UseVisualStyleBackColor = true;
-            // 
             // Edit_Button
             // 
             this.Edit_Button.Location = new System.Drawing.Point(164, 499);
@@ -236,35 +243,6 @@
             this.dgvHD.TabIndex = 40;
             this.dgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellClick);
             // 
-            // Save_Button
-            // 
-            this.Save_Button.Location = new System.Drawing.Point(49, 549);
-            this.Save_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Save_Button.Name = "Save_Button";
-            this.Save_Button.Size = new System.Drawing.Size(100, 31);
-            this.Save_Button.TabIndex = 42;
-            this.Save_Button.Text = "Lưu";
-            this.Save_Button.UseVisualStyleBackColor = true;
-            this.Save_Button.Click += new System.EventHandler(this.Save_Button_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Ngày Trả Phòng";
-            // 
-            // NgayTra_DateTimePicker
-            // 
-            this.NgayTra_DateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.NgayTra_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.NgayTra_DateTimePicker.Location = new System.Drawing.Point(325, 63);
-            this.NgayTra_DateTimePicker.Name = "NgayTra_DateTimePicker";
-            this.NgayTra_DateTimePicker.Size = new System.Drawing.Size(97, 20);
-            this.NgayTra_DateTimePicker.TabIndex = 31;
-            // 
             // MaHD
             // 
             this.MaHD.DataPropertyName = "MaHopDong";
@@ -280,10 +258,10 @@
             // NgayThue
             // 
             this.NgayThue.DataPropertyName = "NgayThue";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.NgayThue.DefaultCellStyle = dataGridViewCellStyle1;
             this.NgayThue.HeaderText = "Ngày Bắt Đầu Thuê";
             this.NgayThue.Name = "NgayThue";
             // 
@@ -292,6 +270,17 @@
             this.NgayDuKienTra.DataPropertyName = "NgayDuKienTraPhong";
             this.NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả";
             this.NgayDuKienTra.Name = "NgayDuKienTra";
+            // 
+            // Save_Button
+            // 
+            this.Save_Button.Location = new System.Drawing.Point(49, 549);
+            this.Save_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Save_Button.Name = "Save_Button";
+            this.Save_Button.Size = new System.Drawing.Size(100, 31);
+            this.Save_Button.TabIndex = 42;
+            this.Save_Button.Text = "Lưu";
+            this.Save_Button.UseVisualStyleBackColor = true;
+            this.Save_Button.Click += new System.EventHandler(this.Save_Button_Click);
             // 
             // QuanLyHopDong_Form
             // 
@@ -302,7 +291,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Reload_Button);
             this.Controls.Add(this.Back_Button);
-            this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Edit_Button);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.dgvHD);
@@ -332,7 +320,6 @@
         private System.Windows.Forms.TextBox Search_TextBox;
         private System.Windows.Forms.Button Reload_Button;
         private System.Windows.Forms.Button Back_Button;
-        private System.Windows.Forms.Button Delete_Button;
         private System.Windows.Forms.Button Edit_Button;
         private System.Windows.Forms.Button Cancel_Button;
         private System.Windows.Forms.DataGridView dgvHD;

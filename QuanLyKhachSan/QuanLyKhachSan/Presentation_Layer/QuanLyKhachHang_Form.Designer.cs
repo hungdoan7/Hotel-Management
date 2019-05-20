@@ -42,7 +42,6 @@
             this.Nam_RadioButton = new System.Windows.Forms.RadioButton();
             this.XuatXu_TextBox = new System.Windows.Forms.TextBox();
             this.CMND_TextBox = new System.Windows.Forms.TextBox();
-            this.Delete_Button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.MaKH_TextBox = new System.Windows.Forms.TextBox();
             this.XuatXu_Label = new System.Windows.Forms.Label();
@@ -121,7 +120,7 @@
             // 
             // Back_Button
             // 
-            this.Back_Button.Location = new System.Drawing.Point(383, 496);
+            this.Back_Button.Location = new System.Drawing.Point(262, 546);
             this.Back_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(100, 31);
@@ -207,16 +206,6 @@
             this.CMND_TextBox.Name = "CMND_TextBox";
             this.CMND_TextBox.Size = new System.Drawing.Size(90, 20);
             this.CMND_TextBox.TabIndex = 12;
-            // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Location = new System.Drawing.Point(261, 546);
-            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(100, 31);
-            this.Delete_Button.TabIndex = 21;
-            this.Delete_Button.Text = "Xóa";
-            this.Delete_Button.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -385,7 +374,6 @@
             this.Controls.Add(this.Save_Button);
             this.Controls.Add(this.Reload_Button);
             this.Controls.Add(this.Back_Button);
-            this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.dgvKH);
@@ -416,7 +404,6 @@
         private System.Windows.Forms.RadioButton Nam_RadioButton;
         private System.Windows.Forms.TextBox XuatXu_TextBox;
         private System.Windows.Forms.TextBox CMND_TextBox;
-        private System.Windows.Forms.Button Delete_Button;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox MaKH_TextBox;
         private System.Windows.Forms.Label XuatXu_Label;

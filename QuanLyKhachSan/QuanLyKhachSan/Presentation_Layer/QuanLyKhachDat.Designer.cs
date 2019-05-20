@@ -35,6 +35,12 @@
             this.SearchKhachDat_ComboBox = new System.Windows.Forms.ComboBox();
             this.SearchKhachDat_TextBox = new System.Windows.Forms.TextBox();
             this.dgvKhachDat = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TenNguoiDat_TextBox = new System.Windows.Forms.TextBox();
@@ -43,17 +49,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Reload_Button = new System.Windows.Forms.Button();
             this.Back_Button = new System.Windows.Forms.Button();
-            this.Delete_Button = new System.Windows.Forms.Button();
             this.Edit_Button = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.Save_Button = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachDat)).BeginInit();
@@ -132,6 +131,46 @@
             this.dgvKhachDat.TabIndex = 24;
             this.dgvKhachDat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachDat_CellClick);
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MaNguoiDat";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mã Người Đặt";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "TenNguoiDat";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tên Người Đặt";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SDT";
+            this.dataGridViewTextBoxColumn5.HeaderText = "SĐT";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NgayHetHan";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Ngày Hết Hạn";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng";
+            this.MaPhong.Name = "MaPhong";
+            // 
+            // LoaiPhong
+            // 
+            this.LoaiPhong.DataPropertyName = "LoaiPhong";
+            this.LoaiPhong.HeaderText = "Loại Phòng";
+            this.LoaiPhong.Name = "LoaiPhong";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -203,16 +242,6 @@
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
             // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Location = new System.Drawing.Point(250, 455);
-            this.Delete_Button.Margin = new System.Windows.Forms.Padding(2);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(100, 31);
-            this.Delete_Button.TabIndex = 52;
-            this.Delete_Button.Text = "Xóa";
-            this.Delete_Button.UseVisualStyleBackColor = true;
-            // 
             // Edit_Button
             // 
             this.Edit_Button.Location = new System.Drawing.Point(131, 405);
@@ -260,46 +289,6 @@
             this.panel.Size = new System.Drawing.Size(594, 112);
             this.panel.TabIndex = 54;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "MaNguoiDat";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mã Người Đặt";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TenNguoiDat";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tên Người Đặt";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SDT";
-            this.dataGridViewTextBoxColumn5.HeaderText = "SĐT";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NgayHetHan";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Ngày Hết Hạn";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã Phòng";
-            this.MaPhong.Name = "MaPhong";
-            // 
-            // LoaiPhong
-            // 
-            this.LoaiPhong.DataPropertyName = "LoaiPhong";
-            this.LoaiPhong.HeaderText = "Loại Phòng";
-            this.LoaiPhong.Name = "LoaiPhong";
-            // 
             // QuanLyKhachDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,7 +297,6 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.Reload_Button);
             this.Controls.Add(this.Back_Button);
-            this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Edit_Button);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Save_Button);
@@ -342,7 +330,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Reload_Button;
         private System.Windows.Forms.Button Back_Button;
-        private System.Windows.Forms.Button Delete_Button;
         private System.Windows.Forms.Button Edit_Button;
         private System.Windows.Forms.Button Cancel_Button;
         private System.Windows.Forms.Button Save_Button;
