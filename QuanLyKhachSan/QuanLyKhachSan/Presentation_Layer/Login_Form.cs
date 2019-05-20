@@ -34,6 +34,8 @@ namespace QuanLyKhachSan
             if (Flag == true)
             {
                 Main_Form.isLogin = true;
+                Main_Form.user = txtUser.Text;
+                Main_Form.password = txtPass.Text;
                 Close();
             }
             else

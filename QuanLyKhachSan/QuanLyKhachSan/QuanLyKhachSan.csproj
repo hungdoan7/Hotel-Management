@@ -179,11 +179,17 @@
       <DependentUpon>QuanLyHoaDon_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="ThongKeTaiChinh_Form.cs">
+    <Compile Include="Presentation_Layer\ThongKeTaiChinh_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKeTaiChinh_Form.Designer.cs">
+    <Compile Include="Presentation_Layer\ThongKeTaiChinh_Form.Designer.cs">
       <DependentUpon>ThongKeTaiChinh_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation_Layer\ThongKeDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation_Layer\ThongKeDichVu.Designer.cs">
+      <DependentUpon>ThongKeDichVu.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Presentation_Layer\NhanPhongDatTruoc_Form.resx">
       <DependentUpon>NhanPhongDatTruoc_Form.cs</DependentUpon>
@@ -240,8 +246,11 @@
       <DependentUpon>QuanLyHoaDon_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="ThongKeTaiChinh_Form.resx">
+    <EmbeddedResource Include="Presentation_Layer\ThongKeTaiChinh_Form.resx">
       <DependentUpon>ThongKeTaiChinh_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation_Layer\ThongKeDichVu.resx">
+      <DependentUpon>ThongKeDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetReport.xsc">
       <DependentUpon>DataSetReport.xsd</DependentUpon>

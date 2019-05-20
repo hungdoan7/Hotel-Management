@@ -141,3 +141,4 @@ C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\RdlCompile.cache
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\RdlCompile.compiled
 C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CopyComplete
+C:\Users\HUNG PC\Documents\GitHub\Hotel-Management\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.ThongKeDichVu.resources

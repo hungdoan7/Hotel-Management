@@ -16,7 +16,7 @@ namespace QuanLyKhachSan.BS_layer
         }
         public DataSet LayDSPhongHetHan()
         {
-            string sqlSTR = "Select PhongvaHopDong.MaPhong,HopDong.NgayDuKienTraPhong,HopDong.MaKH from HopDong,PhongvaHopDong where PhongvaHopDong.MaHD=HopDong.MaHopDong and PhongvaHopDong.Hide=0  and HopDong.Hide=0";
+            string sqlSTR = "Select PhongvaHopDong.MaPhong,HopDong.NgayDuKienTraPhong,HopDong.MaKH,Hopdong.MaHopDong from HopDong,PhongvaHopDong where PhongvaHopDong.MaHD=HopDong.MaHopDong and PhongvaHopDong.Hide=0 and HopDong.Hide=0";
             return db.ExecuteQueryDataSet(sqlSTR, CommandType.Text);
         }
         public DataSet LayDSPhongDatHetHan()

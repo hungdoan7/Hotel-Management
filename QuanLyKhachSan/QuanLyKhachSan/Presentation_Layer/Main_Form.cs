@@ -14,6 +14,8 @@ namespace QuanLyKhachSan
     {
         public static bool isLogin;
         public static bool QuanLyMode;
+        public static string user;
+        public static string password;
         public Main_Form()
         {
             isLogin = false;
@@ -56,6 +58,15 @@ namespace QuanLyKhachSan
                 Phong_GroupBox.Show();
                 App_Label.Hide();
                 News_Label.Show();
+
+                BS_layer.BLNhanVien bl = new BS_layer.BLNhanVien();
+                DataTable dt = new DataTable();
+                DataSet ds = new DataSet();
+                ds = bl.LayDSNVMainForm(user);
+                dt = ds.Tables[0];
+                FontFamily f = new FontFamily("Times New Roman");
+                NV_Label.Font = new Font(f, 12);
+                NV_Label.Text = "Nhân Viên đang đăng nhập: " + dt.Rows[0].ItemArray[0] + "\nTên: " + dt.Rows[0].ItemArray[1] + "\nChức Vụ: " + dt.Rows[0].ItemArray[2];
             }
         }
 
@@ -166,7 +177,15 @@ namespace QuanLyKhachSan
                 TimeSpan ts = DateTime.Now.Subtract(Convert.ToDateTime(dt.Rows[i].ItemArray[1]));
                 if (ts.Days > 0)
                 {
-                    News_RichTextBox.AppendText(" Khách hàng có mã " + dt.Rows[i].ItemArray[2] + " đang nợ tiền phòng " + dt.Rows[i].ItemArray[0] + " " + ts.Days + " ngày \n");
+                    News_RichTextBox.AppendText(" Khách hàng có mã " + dt.Rows[i].ItemArray[2] + " đang nợ tiền phòng " + dt.Rows[i].ItemArray[0] + "   " + ts.Days + " ngày \n");
+                    if (ts.Days > 10)
+                    {
+                        News_RichTextBox.AppendText(" Vì đã quá 10 ngày nhưng khách không thanh toán tiền nên hợp đồng sẽ chấm dứt và phòng"+ dt.Rows[i].ItemArray[0] + " sẽ được chuyển thành trống!");
+                        BS_layer.BLTraPhong blTP = new BS_layer.BLTraPhong();
+                        blTP.XoaDichVuVaHopDong(dt.Rows[i].ItemArray[3].ToString());
+                        blTP.XoaPhongVaHopDong(dt.Rows[i].ItemArray[3].ToString());
+                        blTP.XoaHopDong(dt.Rows[i].ItemArray[3].ToString());
+                    }
                 }
             }
             dt.Clear();
@@ -235,7 +254,8 @@ namespace QuanLyKhachSan
 
         private void biểuĐồKháchSửDụngDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ThongKeDichVu Temp = new ThongKeDichVu();
+            Temp.ShowDialog();
         }
     }
 }

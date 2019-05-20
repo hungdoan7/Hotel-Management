@@ -55,6 +55,7 @@
             this.Main_MonthCalendar = new System.Windows.Forms.MonthCalendar();
             this.News_Label = new System.Windows.Forms.Label();
             this.App_Label = new System.Windows.Forms.Label();
+            this.NV_Label = new System.Windows.Forms.Label();
             this.MenuStrip_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -224,14 +225,14 @@
             // biểuĐồTàiChínhToolStripMenuItem
             // 
             this.biểuĐồTàiChínhToolStripMenuItem.Name = "biểuĐồTàiChínhToolStripMenuItem";
-            this.biểuĐồTàiChínhToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.biểuĐồTàiChínhToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.biểuĐồTàiChínhToolStripMenuItem.Text = "Biểu Đồ Tài Chính";
             this.biểuĐồTàiChínhToolStripMenuItem.Click += new System.EventHandler(this.biểuĐồTàiChínhToolStripMenuItem_Click);
             // 
             // biểuĐồKháchSửDụngDịchVụToolStripMenuItem
             // 
             this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Name = "biểuĐồKháchSửDụngDịchVụToolStripMenuItem";
-            this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Text = "Biểu Đồ Dịch Vụ";
             this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem.Click += new System.EventHandler(this.biểuĐồKháchSửDụngDịchVụToolStripMenuItem_Click);
             // 
@@ -239,7 +240,7 @@
             // 
             this.News_RichTextBox.Location = new System.Drawing.Point(694, 237);
             this.News_RichTextBox.Name = "News_RichTextBox";
-            this.News_RichTextBox.Size = new System.Drawing.Size(270, 341);
+            this.News_RichTextBox.Size = new System.Drawing.Size(270, 194);
             this.News_RichTextBox.TabIndex = 1;
             this.News_RichTextBox.Text = "";
             // 
@@ -272,18 +273,27 @@
             // 
             this.App_Label.BackColor = System.Drawing.Color.Transparent;
             this.App_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F);
-            this.App_Label.Location = new System.Drawing.Point(194, 196);
+            this.App_Label.Location = new System.Drawing.Point(201, 197);
             this.App_Label.Name = "App_Label";
             this.App_Label.Size = new System.Drawing.Size(613, 142);
             this.App_Label.TabIndex = 5;
             this.App_Label.Text = "Quản Lý Khách Sạn";
             this.App_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // NV_Label
+            // 
+            this.NV_Label.AutoSize = true;
+            this.NV_Label.Location = new System.Drawing.Point(694, 434);
+            this.NV_Label.Name = "NV_Label";
+            this.NV_Label.Size = new System.Drawing.Size(0, 13);
+            this.NV_Label.TabIndex = 6;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 590);
+            this.Controls.Add(this.NV_Label);
             this.Controls.Add(this.App_Label);
             this.Controls.Add(this.News_Label);
             this.Controls.Add(this.Main_MonthCalendar);
@@ -330,5 +340,6 @@
         private System.Windows.Forms.MonthCalendar Main_MonthCalendar;
         private System.Windows.Forms.Label News_Label;
         private System.Windows.Forms.Label App_Label;
+        private System.Windows.Forms.Label NV_Label;
     }
 }

@@ -19,6 +19,10 @@ namespace QuanLyKhachSan.BS_layer
         {
             return db.ExecuteQueryDataSet(" select * from NhanVien where Hide=0", CommandType.Text);
         }
+        public DataSet LayDSNVMainForm(string manv)
+        {
+            return db.ExecuteQueryDataSet(" select * from NhanVien where Hide=0 and MaNV='"+manv+"'", CommandType.Text);
+        }
         public DataSet LayDSNVSinhMa()
         {
             return db.ExecuteQueryDataSet(" select * from NhanVien", CommandType.Text);
